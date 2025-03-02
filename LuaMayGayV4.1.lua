@@ -23772,23 +23772,15 @@ task.spawn(C_63);
 return G2L["1"], require;
     end
 }
-
-Tab:Button{
-	Name = "Dex V5 Leak idk",
-	Description = nil,
-	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/dyyll/Dex-V5-leak/refs/heads/main/Dex%20V5.lua"))()
-    end
-}
   end
 end)
 
 GetKeyButton.MouseButton1Click:Connect(function()
- setclipboard("Paste here your link to get the key") 
+ setclipboard("https://discord.gg/5DNQ4KgF3M") 
 end) 
   end
 end)
 
 GetKeyButton.MouseButton1Click:Connect(function()
- setclipboard("Paste here your link to get the key") 
+ setclipboard("https://discord.gg/5DNQ4KgF3M") 
 end) 
