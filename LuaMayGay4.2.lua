@@ -207,14 +207,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/m
 local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
 
 local GUI = Mercury:Create{
-    Name = "LuaMayGay V4",
+    Name = "Project LuaCore V4.2",
     Size = UDim2.fromOffset(600, 400),
     Theme = Mercury.Themes.Dark,
     Link = "https://github.com/deeeity/mercury-lib"
 }
 GUI:Notification{
-	Title = "Warning",
-	Text = "Some Scripts Might be Broken",
+	Title = "Update",
+	Text = "Change Name To Project LuaCore",
 	Duration = 3,
 	Callback = function() end
 }
