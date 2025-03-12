@@ -1,0 +1,127 @@
+local ScreenGui = Instance.new("ScreenGui")
+local ToggleButton = Instance.new("TextButton")
+local MainFrame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+
+-- Parent GUI to PlayerGui
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Toggle Button (OPEN / CLOSE)
+ToggleButton.Parent = ScreenGui
+ToggleButton.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
+ToggleButton.Position = UDim2.new(0.05, 0, 0.85, 0)
+ToggleButton.Size = UDim2.new(0, 120, 0, 50)
+ToggleButton.Text = "OPEN"
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.TextSize = 20
+ToggleButton.Visible = true
+
+-- Main GUI Frame (No Outline)
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+MainFrame.Position = UDim2.new(0.245, 0, 0.19, 0)
+MainFrame.Size = UDim2.new(0, 400, 0, 500)
+
+-- Title Bar (No Smooth Corners)
+Title.Parent = MainFrame
+Title.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.Font = Enum.Font.SourceSansBold
+Title.Text = "Prison Life Hub By Shedletsky"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 22
+
+-- Function to create script buttons with fixed names
+local function createScriptButton(position, scriptURL, buttonText)
+    -- Create a Frame to hold the Button
+    local frame = Instance.new("Frame")
+    frame.Parent = MainFrame
+    frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    frame.Size = UDim2.new(0.8, 0, 0.07, 0)
+    frame.Position = UDim2.new(0.1, 0, position, 0)
+
+    -- Create a TextButton with fixed script name
+    local button = Instance.new("TextButton")
+    button.Parent = frame
+    button.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
+    button.Size = UDim2.new(1, 0, 1, 0)
+    button.Text = buttonText -- Fixed name like "Sigma", "Swag", etc.
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.TextSize = 18
+    button.Font = Enum.Font.SourceSans
+
+    -- Execute the script from the URL when the button is clicked
+    button.MouseButton1Click:Connect(function()
+        loadstring(game:HttpGet(scriptURL))()
+    end)
+end
+
+-- Creating 10 script buttons with fixed text
+local scriptLinks = {
+    "https://rawscripts.net/raw/Universal-Script-Anonymous-Gui-Leak-31783",
+    "https://raw.githubusercontent.com/Icalock/Server/refs/heads/main/R6%20anims.lua",
+"https://raw.githubusercontent.com/MagnumIceCream/SecretServicePanel/6fefdf531e86404fb41b7812e7e84b69c7ea728f/ShakesSSP",
+"https://raw.githubusercontent.com/gitluau/luauexser/refs/heads/main/pHzp8uG1PO962o6qucrlP3AJy17eV3B.lua",
+    "https://raw.githubusercontent.com/Icalock/Server/refs/heads/main/Neon%20Green%20Sword.txt",
+    "https://raw.githubusercontent.com/Icalock/Server/refs/heads/main/Lua%20Hammer.txt",
+    "https://raw.githubusercontent.com/Icalock/Server/refs/heads/main/Grab%20V4.txt",
+    "https://raw.githubusercontent.com/Icalock/Server/refs/heads/main/Grab%20V3.txt",
+    "https://raw.githubusercontent.com/Icalock/Server/refs/heads/main/bomb%20vest.txt",
+    "https://raw.githubusercontent.com/Icalock/Server/refs/heads/main/Thomas%20The%20Dank%20Engine.txt"
+}
+
+local scriptNames = {
+    "Anonymous Gui",
+    "R6 Reset To R15",
+    "SSP",
+    "Exser",
+    "Green Sword",
+    "Lua Hammer",
+    "Grab Knife V4",
+    "Grab Knife V3",
+    "Allah Akbar",
+    "Thomas"
+}
+
+for i, scriptURL in ipairs(scriptLinks) do
+    createScriptButton(0.1 + ((i - 1) * 0.08), scriptURL, scriptNames[i])
+end
+
+-- Toggle Button Function (OPEN / CLOSE)
+local isVisible = false
+ToggleButton.MouseButton1Click:Connect(function()
+    isVisible = not isVisible
+    MainFrame.Visible = isVisible
+    ToggleButton.Text = isVisible and "CLOSE" or "OPEN"
+end)
+
+-- DRAG FUNCTION
+local UIS = game:GetService("UserInputService")
+local dragToggle = false
+local dragSpeed = 0.25
+local dragStart, startPos
+
+local function updateInput(input)
+    local delta = input.Position - dragStart
+    local goal = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    MainFrame:TweenPosition(goal, Enum.EasingDirection.Out, Enum.EasingStyle.Quad, dragSpeed, true)
+end
+
+MainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragToggle = true
+        dragStart = input.Position
+        startPos = MainFrame.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragToggle = false
+            end
+        end)
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if dragToggle and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        updateInput(input)
+    end
+end)
