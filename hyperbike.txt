@@ -1,0 +1,5522 @@
+
+--Converted with ttyyuu12345's model to script plugin v4
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Model0 = Instance.new("Model")
+Tool1 = Instance.new("Tool")
+Part2 = Instance.new("Part")
+SpecialMesh3 = Instance.new("SpecialMesh")
+Sound4 = Instance.new("Sound")
+Sound5 = Instance.new("Sound")
+Script6 = Instance.new("Script")
+Animation7 = Instance.new("Animation")
+LocalScript8 = Instance.new("LocalScript")
+LocalScript9 = Instance.new("LocalScript")
+Script10 = Instance.new("Script")
+ModuleScript11 = Instance.new("ModuleScript")
+Animation12 = Instance.new("Animation")
+Camera13 = Instance.new("Camera")
+Tool14 = Instance.new("Tool")
+Part15 = Instance.new("Part")
+Sound16 = Instance.new("Sound")
+Sound17 = Instance.new("Sound")
+SpecialMesh18 = Instance.new("SpecialMesh")
+Script19 = Instance.new("Script")
+Animation20 = Instance.new("Animation")
+LocalScript21 = Instance.new("LocalScript")
+LocalScript22 = Instance.new("LocalScript")
+Script23 = Instance.new("Script")
+ModuleScript24 = Instance.new("ModuleScript")
+Camera25 = Instance.new("Camera")
+Tool26 = Instance.new("Tool")
+Part27 = Instance.new("Part")
+SpecialMesh28 = Instance.new("SpecialMesh")
+Sound29 = Instance.new("Sound")
+Sound30 = Instance.new("Sound")
+Script31 = Instance.new("Script")
+Script32 = Instance.new("Script")
+LocalScript33 = Instance.new("LocalScript")
+LocalScript34 = Instance.new("LocalScript")
+ModuleScript35 = Instance.new("ModuleScript")
+Animation36 = Instance.new("Animation")
+Camera37 = Instance.new("Camera")
+Tool38 = Instance.new("Tool")
+Part39 = Instance.new("Part")
+SpecialMesh40 = Instance.new("SpecialMesh")
+Sound41 = Instance.new("Sound")
+Sound42 = Instance.new("Sound")
+Script43 = Instance.new("Script")
+Script44 = Instance.new("Script")
+LocalScript45 = Instance.new("LocalScript")
+ModuleScript46 = Instance.new("ModuleScript")
+Animation47 = Instance.new("Animation")
+Color3Value48 = Instance.new("Color3Value")
+LocalScript49 = Instance.new("LocalScript")
+Camera50 = Instance.new("Camera")
+Tool51 = Instance.new("Tool")
+Part52 = Instance.new("Part")
+SpecialMesh53 = Instance.new("SpecialMesh")
+Sound54 = Instance.new("Sound")
+Sound55 = Instance.new("Sound")
+Animation56 = Instance.new("Animation")
+Color3Value57 = Instance.new("Color3Value")
+Model58 = Instance.new("Model")
+Part59 = Instance.new("Part")
+Weld60 = Instance.new("Weld")
+Part61 = Instance.new("Part")
+Weld62 = Instance.new("Weld")
+Part63 = Instance.new("Part")
+SpecialMesh64 = Instance.new("SpecialMesh")
+Sound65 = Instance.new("Sound")
+Sound66 = Instance.new("Sound")
+Weld67 = Instance.new("Weld")
+Script68 = Instance.new("Script")
+Script69 = Instance.new("Script")
+LocalScript70 = Instance.new("LocalScript")
+LocalScript71 = Instance.new("LocalScript")
+ModuleScript72 = Instance.new("ModuleScript")
+Camera73 = Instance.new("Camera")
+Model0.Name = "Hyperbikes"
+Model0.Parent = mas
+Tool1.Name = "BlueHyperbike"
+Tool1.Parent = Model0
+Tool1.TextureId = "http://www.roblox.com/asset/?id=130087424"
+Tool1.CanBeDropped = false
+Tool1.Grip = CFrame.new(1.5, 2.20000005, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool1.GripPos = Vector3.new(1.5, 2.200000047683716, 0)
+Tool1.ToolTip = "LOOK'N FOR TECH-VENTURE"
+Part2.Name = "Handle"
+Part2.Parent = Tool1
+Part2.CFrame = CFrame.new(21.9453945, 20.0888863, 24.3061466, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part2.Position = Vector3.new(21.94539451599121, 20.088886260986328, 24.3061466217041)
+Part2.Size = Vector3.new(0.20000000298023224, 4.125, 8)
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.CustomPhysicalProperties = 0.699999988, 0, 0, 1, 1
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.FormFactor = Enum.FormFactor.Custom
+Part2.formFactor = Enum.FormFactor.Custom
+SpecialMesh3.Parent = Part2
+SpecialMesh3.MeshId = "http://www.roblox.com/asset/?id=130087381"
+SpecialMesh3.Scale = Vector3.new(2.5, 2.5, 2.5)
+SpecialMesh3.TextureId = "http://www.roblox.com/asset/?id=130087211"
+SpecialMesh3.MeshType = Enum.MeshType.FileMesh
+Sound4.Name = "Running"
+Sound4.Parent = Part2
+Sound4.Looped = true
+Sound4.SoundId = "http://www.roblox.com/asset/?id=130091914"
+Sound5.Name = "Honk"
+Sound5.Parent = Part2
+Script6.Name = "TrailScript"
+Script6.Parent = Tool1
+table.insert(cors,sandbox(Script6,function()
+--Rescripted by Luckymaxer
+--Made by Fusroblox
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Debris = game:GetService("Debris")
+
+BasePart = Instance.new("Part")
+BasePart.Shape = Enum.PartType.Block
+BasePart.Material = Enum.Material.Plastic
+BasePart.TopSurface = Enum.SurfaceType.Smooth
+BasePart.BottomSurface = Enum.SurfaceType.Smooth
+BasePart.FormFactor = Enum.FormFactor.Custom
+BasePart.Anchored = false
+BasePart.CanCollide = true
+BasePart.Locked = true
+
+BaseTrailPart = BasePart:Clone()
+BaseTrailPart.Name = "LaserTrail"
+BaseTrailPart.BrickColor = BrickColor.new("Bright blue")
+BaseTrailPart.Transparency = 0.2
+BaseTrailPart.Size = Vector3.new(0.2, 5, 3)
+BaseTrailPart.Material = Enum.Material.SmoothPlastic
+BaseTrailPart.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.Anchored = true
+BaseTrailPart.CanCollide = false
+TrailLight = Instance.new("PointLight")
+TrailLight.Color = BrickColor.new("Bright blue").Color
+TrailLight.Brightness = 10
+TrailLight.Range = 8
+TrailLight.Shadows = false
+TrailLight.Enabled = true
+TrailLight.Parent = BaseTrailPart
+
+Rate = (1 / 60)
+
+function StartTrail(Source, Parent)
+	
+	local TrailParts = {}
+	
+	local SourceAlive = true
+
+	local NumberOfParts = 60
+	local LastPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+	
+	Source.Changed:connect(function(Property)
+		if Property == "Parent" and not Source.Parent then
+			SourceAlive = false
+		end
+	end)
+	
+	while SourceAlive do
+		local CurrentPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+		if Source.Velocity.magnitude > 20 then
+			local TrailPart = BaseTrailPart:Clone()
+			table.insert(TrailParts, TrailPart)
+			TrailPart.Size = Vector3.new(TrailPart.Size.X, TrailPart.Size.Y, (CurrentPoint - LastPoint).magnitude)
+			TrailPart.Parent = Parent
+			TrailPart.CFrame = CFrame.new(((CurrentPoint + LastPoint) * 0.5), LastPoint)
+			if #TrailParts > NumberOfParts then
+				local TrailPart = TrailParts[1]
+				if TrailPart and TrailPart.Parent then
+					TrailPart:Destroy()
+				end
+				table.remove(TrailParts, 1)
+			end
+		else
+			local TrailPart = TrailParts[1]
+			if TrailPart and TrailPart.Parent then
+				TrailPart:Destroy()
+			end
+			table.remove(TrailParts, 1)
+		end
+		LastPoint = CurrentPoint
+		wait(Rate)
+	end
+	
+	for i, v in pairs(TrailParts) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	
+end
+
+Tool.ChildAdded:connect(function(Child)
+	if Child.Name == "Body" then
+		Spawn(function()
+			StartTrail(Child, Tool)
+		end)
+	end
+end)
+end))
+Animation7.Name = "Hold"
+Animation7.Parent = Tool1
+Animation7.AnimationId = "http://www.roblox.com/asset/?id=180270832"
+LocalScript8.Parent = Tool1
+table.insert(cors,sandbox(LocalScript8,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+RunService = game:GetService("RunService")
+
+Camera = game:GetService("Workspace").CurrentCamera
+
+Animations = {}
+LocalObjects = {}
+
+ServerControl = Tool:WaitForChild("ServerControl")
+ClientControl = Tool:WaitForChild("ClientControl")
+
+ToolEquipped = false
+
+function SetAnimation(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+		local AnimationTrack = Humanoid:LoadAnimation(value.Animation)
+		table.insert(Animations, {Animation = value.Animation, AnimationTrack = AnimationTrack})
+		AnimationTrack:Play(value.FadeTime, value.Weight, value.Speed)
+	elseif mode == "StopAnimation" and value then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+	end
+end
+
+function DisableJump(Boolean)
+	if PreventJump then
+		PreventJump:disconnect()
+	end
+	if Boolean then
+		PreventJump = Humanoid.Changed:connect(function(Property)
+			if Property ==  "Jump" then
+				Humanoid.Jump = false
+			end
+		end)
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	ToolEquipped = true
+	if not CheckIfAlive() then
+		return
+	end
+	PlayerMouse = Player:GetMouse()
+	Mouse.Button1Down:connect(function()
+		InvokeServer("MouseClick", {Down = true})
+	end)
+	Mouse.Button1Up:connect(function()
+		InvokeServer("MouseClick", {Down = false})
+	end)
+	Mouse.KeyDown:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = true})
+	end)
+	Mouse.KeyUp:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = false})
+	end)
+	Mouse.Move:connect(function()
+		InvokeServer("MouseMove", {Position = Mouse.Hit.p, Target = Mouse.Target})
+	end)
+	Humanoid:ChangeState(Enum.HumanoidStateType.None)
+end
+
+function Unequipped()
+	ToolEquipped = false
+	LocalObjects = {}
+	for i, v in pairs(Animations) do
+		if v and v.AnimationTrack then
+			v.AnimationTrack:Stop()
+		end
+	end
+	for i, v in pairs({PreventJump, ObjectLocalTransparencyModifier}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	Humanoid:ChangeState(Enum.HumanoidStateType.Freefall) --Prevent the ability to fly by constantly equipping and unequipping the tool.
+	Animations = {}
+end
+
+function InvokeServer(mode, value)
+	pcall(function()
+		local ServerReturn = ServerControl:InvokeServer(mode, value)
+		return ServerReturn
+	end)
+end
+
+function OnClientInvoke(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		SetAnimation("PlayAnimation", value)
+	elseif mode == "StopAnimation" and value then
+		SetAnimation("StopAnimation", value)
+	elseif mode == "PlaySound" and value then
+		value:Play()
+	elseif mode == "StopSound" and value then
+		value:Stop()
+	elseif mode == "MousePosition" then
+		return {Position = PlayerMouse.Hit.p, Target = PlayerMouse.Target}
+	elseif mode == "DisableJump" then
+		DisableJump(value)
+	elseif mode == "SetLocalTransparencyModifier" and value and ToolEquipped then
+		pcall(function()
+			local ObjectFound = false
+			for i, v in pairs(LocalObjects) do
+				if v == value then
+					ObjectFound = true
+				end
+			end
+			if not ObjectFound then
+				table.insert(LocalObjects, value)
+				if ObjectLocalTransparencyModifier then
+					ObjectLocalTransparencyModifier:disconnect()
+				end
+				ObjectLocalTransparencyModifier = RunService.RenderStepped:connect(function()
+					for i, v in pairs(LocalObjects) do
+						if v.Object and v.Object.Parent then
+							local CurrentTransparency = v.Object.LocalTransparencyModifier
+							if ((not v.AutoUpdate and (CurrentTransparency == 1 or  CurrentTransparency == 0)) or v.AutoUpdate) then
+								v.Object.LocalTransparencyModifier = v.Transparency
+							end
+						else
+							table.remove(LocalObjects, i)
+						end
+					end
+				end)
+			end
+		end)
+	end
+end
+
+ClientControl.OnClientInvoke = OnClientInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+LocalScript9.Name = "MouseIcon"
+LocalScript9.Parent = Tool1
+table.insert(cors,sandbox(LocalScript9,function()
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = script.Parent
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+Tool:GetPropertyChangedSignal("Enabled"):Connect(UpdateIcon)
+Tool.Equipped:connect(OnEquipped)
+end))
+Script10.Parent = Tool1
+table.insert(cors,sandbox(Script10,function()
+--Rescripted by Luckymaxer
+--Made by Fusroblox
+--Updated for R15 avatars by StarWars
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+
+Assets = require(Tool:WaitForChild("Assets"))
+Data = Assets.Data
+
+BaseUrl = Assets.BaseUrl
+
+
+Animations = {
+	Hold = {Animation = Tool:WaitForChild("Hold"), FadeTime = nil, Weight = nil, Speed = nil},
+	R15Hold = {Animation = Tool:WaitForChild("R15Hold"), FadeTime = nil, Weight = nil, Speed = nil}
+}
+
+Sounds = {
+	Honk = Handle:WaitForChild("Honk"),
+	Engine = Handle:WaitForChild("Running")
+}
+
+Controls = {
+	Forward = {Key = "w", ByteKey = 17, Mode = false},
+	Backward = {Key = "s", ByteKey = 18, Mode = false},
+	Left = {Key = "a", ByteKey = 20, Mode = false},
+	Right = {Key = "d", ByteKey = 19, Mode = false}
+}
+	
+Rate = (1 / 60)
+	
+Gravity = 196.20
+	
+PoseOffset = CFrame.new(0, -1.5, -1.4) * CFrame.Angles(0, 0, 0) --The offset your character is from the center of the vehicle.
+
+SpeedBoost = {
+	Allowed = false,
+	Active = false,
+	Enabled = true,
+	Duration = 10,
+	ReloadTime = 30
+}
+
+Special = {
+	Allowed = false,
+	Enabled = true,
+	Active = false,
+	Duration = 0,
+	ReloadTime = 60
+}
+
+Speed = {
+	Acceleration = {
+		Normal = 20,
+		Boost = 20
+	},
+	Deceleration = {
+		Normal = 20,
+		Boost = 20
+	},
+	MovementSpeed = {
+		Normal = {Min = 20, Max = 70},
+		Boost = {Min = 20, Max = 70}
+	},
+	TurnSpeed = {
+		Speed = {Min = 5, Max = 5},
+		TurnAlpha = 0.30,
+		AlphaDampening = 0.2
+	},
+}
+
+MaxSpeed = { --Maximum speed which the vehicle can move and turn at.
+	Movement = Speed.MovementSpeed.Normal,
+	Turn = Speed.TurnSpeed.Speed,
+	Acceleration = Speed.Acceleration.Normal,
+	Deceleration = Speed.Deceleration.Normal
+}
+
+CurrentSpeed = { --The speed which the vehicle is moving and turning at.
+	Movement = 0,
+	Turn = 0
+}
+
+Honk = {
+	Honking = false,
+	LastHonk = 0,
+	ReloadTime = 1
+}
+
+Jump = {
+	Jumping = false,
+	LastJump = 0,
+	ReloadTime = 1.9,
+	JumpForce = 30
+}
+
+ToolEquipped = false
+
+ServerControl = (Tool:FindFirstChild("ServerControl") or Instance.new("RemoteFunction"))
+ServerControl.Name = "ServerControl"
+ServerControl.Parent = Tool
+
+ClientControl = (Tool:FindFirstChild("ClientControl") or Instance.new("RemoteFunction"))
+ClientControl.Name = "ClientControl"
+ClientControl.Parent = Tool
+
+Tool.Enabled = true
+
+function RayCast(Position, Direction, MaxDistance, IgnoreList)
+	local IgnoreList = ((type(IgnoreList) == "table" and IgnoreList) or {IgnoreList})
+	return game:GetService("Workspace"):FindPartOnRayWithIgnoreList(Ray.new(Position, Direction.unit * (MaxDistance or 999.999)), IgnoreList)
+end
+
+function GetAllConnectedParts(Object)
+	local Parts = {}
+	local function GetConnectedParts(Object)
+		for i, v in pairs(Object:GetConnectedParts()) do
+			local Ignore = false
+			for ii, vv in pairs(Parts) do
+				if v == vv then
+					Ignore = true
+				end
+			end
+			if not Ignore then
+				table.insert(Parts, v)
+				GetConnectedParts(v)
+			end
+		end
+	end
+	GetConnectedParts(Object)
+	return Parts
+end
+
+function EnableFirstPersonView()
+	if not CheckIfAlive() or not ToolEquipped then
+		return
+	end
+	local Limbs = {"Left Arm", "Right Arm", "LeftHand", "RightHand", "LeftLowerArm", "LeftUpperArm", "RightLowerArm", "RightUpperArm"}
+	for i, v in pairs(Limbs) do
+		local Limb = Character:FindFirstChild(v)
+		if Limb and Limb:IsA("BasePart") then
+			Spawn(function()
+				InvokeClient("SetLocalTransparencyModifier", {Object = Limb, Transparency = 0, AutoUpdate = false})
+			end)
+		end
+	end
+end
+
+function ThrustUpdater()
+	
+	for i, v in pairs(CurrentSpeed) do
+		CurrentSpeed[i] = 0
+	end
+	for i, v in pairs(Controls) do
+		Controls[i].Mode = false
+	end
+
+	while ToolEquipped and Body and Body.Parent and CheckIfAlive() and RotationForce and RotationForce.Parent and ThrustForce and ThrustForce.Parent and TurnGyro and TurnGyro.Parent do
+		
+		RotationForce.angularvelocity = Vector3.new(0, CurrentSpeed.Turn, 0)
+		if math.abs(CurrentSpeed.Turn) > Speed.TurnSpeed.AlphaDampening then
+			CurrentSpeed.Turn = (CurrentSpeed.Turn - (Speed.TurnSpeed.AlphaDampening * (math.abs(CurrentSpeed.Turn) / CurrentSpeed.Turn)))
+		else 
+			CurrentSpeed.Turn = 0		
+		end
+				
+		if not Controls.Forward.Mode or Controls.Backward.Mode then --Slow down if not controlling.
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.99)
+		end
+		
+		local MySpeed = Vector3.new(Body.Velocity.X, 0, Body.Velocity.Z).magnitude
+		local VelocityDifference = math.abs((MySpeed - (ThrustForce.velocity.magnitude)))
+		if MySpeed > 3 and ThrustForce.velocity.magnitude > 3 and VelocityDifference > (0.7 * ThrustForce.velocity.magnitude) then
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.9)
+		end
+		
+		if Controls.Forward.Mode then --Handle acceleration
+			CurrentSpeed.Movement = math.min(MaxSpeed.Movement.Max, (CurrentSpeed.Movement + (MaxSpeed.Acceleration * Rate)))
+		end
+		if Controls.Backward.Mode then --Handle deceleration, if speed is more than 0, decrease quicker.
+			CurrentSpeed.Movement = math.max(-MaxSpeed.Movement.Min, (CurrentSpeed.Movement - (MaxSpeed.Deceleration * ((CurrentSpeed.Movement > 0 and 2.8) or 1) * Rate)))
+		end
+		
+		if Controls.Left.Mode then --Handle left turn speed
+			CurrentSpeed.Turn = math.min(Speed.TurnSpeed.Speed.Max, (CurrentSpeed.Turn + (Speed.TurnSpeed.TurnAlpha)))
+		end
+		if Controls.Right.Mode then --Handle right turn speed
+			CurrentSpeed.Turn = math.max(-Speed.TurnSpeed.Speed.Min, (CurrentSpeed.Turn - (Speed.TurnSpeed.TurnAlpha)))
+		end
+		
+		local Direction = Torso.CFrame.lookVector
+		Direction = Vector3.new(Direction.x, 0, Direction.z).unit
+		
+		local Velocity = (Direction * CurrentSpeed.Movement) --The thrust force which you move.
+		ThrustForce.velocity = Vector3.new(Velocity.X, ThrustForce.velocity.Y, Velocity.Z)
+		
+		local LeanAmount = (-CurrentSpeed.Turn * (math.pi / 6) / 4) --Amount your character leans over.
+		local XZAngle = math.atan2(Torso.CFrame.lookVector.z, 0, Torso.CFrame.lookVector.x) --Handle rotation
+		TurnGyro.cframe = CFrame.Angles((LeanAmount * Direction.x), 0, (LeanAmount * Direction.z))
+		
+		--Wheel animation
+		local DesiredAngle = (999999999 * (-CurrentSpeed.Movement / math.abs(CurrentSpeed.Movement)))
+		local MaxVelocity = (CurrentSpeed.Movement / 250)
+		for i, v in pairs({FrontMotor, BackMotor}) do
+			if v and v.Parent then
+				v.DesiredAngle = DesiredAngle
+				v.MaxVelocity = MaxVelocity
+			end
+		end
+		
+		--Smoke exhaust from vehicle running.
+		for i, v in pairs(ExhaustSmoke) do
+			if v and v.Parent then
+				v.Opacity = ((math.min(math.abs(CurrentSpeed.Movement), 10) / 10) * 0.5)
+			end
+		end
+		
+		--Engine running sound which pitch changes while in motion.
+		Sounds.Engine.Pitch = (1 + (math.abs(CurrentSpeed.Movement / MaxSpeed.Movement.Max) * 1))
+		
+		wait(Rate)
+		
+	end
+end
+
+function SpawnVehicle()
+	
+	Handle.Transparency = 1
+	
+	local Animation = Animations.Hold
+	if Humanoid and Humanoid.RigType == Enum.HumanoidRigType.R15 then
+		Animation = Animations.R15Hold 
+	end 
+	Spawn(function()
+		InvokeClient("PlaySound", Sounds.Engine)
+		InvokeClient("PlayAnimation", Animation)
+	end)	
+	
+	Humanoid.PlatformStand = true
+	
+	local VehicleData = Assets.CreateVehicle()
+	Body = VehicleData.Vehicle
+	local ParticleTable = VehicleData.Tables
+	
+	FrontMotor = Body.FrontMotor
+	BackMotor = Body.BackMotor
+	
+	ExhaustSmoke = ParticleTable.ExhaustSmoke
+	Lights = ParticleTable.Lights
+	Sparkles = ParticleTable.Sparkles
+	
+	if SpeedBoost.Active then
+		for i, v in pairs(Sparkles) do
+			if v and v.Parent then
+				v.Enabled = true
+			end
+		end
+	end
+	
+	local TorsoWeld = Instance.new("Weld")
+	TorsoWeld.C0 = PoseOffset
+	TorsoWeld.Part0 = Torso
+	TorsoWeld.Part1 = Body
+	TorsoWeld.Parent = Body
+	
+	Body.CanCollide = true
+
+	RotationForce = Instance.new("BodyAngularVelocity")
+	RotationForce.maxTorque = Vector3.new(0, math.huge, 0)
+	RotationForce.angularvelocity = Vector3.new(0, 0, 0)
+	RotationForce.Parent = Torso
+	
+	ThrustForce = Instance.new("BodyVelocity")
+	ThrustForce.maxForce = Vector3.new(math.huge, 0, math.huge)
+	ThrustForce.velocity = Vector3.new(0, 0, 0)
+	ThrustForce.P = 100
+	ThrustForce.Parent = Torso
+	
+	TurnGyro = Instance.new("BodyGyro")
+	TurnGyro.maxTorque = Vector3.new(5000, 0, 5000)
+	TurnGyro.P = 300
+	TurnGyro.D = 100
+	TurnGyro.Parent = Torso
+	
+	Body.Parent = Tool
+	
+	local RayHit, RayPos, RayNormal = RayCast(Torso.Position, Vector3.new(0, -1, 0), (Torso.Size.Y * 2), {Character})
+	if RayHit then
+		Torso.CFrame = Torso.CFrame + Vector3.new(0, ((Character:GetModelSize().Y / 2) + 1.5), 0)
+	end
+	
+	Spawn(ThrustUpdater)
+	
+end
+
+function CleanUp()
+	Handle.Velocity = Vector3.new(0, 0, 0)
+	Handle.RotVelocity = Vector3.new(0, 0, 0)
+	for i, v in pairs({}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	for i, v in pairs({Body, RotationForce, ThrustForce, TurnGyro}) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	for i, v in pairs(Tool:GetChildren()) do
+		if v:IsA("BasePart") and v ~= Handle then
+			v:Destroy()
+		end
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	Torso = Character:FindFirstChild("Torso") or Character:FindFirstChild("UpperTorso")
+	if not CheckIfAlive() then
+		return
+	end
+	Spawn(CleanUp)
+	Spawn(EnableFirstPersonView)
+	Spawn(SpawnVehicle)
+	ToolEquipped = true
+end
+
+function Unequipped()
+	Spawn(CleanUp)
+	for i, v in pairs(Sounds) do
+		v:Stop()
+		Spawn(function()
+			InvokeClient("StopSound", v)
+		end)
+	end
+	if CheckIfAlive() then
+		Humanoid.PlatformStand = false
+	end
+	Handle.Transparency = 0
+	ToolEquipped = false
+end
+
+function OnServerInvoke(player, mode, value)
+	if player == Player and ToolEquipped and value and CheckIfAlive() then
+		if mode == "KeyPress" then
+			local Down = value.Down
+			local Key = value.Key
+			local ByteKey = string.byte(Key)
+			for i, v in pairs(Controls) do
+				if Key == v.Key or ByteKey == v.ByteKey then
+					Controls[i].Mode = Down
+				end
+			end
+			if Key == " " and Down then --Jump controller
+				if math.abs(tick() - Jump.LastJump) > Jump.ReloadTime and not Jump.Jumping and ThrustForce and ThrustForce.Parent then
+					Jump.Jumping = true
+					local Parts = GetAllConnectedParts(Body)
+					local Mass = 0
+					for i, v in pairs(Parts) do
+						Mass = (Mass + v:GetMass())
+					end
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, ((Mass * Gravity) * 100), ThrustForce.maxForce.Z)
+					ThrustForce.velocity = (Vector3.new(0, 1, 0) * Jump.JumpForce) + Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					wait(0.1)
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, 0, ThrustForce.maxForce.Z)
+					ThrustForce.velocity = Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					Jump.LastJump = tick()
+					Jump.Jumping = false
+				end
+			elseif Key == "x" and Down then --Toggle light(s) on/off.
+				for i, v in pairs(Lights) do
+					if v and v.Parent then
+						v.Enabled = not v.Enabled
+					end
+				end
+			elseif Key == "h" and Down then --Play honk sound.
+				local Sound = Sounds.Honk
+				if (tick() - Honk.LastHonk) >= (Sound.TimeLength + Honk.ReloadTime) and not Honk.Honking then
+					Honk.Honking = true
+					local TempSound = Sound:Clone()
+					Debris:AddItem(TempSound, Sound.TimeLength)
+					TempSound.Parent = Body
+					TempSound:Play()
+					Honk.LastHonk = tick()
+					Honk.Honking = false
+				end
+			elseif Key == "q" and Down then --Activate special.
+				if not Special.Allowed or not Special.Enabled or Special.Active then
+					return
+				end
+				Special.Enabled = false
+				Special.Active = true
+				wait(Special.Duration)
+				Special.Active = false
+				wait(Special.ReloadTime)
+				Special.Enabled = true
+			elseif ByteKey == 48 and Down then --Activate speed boost.
+				if not SpeedBoost.Allowed or not SpeedBoost.Enabled or SpeedBoost.Active then
+					return
+				end
+				SpeedBoost.Enabled = false
+				SpeedBoost.Active = true
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = true
+					end
+				end
+				MaxSpeed.Acceleration = Speed.Acceleration.Boost
+				MaxSpeed.Deceleration = Speed.Deceleration.Boost
+				MaxSpeed.Movement = Speed.MovementSpeed.Boost
+				wait(SpeedBoost.Duration)
+				MaxSpeed.Acceleration = Speed.Acceleration.Normal
+				MaxSpeed.Deceleration = Speed.Deceleration.Normal
+				MaxSpeed.Movement = Speed.MovementSpeed.Normal
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = false
+					end
+				end
+				SpeedBoost.Active = false
+				wait(SpeedBoost.ReloadTime)
+				SpeedBoost.Enabled = true
+			end
+		end
+	end
+end
+
+function InvokeClient(Mode, Value)
+	local ClientReturn = nil
+	pcall(function()
+		ClientReturn = ClientControl:InvokeClient(Player, Mode, Value)
+	end)
+	return ClientReturn
+end
+
+Spawn(CleanUp)
+
+ServerControl.OnServerInvoke = OnServerInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+ModuleScript11.Name = "Assets"
+ModuleScript11.Parent = Tool1
+table.insert(cors,sandbox(ModuleScript11,function()
+--Made by Luckymaxer
+
+BaseUrl = "http://www.roblox.com/asset/?id="
+
+local function Create_PrivImpl(objectType)
+	if type(objectType) ~= 'string' then
+		error("Argument of Create must be a string", 2)
+	end
+	--return the proxy function that gives us the nice Create'string'{data} syntax
+	--The first function call is a function call using Lua's single-string-argument syntax
+	--The second function call is using Lua's single-table-argument syntax
+	--Both can be chained together for the nice effect.
+	return function(dat)
+		--default to nothing, to handle the no argument given case
+		dat = dat or {}
+
+		--make the object to mutate
+		local obj = Instance.new(objectType)
+		local parent = nil
+
+		--stored constructor function to be called after other initialization
+		local ctor = nil
+
+		for k, v in pairs(dat) do
+			--add property
+			if type(k) == 'string' then
+				if k == 'Parent' then
+					-- Parent should always be set last, setting the Parent of a new object
+					-- immediately makes performance worse for all subsequent property updates.
+					parent = v
+				else
+					obj[k] = v
+				end
+
+
+			--add child
+			elseif type(k) == 'number' then
+				if type(v) ~= 'userdata' then
+					error("Bad entry in Create body: Numeric keys must be paired with children, got a: "..type(v), 2)
+				end
+				v.Parent = obj
+
+
+			--event connect
+			elseif type(k) == 'table' and k.__eventname then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create.E\'"..k.__eventname.."\']` must have a function value\
+							got: "..tostring(v), 2)
+				end
+				obj[k.__eventname]:connect(v)
+
+
+			--define constructor function
+			elseif k == t.Create then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create]` should be paired with a constructor function, \
+							got: "..tostring(v), 2)
+				elseif ctor then
+					--ctor already exists, only one allowed
+					error("Bad entry in Create body: Only one constructor function is allowed", 2)
+				end
+				ctor = v
+
+
+			else
+				error("Bad entry ("..tostring(k).." => "..tostring(v)..") in Create body", 2)
+			end
+		end
+
+		--apply constructor function if it exists
+		if ctor then
+			ctor(obj)
+		end
+
+		if parent then
+			obj.Parent = parent
+		end
+
+		--return the completed object
+		return obj
+	end
+end
+
+--now, create the functor:
+Create = setmetatable({}, {__call = function(tb, ...) return Create_PrivImpl(...) end})
+
+--and create the "Event.E" syntax stub. Really it's just a stub to construct a table which our Create
+--function can recognize as special.
+Create.E = function(eventName)
+	return {__eventname = eventName}
+end
+
+
+BasePart = Create("Part"){
+	Material = Enum.Material.Plastic,
+	Shape = Enum.PartType.Block,
+	TopSurface = Enum.SurfaceType.Smooth,
+	BottomSurface = Enum.SurfaceType.Smooth,
+	FormFactor = Enum.FormFactor.Custom,
+	Size = Vector3.new(0.2, 0.2, 0.2),
+	Anchored = false,
+	CanCollide = true,
+	Locked = true
+}
+
+MeshData = {
+	Meshes = {
+		Body = 130087108,
+		Wheel = 130087185,
+	},
+	TextureId = 130087211
+}
+
+function CreateVehicle()
+
+	local ExhaustSmoke = {}
+	local Lights = {}
+	local Sparkles = {}
+
+	local Body = BasePart:Clone()
+	Body.Name = "Body"
+	Body.Size = Vector3.new(1, 4.125, 8)
+	local BodyMesh = Create("SpecialMesh"){
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = MeshData.Meshes.Body,
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(2.5, 2.5, 2.5),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = Body
+	}
+	
+	local BaseWheel = BasePart:Clone()
+	BaseWheel.Size = Vector3.new(0.5, 1, 1)
+	BaseWheel.CanCollide = false
+	local WheelMesh = Create("SpecialMesh"){
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = "",
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(2.5, 2.5, 2.5),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = BaseWheel,
+	}
+
+	local BaseFrontWheel = BaseWheel:Clone()
+	BaseFrontWheel.Name = "FrontWheel"
+	BaseFrontWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+	BaseFrontWheel.Mesh.Scale = Vector3.new(4.75, 2.7, 2.7)
+	
+	local BaseBackWheel = BaseWheel:Clone()
+	BaseBackWheel.Name = "BackWheel"
+	BaseBackWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+	BaseBackWheel.Mesh.Scale = Vector3.new(4.75, 2, 2)
+
+	local BaseSmokePart = BasePart:Clone()
+	BaseSmokePart.Name = "SmokePart"
+	BaseSmokePart.Transparency = 1
+	local BaseExhaustSmoke = Create("Smoke"){
+		Name = "ExhaustSmoke",
+		Size = 0.1,
+		RiseVelocity = 0.01,
+		Color = Color3.new((127 / 255), (127 / 255), (127 / 255)),
+		Enabled = true,
+		Parent = BaseSmokePart,
+	}
+
+	local BaseLightPart = BasePart:Clone()
+	BaseLightPart.Name = "LightPart"
+	BaseLightPart.Transparency = 1
+	local Light = Create("SpotLight"){
+		Name = "Light",
+		Brightness = 50,
+		Angle = 45,
+		Color = Color3.new((33 / 255), (84 / 255), (185 / 255)),
+		Range = 20,
+		Shadows = false,
+		Enabled = false,
+		Parent = BaseLightPart,
+	}
+			
+	local FrontWheel = BaseFrontWheel:Clone()
+	FrontWheel.Parent = Body
+	
+	local FrontMotor = Create("Motor6D"){
+		Name = "FrontMotor",
+		Part0 = Body,
+		Part1 = FrontWheel,
+		C0 = CFrame.new(0, -0.7, -3.1) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local BackWheel = BaseBackWheel:Clone()
+	BackWheel.Parent = Body
+	
+	local BackMotor = Create("Motor6D"){
+		Name = "BackMotor",
+		Part0 = Body,
+		Part1 = BackWheel,
+		C0 = CFrame.new(0, -1.1, 3.6) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local HeadLight = BaseLightPart:Clone()
+	HeadLight.Parent = Body
+	table.insert(Lights, HeadLight.Light)
+	for i, v in pairs(HeadLight:GetChildren()) do
+		if v:IsA("Sparkles") then
+			table.insert(Sparkles, v)
+		end
+	end
+	
+	local LightWeld = Create("Weld"){
+		Part0 = Body,
+		Part1 = HeadLight,
+		C0 = CFrame.new(0, 1.25, -1.9) * CFrame.Angles(0, 0, 0),
+		Parent = HeadLight
+	}
+
+	local Tables = {
+		ExhaustSmoke = ExhaustSmoke,
+		Lights = Lights,
+		Sparkles = Sparkles
+	}
+	
+	return {
+		Vehicle = Body,
+		Tables = Tables
+	}
+	
+end
+
+for i, v in pairs(MeshData) do
+	if type(v) == "table" then
+		for ii, vv in pairs(v) do
+			if type(vv) == "string" or type(vv) == "number" then
+				MeshData[i][ii] = (BaseUrl .. tostring(vv))
+			end
+		end
+	elseif type(v) == "string" or type(v) == "number" then
+		MeshData[i] = (BaseUrl .. tostring(v))
+	end
+end
+
+return {
+	BaseUrl = BaseUrl,
+	MeshData = MeshData,
+	CreateVehicle = CreateVehicle
+}
+end))
+Animation12.Name = "R15Hold"
+Animation12.Parent = Tool1
+Animation12.AnimationId = "rbxassetid://517892320"
+Camera13.Name = "ThumbnailCamera"
+Camera13.Parent = Tool1
+Camera13.CFrame = CFrame.new(-3.13124824, 20.8353786, 15.7467604, -0.619206667, 0.238754958, -0.748050272, 1.49011612e-08, 0.952653527, 0.304058075, 0.785228074, 0.188274771, -0.589889407)
+Camera13.CoordinateFrame = CFrame.new(-3.13124824, 20.8353786, 15.7467604, -0.619206667, 0.238754958, -0.748050272, 1.49011612e-08, 0.952653527, 0.304058075, 0.785228074, 0.188274771, -0.589889407)
+Camera13.Focus = CFrame.new(4.34619522, 17.7960415, 21.6432419, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera13.focus = CFrame.new(4.34619522, 17.7960415, 21.6432419, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool14.Name = "RedHyperbike"
+Tool14.Parent = Model0
+Tool14.TextureId = "http://www.roblox.com/asset/?id=168137599"
+Tool14.CanBeDropped = false
+Tool14.Grip = CFrame.new(1.5, 2.20000005, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool14.GripPos = Vector3.new(1.5, 2.200000047683716, 0)
+Tool14.ToolTip = "LOOK'N FOR TECH-VENTURE"
+Part15.Name = "Handle"
+Part15.Parent = Tool14
+Part15.CFrame = CFrame.new(16.7453938, 20.0888863, 24.3061466, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part15.Position = Vector3.new(16.745393753051758, 20.088886260986328, 24.3061466217041)
+Part15.Size = Vector3.new(0.20000000298023224, 4.125, 8)
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.CustomPhysicalProperties = 0.699999988, 0, 0, 1, 1
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.FormFactor = Enum.FormFactor.Custom
+Part15.formFactor = Enum.FormFactor.Custom
+Sound16.Name = "Running"
+Sound16.Parent = Part15
+Sound16.Looped = true
+Sound16.Pitch = 1.950990080833435
+Sound16.PlaybackSpeed = 1.950990080833435
+Sound16.SoundId = "http://www.roblox.com/asset/?id=130091914"
+Sound17.Name = "Honk"
+Sound17.Parent = Part15
+SpecialMesh18.Parent = Part15
+SpecialMesh18.MeshId = "http://www.roblox.com/asset/?id=130087381"
+SpecialMesh18.Scale = Vector3.new(2.5, 2.5, 2.5)
+SpecialMesh18.TextureId = "http://www.roblox.com/asset/?id=165896476"
+SpecialMesh18.MeshType = Enum.MeshType.FileMesh
+Script19.Name = "TrailScript"
+Script19.Parent = Tool14
+table.insert(cors,sandbox(Script19,function()
+--Rescripted by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Debris = game:GetService("Debris")
+
+BasePart = Instance.new("Part")
+BasePart.Shape = Enum.PartType.Block
+BasePart.Material = Enum.Material.Plastic
+BasePart.TopSurface = Enum.SurfaceType.Smooth
+BasePart.BottomSurface = Enum.SurfaceType.Smooth
+BasePart.FormFactor = Enum.FormFactor.Custom
+BasePart.Anchored = false
+BasePart.CanCollide = true
+BasePart.Locked = true
+
+BaseTrailPart = BasePart:Clone()
+BaseTrailPart.Name = "LaserTrail"
+BaseTrailPart.BrickColor = BrickColor.new("Bright red")
+BaseTrailPart.Transparency = 0.2
+BaseTrailPart.Size = Vector3.new(0.2, 5, 3)
+BaseTrailPart.Material = Enum.Material.SmoothPlastic
+BaseTrailPart.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.Anchored = true
+BaseTrailPart.CanCollide = false
+TrailLight = Instance.new("PointLight")
+TrailLight.Color = BrickColor.new("Bright red").Color
+TrailLight.Brightness = 10
+TrailLight.Range = 8
+TrailLight.Shadows = false
+TrailLight.Enabled = true
+TrailLight.Parent = BaseTrailPart
+
+Rate = (1 / 60)
+
+function StartTrail(Source, Parent)
+	
+	local TrailParts = {}
+	
+	local SourceAlive = true
+
+	local NumberOfParts = 60
+	local LastPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+	
+	Source.Changed:connect(function(Property)
+		if Property == "Parent" and not Source.Parent then
+			SourceAlive = false
+		end
+	end)
+	
+	while SourceAlive do
+		local CurrentPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+		if Source.Velocity.magnitude > 20 then
+			local TrailPart = BaseTrailPart:Clone()
+			table.insert(TrailParts, TrailPart)
+			TrailPart.Size = Vector3.new(TrailPart.Size.X, TrailPart.Size.Y, (CurrentPoint - LastPoint).magnitude)
+			TrailPart.Parent = Parent
+			TrailPart.CFrame = CFrame.new(((CurrentPoint + LastPoint) * 0.5), LastPoint)
+			if #TrailParts > NumberOfParts then
+				local TrailPart = TrailParts[1]
+				if TrailPart and TrailPart.Parent then
+					TrailPart:Destroy()
+				end
+				table.remove(TrailParts, 1)
+			end
+		else
+			local TrailPart = TrailParts[1]
+			if TrailPart and TrailPart.Parent then
+				TrailPart:Destroy()
+			end
+			table.remove(TrailParts, 1)
+		end
+		LastPoint = CurrentPoint
+		wait(Rate)
+	end
+	
+	for i, v in pairs(TrailParts) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	
+end
+
+Tool.ChildAdded:connect(function(Child)
+	if Child.Name == "Body" then
+		Spawn(function()
+			StartTrail(Child, Tool)
+		end)
+	end
+end)
+end))
+Animation20.Name = "Hold"
+Animation20.Parent = Tool14
+Animation20.AnimationId = "http://www.roblox.com/asset/?id=180270832"
+LocalScript21.Parent = Tool14
+table.insert(cors,sandbox(LocalScript21,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+RunService = game:GetService("RunService")
+
+Camera = game:GetService("Workspace").CurrentCamera
+
+Animations = {}
+LocalObjects = {}
+
+ServerControl = Tool:WaitForChild("ServerControl")
+ClientControl = Tool:WaitForChild("ClientControl")
+
+ToolEquipped = false
+
+function SetAnimation(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+		local AnimationTrack = Humanoid:LoadAnimation(value.Animation)
+		table.insert(Animations, {Animation = value.Animation, AnimationTrack = AnimationTrack})
+		AnimationTrack:Play(value.FadeTime, value.Weight, value.Speed)
+	elseif mode == "StopAnimation" and value then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+	end
+end
+
+function DisableJump(Boolean)
+	if PreventJump then
+		PreventJump:disconnect()
+	end
+	if Boolean then
+		PreventJump = Humanoid.Changed:connect(function(Property)
+			if Property ==  "Jump" then
+				Humanoid.Jump = false
+			end
+		end)
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	ToolEquipped = true
+	if not CheckIfAlive() then
+		return
+	end
+	PlayerMouse = Player:GetMouse()
+	Mouse.Button1Down:connect(function()
+		InvokeServer("MouseClick", {Down = true})
+	end)
+	Mouse.Button1Up:connect(function()
+		InvokeServer("MouseClick", {Down = false})
+	end)
+	Mouse.KeyDown:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = true})
+	end)
+	Mouse.KeyUp:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = false})
+	end)
+	Mouse.Move:connect(function()
+		InvokeServer("MouseMove", {Position = Mouse.Hit.p, Target = Mouse.Target})
+	end)
+	Humanoid:ChangeState(Enum.HumanoidStateType.None)
+end
+
+function Unequipped()
+	ToolEquipped = false
+	LocalObjects = {}
+	for i, v in pairs(Animations) do
+		if v and v.AnimationTrack then
+			v.AnimationTrack:Stop()
+		end
+	end
+	for i, v in pairs({PreventJump, ObjectLocalTransparencyModifier}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	Humanoid:ChangeState(Enum.HumanoidStateType.Freefall) --Prevent the ability to fly by constantly equipping and unequipping the tool.
+	Animations = {}
+end
+
+function InvokeServer(mode, value)
+	pcall(function()
+		local ServerReturn = ServerControl:InvokeServer(mode, value)
+		return ServerReturn
+	end)
+end
+
+function OnClientInvoke(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		SetAnimation("PlayAnimation", value)
+	elseif mode == "StopAnimation" and value then
+		SetAnimation("StopAnimation", value)
+	elseif mode == "PlaySound" and value then
+		value:Play()
+	elseif mode == "StopSound" and value then
+		value:Stop()
+	elseif mode == "MousePosition" then
+		return {Position = PlayerMouse.Hit.p, Target = PlayerMouse.Target}
+	elseif mode == "DisableJump" then
+		DisableJump(value)
+	elseif mode == "SetLocalTransparencyModifier" and value and ToolEquipped then
+		pcall(function()
+			local ObjectFound = false
+			for i, v in pairs(LocalObjects) do
+				if v == value then
+					ObjectFound = true
+				end
+			end
+			if not ObjectFound then
+				table.insert(LocalObjects, value)
+				if ObjectLocalTransparencyModifier then
+					ObjectLocalTransparencyModifier:disconnect()
+				end
+				ObjectLocalTransparencyModifier = RunService.RenderStepped:connect(function()
+					for i, v in pairs(LocalObjects) do
+						if v.Object and v.Object.Parent then
+							local CurrentTransparency = v.Object.LocalTransparencyModifier
+							if ((not v.AutoUpdate and (CurrentTransparency == 1 or  CurrentTransparency == 0)) or v.AutoUpdate) then
+								v.Object.LocalTransparencyModifier = v.Transparency
+							end
+						else
+							table.remove(LocalObjects, i)
+						end
+					end
+				end)
+			end
+		end)
+	end
+end
+
+ClientControl.OnClientInvoke = OnClientInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+LocalScript22.Name = "MouseIcon"
+LocalScript22.Parent = Tool14
+table.insert(cors,sandbox(LocalScript22,function()
+--Made by Luckymaxer
+
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = script.Parent
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:connect(OnEquipped)
+Tool.Changed:connect(OnChanged)
+end))
+Script23.Parent = Tool14
+table.insert(cors,sandbox(Script23,function()
+--Rescripted by Luckymaxer
+--[[ alexnewtron 2014 ]]--
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+
+Assets = require(Tool:WaitForChild("Assets"))
+Data = Assets.Data
+
+BaseUrl = Assets.BaseUrl
+
+
+Animations = {
+	Hold = {Animation = Tool:WaitForChild("Hold"), FadeTime = nil, Weight = nil, Speed = nil}
+}
+
+Sounds = {
+	Honk = Handle:WaitForChild("Honk"),
+	Engine = Handle:WaitForChild("Running")
+}
+
+Controls = {
+	Forward = {Key = "w", ByteKey = 17, Mode = false},
+	Backward = {Key = "s", ByteKey = 18, Mode = false},
+	Left = {Key = "a", ByteKey = 20, Mode = false},
+	Right = {Key = "d", ByteKey = 19, Mode = false}
+}
+	
+Rate = (1 / 60)
+	
+Gravity = 196.20
+	
+PoseOffset = CFrame.new(0, -1.5, -1.4) * CFrame.Angles(0, 0, 0) --The offset your character is from the center of the vehicle.
+
+SpeedBoost = {
+	Allowed = false,
+	Active = false,
+	Enabled = true,
+	Duration = 10,
+	ReloadTime = 30
+}
+
+Special = {
+	Allowed = false,
+	Enabled = true,
+	Active = false,
+	Duration = 0,
+	ReloadTime = 60
+}
+
+Speed = {
+	Acceleration = {
+		Normal = 20,
+		Boost = 20
+	},
+	Deceleration = {
+		Normal = 20,
+		Boost = 20
+	},
+	MovementSpeed = {
+		Normal = {Min = 20, Max = 70},
+		Boost = {Min = 20, Max = 70}
+	},
+	TurnSpeed = {
+		Speed = {Min = 5, Max = 5},
+		TurnAlpha = 0.30,
+		AlphaDampening = 0.2
+	},
+}
+
+MaxSpeed = { --Maximum speed which the vehicle can move and turn at.
+	Movement = Speed.MovementSpeed.Normal,
+	Turn = Speed.TurnSpeed.Speed,
+	Acceleration = Speed.Acceleration.Normal,
+	Deceleration = Speed.Deceleration.Normal
+}
+
+CurrentSpeed = { --The speed which the vehicle is moving and turning at.
+	Movement = 0,
+	Turn = 0
+}
+
+Honk = {
+	Honking = false,
+	LastHonk = 0,
+	ReloadTime = 1
+}
+
+Jump = {
+	Jumping = false,
+	LastJump = 0,
+	ReloadTime = 1.9,
+	JumpForce = 30
+}
+
+ToolEquipped = false
+
+ServerControl = (Tool:FindFirstChild("ServerControl") or Instance.new("RemoteFunction"))
+ServerControl.Name = "ServerControl"
+ServerControl.Parent = Tool
+
+ClientControl = (Tool:FindFirstChild("ClientControl") or Instance.new("RemoteFunction"))
+ClientControl.Name = "ClientControl"
+ClientControl.Parent = Tool
+
+Tool.Enabled = true
+
+function RayCast(Position, Direction, MaxDistance, IgnoreList)
+	local IgnoreList = ((type(IgnoreList) == "table" and IgnoreList) or {IgnoreList})
+	return game:GetService("Workspace"):FindPartOnRayWithIgnoreList(Ray.new(Position, Direction.unit * (MaxDistance or 999.999)), IgnoreList)
+end
+
+function GetAllConnectedParts(Object)
+	local Parts = {}
+	local function GetConnectedParts(Object)
+		for i, v in pairs(Object:GetConnectedParts()) do
+			local Ignore = false
+			for ii, vv in pairs(Parts) do
+				if v == vv then
+					Ignore = true
+				end
+			end
+			if not Ignore then
+				table.insert(Parts, v)
+				GetConnectedParts(v)
+			end
+		end
+	end
+	GetConnectedParts(Object)
+	return Parts
+end
+
+function EnableFirstPersonView()
+	if not CheckIfAlive() or not ToolEquipped then
+		return
+	end
+	local Limbs = {"Left Arm", "Right Arm"}
+	for i, v in pairs(Limbs) do
+		local Limb = Character:FindFirstChild(v)
+		if Limb:IsA("BasePart") then
+			Spawn(function()
+				InvokeClient("SetLocalTransparencyModifier", {Object = Limb, Transparency = 0, AutoUpdate = false})
+			end)
+		end
+	end
+end
+
+function ThrustUpdater()
+	
+	for i, v in pairs(CurrentSpeed) do
+		CurrentSpeed[i] = 0
+	end
+	for i, v in pairs(Controls) do
+		Controls[i].Mode = false
+	end
+
+	while ToolEquipped and Body and Body.Parent and CheckIfAlive() and RotationForce and RotationForce.Parent and ThrustForce and ThrustForce.Parent and TurnGyro and TurnGyro.Parent do
+		
+		RotationForce.angularvelocity = Vector3.new(0, CurrentSpeed.Turn, 0)
+		if math.abs(CurrentSpeed.Turn) > Speed.TurnSpeed.AlphaDampening then
+			CurrentSpeed.Turn = (CurrentSpeed.Turn - (Speed.TurnSpeed.AlphaDampening * (math.abs(CurrentSpeed.Turn) / CurrentSpeed.Turn)))
+		else 
+			CurrentSpeed.Turn = 0		
+		end
+				
+		if not Controls.Forward.Mode or Controls.Backward.Mode then --Slow down if not controlling.
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.99)
+		end
+		
+		local MySpeed = Vector3.new(Body.Velocity.X, 0, Body.Velocity.Z).magnitude
+		local VelocityDifference = math.abs((MySpeed - (ThrustForce.velocity.magnitude)))
+		if MySpeed > 3 and ThrustForce.velocity.magnitude > 3 and VelocityDifference > (0.7 * ThrustForce.velocity.magnitude) then
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.9)
+		end
+		
+		if Controls.Forward.Mode then --Handle acceleration
+			CurrentSpeed.Movement = math.min(MaxSpeed.Movement.Max, (CurrentSpeed.Movement + (MaxSpeed.Acceleration * Rate)))
+		end
+		if Controls.Backward.Mode then --Handle deceleration, if speed is more than 0, decrease quicker.
+			CurrentSpeed.Movement = math.max(-MaxSpeed.Movement.Min, (CurrentSpeed.Movement - (MaxSpeed.Deceleration * ((CurrentSpeed.Movement > 0 and 2.8) or 1) * Rate)))
+		end
+		
+		if Controls.Left.Mode then --Handle left turn speed
+			CurrentSpeed.Turn = math.min(Speed.TurnSpeed.Speed.Max, (CurrentSpeed.Turn + (Speed.TurnSpeed.TurnAlpha)))
+		end
+		if Controls.Right.Mode then --Handle right turn speed
+			CurrentSpeed.Turn = math.max(-Speed.TurnSpeed.Speed.Min, (CurrentSpeed.Turn - (Speed.TurnSpeed.TurnAlpha)))
+		end
+		
+		local Direction = Torso.CFrame.lookVector
+		Direction = Vector3.new(Direction.x, 0, Direction.z).unit
+		
+		local Velocity = (Direction * CurrentSpeed.Movement) --The thrust force which you move.
+		ThrustForce.velocity = Vector3.new(Velocity.X, ThrustForce.velocity.Y, Velocity.Z)
+		
+		local LeanAmount = (-CurrentSpeed.Turn * (math.pi / 6) / 4) --Amount your character leans over.
+		local XZAngle = math.atan2(Torso.CFrame.lookVector.z, 0, Torso.CFrame.lookVector.x) --Handle rotation
+		TurnGyro.cframe = CFrame.Angles((LeanAmount * Direction.x), 0, (LeanAmount * Direction.z))
+		
+		--Wheel animation
+		local DesiredAngle = (999999999 * (-CurrentSpeed.Movement / math.abs(CurrentSpeed.Movement)))
+		local MaxVelocity = (CurrentSpeed.Movement / 250)
+		for i, v in pairs({FrontMotor, BackMotor}) do
+			if v and v.Parent then
+				v.DesiredAngle = DesiredAngle
+				v.MaxVelocity = MaxVelocity
+			end
+		end
+		
+		--Smoke exhaust from vehicle running.
+		for i, v in pairs(ExhaustSmoke) do
+			if v and v.Parent then
+				v.Opacity = ((math.min(math.abs(CurrentSpeed.Movement), 10) / 10) * 0.5)
+			end
+		end
+		
+		--Engine running sound which pitch changes while in motion.
+		Sounds.Engine.Pitch = (1 + (math.abs(CurrentSpeed.Movement / MaxSpeed.Movement.Max) * 1))
+		
+		wait(Rate)
+		
+	end
+end
+
+function SpawnVehicle()
+	
+	Handle.Transparency = 1
+	
+	Spawn(function()
+		InvokeClient("PlaySound", Sounds.Engine)
+		InvokeClient("PlayAnimation", Animations.Hold)
+	end)	
+	
+	Humanoid.PlatformStand = true
+	
+	local VehicleData = Assets.CreateVehicle()
+	Body = VehicleData.Vehicle
+	local ParticleTable = VehicleData.Tables
+	
+	FrontMotor = Body.FrontMotor
+	BackMotor = Body.BackMotor
+	
+	ExhaustSmoke = ParticleTable.ExhaustSmoke
+	Lights = ParticleTable.Lights
+	Sparkles = ParticleTable.Sparkles
+	
+	if SpeedBoost.Active then
+		for i, v in pairs(Sparkles) do
+			if v and v.Parent then
+				v.Enabled = true
+			end
+		end
+	end
+	
+	local TorsoWeld = Instance.new("Weld")
+	TorsoWeld.C0 = PoseOffset
+	TorsoWeld.Part0 = Torso
+	TorsoWeld.Part1 = Body
+	TorsoWeld.Parent = Body
+	
+	Body.CanCollide = true
+
+	RotationForce = Instance.new("BodyAngularVelocity")
+	RotationForce.maxTorque = Vector3.new(0, math.huge, 0)
+	RotationForce.angularvelocity = Vector3.new(0, 0, 0)
+	RotationForce.Parent = Torso
+	
+	ThrustForce = Instance.new("BodyVelocity")
+	ThrustForce.maxForce = Vector3.new(math.huge, 0, math.huge)
+	ThrustForce.velocity = Vector3.new(0, 0, 0)
+	ThrustForce.P = 100
+	ThrustForce.Parent = Torso
+	
+	TurnGyro = Instance.new("BodyGyro")
+	TurnGyro.maxTorque = Vector3.new(5000, 0, 5000)
+	TurnGyro.P = 300
+	TurnGyro.D = 100
+	TurnGyro.Parent = Torso
+	
+	Body.Parent = Tool
+	
+	local RayHit, RayPos, RayNormal = RayCast(Torso.Position, Vector3.new(0, -1, 0), (Torso.Size.Y * 2), {Character})
+	if RayHit then
+		Torso.CFrame = Torso.CFrame + Vector3.new(0, ((Character:GetModelSize().Y / 2) + 1.5), 0)
+	end
+	
+	Spawn(ThrustUpdater)
+	
+end
+
+function CleanUp()
+	Handle.Velocity = Vector3.new(0, 0, 0)
+	Handle.RotVelocity = Vector3.new(0, 0, 0)
+	for i, v in pairs({}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	for i, v in pairs({Body, RotationForce, ThrustForce, TurnGyro}) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	for i, v in pairs(Tool:GetChildren()) do
+		if v:IsA("BasePart") and v ~= Handle then
+			v:Destroy()
+		end
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	Torso = Character:FindFirstChild("Torso")
+	if not CheckIfAlive() then
+		return
+	end
+	Spawn(CleanUp)
+	Spawn(EnableFirstPersonView)
+	Spawn(SpawnVehicle)
+	ToolEquipped = true
+end
+
+function Unequipped()
+	Spawn(CleanUp)
+	for i, v in pairs(Sounds) do
+		v:Stop()
+		Spawn(function()
+			InvokeClient("StopSound", v)
+		end)
+	end
+	if CheckIfAlive() then
+		Humanoid.PlatformStand = false
+	end
+	Handle.Transparency = 0
+	ToolEquipped = false
+end
+
+function OnServerInvoke(player, mode, value)
+	if player == Player and ToolEquipped and value and CheckIfAlive() then
+		if mode == "KeyPress" then
+			local Down = value.Down
+			local Key = value.Key
+			local ByteKey = string.byte(Key)
+			for i, v in pairs(Controls) do
+				if Key == v.Key or ByteKey == v.ByteKey then
+					Controls[i].Mode = Down
+				end
+			end
+			if Key == " " and Down then --Jump controller
+				if math.abs(tick() - Jump.LastJump) > Jump.ReloadTime and not Jump.Jumping and ThrustForce and ThrustForce.Parent then
+					Jump.Jumping = true
+					local Parts = GetAllConnectedParts(Body)
+					local Mass = 0
+					for i, v in pairs(Parts) do
+						Mass = (Mass + v:GetMass())
+					end
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, ((Mass * Gravity) * 100), ThrustForce.maxForce.Z)
+					ThrustForce.velocity = (Vector3.new(0, 1, 0) * Jump.JumpForce) + Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					wait(0.1)
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, 0, ThrustForce.maxForce.Z)
+					ThrustForce.velocity = Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					Jump.LastJump = tick()
+					Jump.Jumping = false
+				end
+			elseif Key == "x" and Down then --Toggle light(s) on/off.
+				for i, v in pairs(Lights) do
+					if v and v.Parent then
+						v.Enabled = not v.Enabled
+					end
+				end
+			elseif Key == "h" and Down then --Play honk sound.
+				local Sound = Sounds.Honk
+				if (tick() - Honk.LastHonk) >= (Sound.TimeLength + Honk.ReloadTime) and not Honk.Honking then
+					Honk.Honking = true
+					local TempSound = Sound:Clone()
+					Debris:AddItem(TempSound, Sound.TimeLength)
+					TempSound.Parent = Body
+					TempSound:Play()
+					Honk.LastHonk = tick()
+					Honk.Honking = false
+				end
+			elseif Key == "q" and Down then --Activate special.
+				if not Special.Allowed or not Special.Enabled or Special.Active then
+					return
+				end
+				Special.Enabled = false
+				Special.Active = true
+				wait(Special.Duration)
+				Special.Active = false
+				wait(Special.ReloadTime)
+				Special.Enabled = true
+			elseif ByteKey == 48 and Down then --Activate speed boost.
+				if not SpeedBoost.Allowed or not SpeedBoost.Enabled or SpeedBoost.Active then
+					return
+				end
+				SpeedBoost.Enabled = false
+				SpeedBoost.Active = true
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = true
+					end
+				end
+				MaxSpeed.Acceleration = Speed.Acceleration.Boost
+				MaxSpeed.Deceleration = Speed.Deceleration.Boost
+				MaxSpeed.Movement = Speed.MovementSpeed.Boost
+				wait(SpeedBoost.Duration)
+				MaxSpeed.Acceleration = Speed.Acceleration.Normal
+				MaxSpeed.Deceleration = Speed.Deceleration.Normal
+				MaxSpeed.Movement = Speed.MovementSpeed.Normal
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = false
+					end
+				end
+				SpeedBoost.Active = false
+				wait(SpeedBoost.ReloadTime)
+				SpeedBoost.Enabled = true
+			end
+		end
+	end
+end
+
+function InvokeClient(Mode, Value)
+	local ClientReturn = nil
+	pcall(function()
+		ClientReturn = ClientControl:InvokeClient(Player, Mode, Value)
+	end)
+	return ClientReturn
+end
+
+Spawn(CleanUp)
+
+ServerControl.OnServerInvoke = OnServerInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+ModuleScript24.Name = "Assets"
+ModuleScript24.Parent = Tool14
+table.insert(cors,sandbox(ModuleScript24,function()
+--Rescripted by Luckymaxer
+
+BaseUrl = "http://www.roblox.com/asset/?id="
+
+local function Create_PrivImpl(objectType)
+	if type(objectType) ~= 'string' then
+		error("Argument of Create must be a string", 2)
+	end
+	--return the proxy function that gives us the nice Create'string'{data} syntax
+	--The first function call is a function call using Lua's single-string-argument syntax
+	--The second function call is using Lua's single-table-argument syntax
+	--Both can be chained together for the nice effect.
+	return function(dat)
+		--default to nothing, to handle the no argument given case
+		dat = dat or {}
+
+		--make the object to mutate
+		local obj = Instance.new(objectType)
+		local parent = nil
+
+		--stored constructor function to be called after other initialization
+		local ctor = nil
+
+		for k, v in pairs(dat) do
+			--add property
+			if type(k) == 'string' then
+				if k == 'Parent' then
+					-- Parent should always be set last, setting the Parent of a new object
+					-- immediately makes performance worse for all subsequent property updates.
+					parent = v
+				else
+					obj[k] = v
+				end
+
+
+			--add child
+			elseif type(k) == 'number' then
+				if type(v) ~= 'userdata' then
+					error("Bad entry in Create body: Numeric keys must be paired with children, got a: "..type(v), 2)
+				end
+				v.Parent = obj
+
+
+			--event connect
+			elseif type(k) == 'table' and k.__eventname then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create.E\'"..k.__eventname.."\']` must have a function value\
+							got: "..tostring(v), 2)
+				end
+				obj[k.__eventname]:connect(v)
+
+
+			--define constructor function
+			elseif k == t.Create then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create]` should be paired with a constructor function, \
+							got: "..tostring(v), 2)
+				elseif ctor then
+					--ctor already exists, only one allowed
+					error("Bad entry in Create body: Only one constructor function is allowed", 2)
+				end
+				ctor = v
+
+
+			else
+				error("Bad entry ("..tostring(k).." => "..tostring(v)..") in Create body", 2)
+			end
+		end
+
+		--apply constructor function if it exists
+		if ctor then
+			ctor(obj)
+		end
+
+		if parent then
+			obj.Parent = parent
+		end
+
+		--return the completed object
+		return obj
+	end
+end
+
+--now, create the functor:
+Create = setmetatable({}, {__call = function(tb, ...) return Create_PrivImpl(...) end})
+
+--and create the "Event.E" syntax stub. Really it's just a stub to construct a table which our Create
+--function can recognize as special.
+Create.E = function(eventName)
+	return {__eventname = eventName}
+end
+
+
+BasePart = Create("Part"){
+	Material = Enum.Material.Plastic,
+	Shape = Enum.PartType.Block,
+	TopSurface = Enum.SurfaceType.Smooth,
+	BottomSurface = Enum.SurfaceType.Smooth,
+	FormFactor = Enum.FormFactor.Custom,
+	Size = Vector3.new(0.2, 0.2, 0.2),
+	Anchored = false,
+	CanCollide = true,
+	Locked = true
+}
+
+MeshData = {
+	Meshes = {
+		Body = 130087108,
+		Wheel = 130087185,
+	},
+	TextureId = 165896476
+}
+
+function CreateVehicle()
+
+	local ExhaustSmoke = {}
+	local Lights = {}
+	local Sparkles = {}
+
+	local Body = BasePart:Clone()
+	Body.Name = "Body"
+	Body.Size = Vector3.new(1, 4.125, 8)
+	local BodyMesh = Create("SpecialMesh"){
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = MeshData.Meshes.Body,
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(2.5, 2.5, 2.5),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = Body
+	}
+	
+	local BaseWheel = BasePart:Clone()
+	BaseWheel.Size = Vector3.new(0.5, 1, 1)
+	BaseWheel.CanCollide = false
+	local WheelMesh = Create("SpecialMesh"){
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = "",
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(2.5, 2.5, 2.5),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = BaseWheel,
+	}
+
+	local BaseFrontWheel = BaseWheel:Clone()
+	BaseFrontWheel.Name = "FrontWheel"
+	BaseFrontWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+	BaseFrontWheel.Mesh.Scale = Vector3.new(4.75, 2.7, 2.7)
+	
+	local BaseBackWheel = BaseWheel:Clone()
+	BaseBackWheel.Name = "BackWheel"
+	BaseBackWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+	BaseBackWheel.Mesh.Scale = Vector3.new(4.75, 2, 2)
+
+	local BaseSmokePart = BasePart:Clone()
+	BaseSmokePart.Name = "SmokePart"
+	BaseSmokePart.Transparency = 1
+	local BaseExhaustSmoke = Create("Smoke"){
+		Name = "ExhaustSmoke",
+		Size = 0.1,
+		RiseVelocity = 0.01,
+		Color = Color3.new((127 / 255), (127 / 255), (127 / 255)),
+		Enabled = true,
+		Parent = BaseSmokePart,
+	}
+
+	local BaseLightPart = BasePart:Clone()
+	BaseLightPart.Name = "LightPart"
+	BaseLightPart.Transparency = 1
+	local Light = Create("SpotLight"){
+		Name = "Light",
+		Brightness = 50,
+		Angle = 45,
+		Color = Color3.new((196 / 255), (40 / 255), (28 / 255)),
+		Range = 20,
+		Shadows = false,
+		Enabled = false,
+		Parent = BaseLightPart,
+	}
+			
+	local FrontWheel = BaseFrontWheel:Clone()
+	FrontWheel.Parent = Body
+	
+	local FrontMotor = Create("Motor6D"){
+		Name = "FrontMotor",
+		Part0 = Body,
+		Part1 = FrontWheel,
+		C0 = CFrame.new(0, -0.7, -3.1) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local BackWheel = BaseBackWheel:Clone()
+	BackWheel.Parent = Body
+	
+	local BackMotor = Create("Motor6D"){
+		Name = "BackMotor",
+		Part0 = Body,
+		Part1 = BackWheel,
+		C0 = CFrame.new(0, -1.1, 3.6) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local HeadLight = BaseLightPart:Clone()
+	HeadLight.Parent = Body
+	table.insert(Lights, HeadLight.Light)
+	for i, v in pairs(HeadLight:GetChildren()) do
+		if v:IsA("Sparkles") then
+			table.insert(Sparkles, v)
+		end
+	end
+	
+	local LightWeld = Create("Weld"){
+		Part0 = Body,
+		Part1 = HeadLight,
+		C0 = CFrame.new(0, 1.25, -1.9) * CFrame.Angles(0, 0, 0),
+		Parent = HeadLight
+	}
+
+	local Tables = {
+		ExhaustSmoke = ExhaustSmoke,
+		Lights = Lights,
+		Sparkles = Sparkles
+	}
+	
+	return {
+		Vehicle = Body,
+		Tables = Tables
+	}
+	
+end
+
+for i, v in pairs(MeshData) do
+	if type(v) == "table" then
+		for ii, vv in pairs(v) do
+			if type(vv) == "string" or type(vv) == "number" then
+				MeshData[i][ii] = (BaseUrl .. tostring(vv))
+			end
+		end
+	elseif type(v) == "string" or type(v) == "number" then
+		MeshData[i] = (BaseUrl .. tostring(v))
+	end
+end
+
+return {
+	BaseUrl = BaseUrl,
+	MeshData = MeshData,
+	CreateVehicle = CreateVehicle
+}
+end))
+Camera25.Name = "ThumbnailCamera"
+Camera25.Parent = Tool14
+Camera25.CFrame = CFrame.new(-3.85137248, 3.27106595, -5.32035971, -0.695696652, 0.39228341, -0.601764023, -0, 0.837719798, 0.546100378, 0.718335748, 0.379920214, -0.582798839)
+Camera25.CameraType = Enum.CameraType.Custom
+Camera25.CoordinateFrame = CFrame.new(-3.85137248, 3.27106595, -5.32035971, -0.695696652, 0.39228341, -0.601764023, -0, 0.837719798, 0.546100378, 0.718335748, 0.379920214, -0.582798839)
+Camera25.Focus = CFrame.new(-2.11829376, 1.69829845, -3.64190078, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera25.focus = CFrame.new(-2.11829376, 1.69829845, -3.64190078, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool26.Name = "GreenHyperbike"
+Tool26.Parent = Model0
+Tool26.TextureId = "http://www.roblox.com/asset/?id=204410820"
+Tool26.CanBeDropped = false
+Tool26.Grip = CFrame.new(1.5, 2.20000005, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool26.GripPos = Vector3.new(1.5, 2.200000047683716, -2)
+Part27.Name = "Handle"
+Part27.Parent = Tool26
+Part27.CFrame = CFrame.new(12.5453949, 19.8388863, 23.8061466, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part27.Position = Vector3.new(12.545394897460938, 19.838886260986328, 23.8061466217041)
+Part27.Size = Vector3.new(0.20000000298023224, 3.625, 9)
+Part27.BottomSurface = Enum.SurfaceType.Smooth
+Part27.CustomPhysicalProperties = 0.699999988, 0, 0, 1, 1
+Part27.TopSurface = Enum.SurfaceType.Smooth
+Part27.FormFactor = Enum.FormFactor.Custom
+Part27.formFactor = Enum.FormFactor.Custom
+SpecialMesh28.Parent = Part27
+SpecialMesh28.MeshId = "http://www.roblox.com/asset/?id=204410623"
+SpecialMesh28.Scale = Vector3.new(1.25, 1.25, 1.25)
+SpecialMesh28.TextureId = "http://www.roblox.com/asset/?id=204410898"
+SpecialMesh28.MeshType = Enum.MeshType.FileMesh
+Sound29.Name = "Running"
+Sound29.Parent = Part27
+Sound29.Looped = true
+Sound29.SoundId = "http://www.roblox.com/asset/?id=130091914"
+Sound30.Name = "Honk"
+Sound30.Parent = Part27
+Script31.Parent = Tool26
+table.insert(cors,sandbox(Script31,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+
+Assets = require(Tool:WaitForChild("Assets"))
+Data = Assets.Data
+
+BaseUrl = Assets.BaseUrl
+
+
+
+Animations = {
+	Hold = {Animation = Tool:WaitForChild("Hold"), FadeTime = nil, Weight = nil, Speed = nil}
+}
+
+Sounds = {
+	Honk = Handle:WaitForChild("Honk"),
+	Engine = Handle:WaitForChild("Running")
+}
+
+Controls = {
+	Forward = {Key = "w", ByteKey = 17, Mode = false},
+	Backward = {Key = "s", ByteKey = 18, Mode = false},
+	Left = {Key = "a", ByteKey = 20, Mode = false},
+	Right = {Key = "d", ByteKey = 19, Mode = false}
+}
+	
+Rate = (1 / 60)
+	
+Gravity = 196.20
+	
+PoseOffset = CFrame.new(0, -2, 0.5) * CFrame.Angles(0, 0, 0) --The offset your character is from the center of the vehicle.
+
+SpeedBoost = {
+	Allowed = false,
+	Active = false,
+	Enabled = true,
+	Duration = 10,
+	ReloadTime = 30
+}
+
+Special = {
+	Allowed = false,
+	Enabled = true,
+	Active = false,
+	Duration = 0,
+	ReloadTime = 60
+}
+
+Speed = {
+	Acceleration = {
+		Normal = 40,
+		Boost = 40
+	},
+	Deceleration = {
+		Normal = 40,
+		Boost = 40
+	},
+	MovementSpeed = {
+		Normal = {Min = 20, Max = 70},
+		Boost = {Min = 20, Max = 70}
+	},
+	TurnSpeed = {
+		Speed = {Min = 5, Max = 5},
+		TurnAlpha = 0.30,
+		AlphaDampening = 0.2
+	},
+}
+
+MaxSpeed = { --Maximum speed which the vehicle can move and turn at.
+	Movement = Speed.MovementSpeed.Normal,
+	Turn = Speed.TurnSpeed.Speed,
+	Acceleration = Speed.Acceleration.Normal,
+	Deceleration = Speed.Deceleration.Normal
+}
+
+CurrentSpeed = { --The speed which the vehicle is moving and turning at.
+	Movement = 0,
+	Turn = 0
+}
+
+Honk = {
+	Honking = false,
+	LastHonk = 0,
+	ReloadTime = 1
+}
+
+Jump = {
+	Jumping = false,
+	LastJump = 0,
+	ReloadTime = 1.9,
+	JumpForce = 30
+}
+
+ToolEquipped = false
+
+ServerControl = (Tool:FindFirstChild("ServerControl") or Instance.new("RemoteFunction"))
+ServerControl.Name = "ServerControl"
+ServerControl.Parent = Tool
+
+ClientControl = (Tool:FindFirstChild("ClientControl") or Instance.new("RemoteFunction"))
+ClientControl.Name = "ClientControl"
+ClientControl.Parent = Tool
+
+Tool.Enabled = true
+
+function RayCast(Position, Direction, MaxDistance, IgnoreList)
+	local IgnoreList = ((type(IgnoreList) == "table" and IgnoreList) or {IgnoreList})
+	return game:GetService("Workspace"):FindPartOnRayWithIgnoreList(Ray.new(Position, Direction.unit * (MaxDistance or 999.999)), IgnoreList)
+end
+
+function GetAllConnectedParts(Object)
+	local Parts = {}
+	local function GetConnectedParts(Object)
+		for i, v in pairs(Object:GetConnectedParts()) do
+			local Ignore = false
+			for ii, vv in pairs(Parts) do
+				if v == vv then
+					Ignore = true
+				end
+			end
+			if not Ignore then
+				table.insert(Parts, v)
+				GetConnectedParts(v)
+			end
+		end
+	end
+	GetConnectedParts(Object)
+	return Parts
+end
+
+function EnableFirstPersonView()
+	if not CheckIfAlive() or not ToolEquipped then
+		return
+	end
+	local Limbs = {"Left Arm", "Right Arm"}
+	for i, v in pairs(Limbs) do
+		local Limb = Character:FindFirstChild(v)
+		if Limb:IsA("BasePart") then
+			Spawn(function()
+				InvokeClient("SetLocalTransparencyModifier", {Object = Limb, Transparency = 0, AutoUpdate = false})
+			end)
+		end
+	end
+end
+
+function ThrustUpdater()
+	
+	for i, v in pairs(CurrentSpeed) do
+		CurrentSpeed[i] = 0
+	end
+	for i, v in pairs(Controls) do
+		Controls[i].Mode = false
+	end
+
+	while ToolEquipped and Body and Body.Parent and CheckIfAlive() and RotationForce and RotationForce.Parent and ThrustForce and ThrustForce.Parent and TurnGyro and TurnGyro.Parent do
+		
+		RotationForce.angularvelocity = Vector3.new(0, CurrentSpeed.Turn, 0)
+		if math.abs(CurrentSpeed.Turn) > Speed.TurnSpeed.AlphaDampening then
+			CurrentSpeed.Turn = (CurrentSpeed.Turn - (Speed.TurnSpeed.AlphaDampening * (math.abs(CurrentSpeed.Turn) / CurrentSpeed.Turn)))
+		else 
+			CurrentSpeed.Turn = 0		
+		end
+				
+		if not Controls.Forward.Mode or Controls.Backward.Mode then --Slow down if not controlling.
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.99)
+		end
+		
+		local MySpeed = Vector3.new(Body.Velocity.X, 0, Body.Velocity.Z).magnitude
+		local VelocityDifference = math.abs((MySpeed - (ThrustForce.velocity.magnitude)))
+		if MySpeed > 3 and ThrustForce.velocity.magnitude > 3 and VelocityDifference > (0.7 * ThrustForce.velocity.magnitude) then
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.9)
+		end
+		
+		if Controls.Forward.Mode then --Handle acceleration
+			CurrentSpeed.Movement = math.min(MaxSpeed.Movement.Max, (CurrentSpeed.Movement + (MaxSpeed.Acceleration * Rate)))
+		end
+		if Controls.Backward.Mode then --Handle deceleration, if speed is more than 0, decrease quicker.
+			CurrentSpeed.Movement = math.max(-MaxSpeed.Movement.Min, (CurrentSpeed.Movement - (MaxSpeed.Deceleration * ((CurrentSpeed.Movement > 0 and 2.8) or 1) * Rate)))
+		end
+		
+		if Controls.Left.Mode then --Handle left turn speed
+			CurrentSpeed.Turn = math.min(Speed.TurnSpeed.Speed.Max, (CurrentSpeed.Turn + (Speed.TurnSpeed.TurnAlpha)))
+		end
+		if Controls.Right.Mode then --Handle right turn speed
+			CurrentSpeed.Turn = math.max(-Speed.TurnSpeed.Speed.Min, (CurrentSpeed.Turn - (Speed.TurnSpeed.TurnAlpha)))
+		end
+		
+		local Direction = Torso.CFrame.lookVector
+		Direction = Vector3.new(Direction.x, 0, Direction.z).unit
+		
+		local Velocity = (Direction * CurrentSpeed.Movement) --The thrust force which you move.
+		ThrustForce.velocity = Vector3.new(Velocity.X, ThrustForce.velocity.Y, Velocity.Z)
+		
+		local LeanAmount = (-CurrentSpeed.Turn * (math.pi / 6) / 4) --Amount your character leans over.
+		local XZAngle = math.atan2(Torso.CFrame.lookVector.z, 0, Torso.CFrame.lookVector.x) --Handle rotation
+		TurnGyro.cframe = CFrame.Angles((LeanAmount * Direction.x), 0, (LeanAmount * Direction.z))
+		
+		--Wheel animation
+		local DesiredAngle = (999999999 * (-CurrentSpeed.Movement / math.abs(CurrentSpeed.Movement)))
+		local MaxVelocity = (CurrentSpeed.Movement / 250)
+		for i, v in pairs({FrontMotor, BackMotor}) do
+			if v and v.Parent then
+				v.DesiredAngle = DesiredAngle
+				v.MaxVelocity = MaxVelocity
+			end
+		end
+		
+		--Smoke exhaust from vehicle running.
+		for i, v in pairs(ExhaustSmoke) do
+			if v and v.Parent then
+				v.Opacity = ((math.min(math.abs(CurrentSpeed.Movement), 10) / 10) * 0.5)
+			end
+		end
+		
+		--Engine running sound which pitch changes while in motion.
+		Sounds.Engine.Pitch = (1 + (math.abs(CurrentSpeed.Movement / MaxSpeed.Movement.Max) * 1))
+		
+		wait(Rate)
+		
+	end
+end
+
+function SpawnVehicle()
+	
+	Handle.Transparency = 1
+	
+	Spawn(function()
+		InvokeClient("PlaySound", Sounds.Engine)
+		InvokeClient("PlayAnimation", Animations.Hold)
+	end)	
+	
+	Humanoid.PlatformStand = true
+	
+	local VehicleData = Assets.CreateVehicle()
+	Body = VehicleData.Vehicle
+	local ParticleTable = VehicleData.Tables
+	
+	FrontMotor = Body.FrontMotor
+	BackMotor = Body.BackMotor
+	
+	ExhaustSmoke = ParticleTable.ExhaustSmoke
+	Lights = ParticleTable.Lights
+	Sparkles = ParticleTable.Sparkles
+	
+	if SpeedBoost.Active then
+		for i, v in pairs(Sparkles) do
+			if v and v.Parent then
+				v.Enabled = true
+			end
+		end
+	end
+	
+	local TorsoWeld = Instance.new("Weld")
+	TorsoWeld.C0 = PoseOffset
+	TorsoWeld.Part0 = Torso
+	TorsoWeld.Part1 = Body
+	TorsoWeld.Parent = Body
+	
+	Body.CanCollide = true
+
+	RotationForce = Instance.new("BodyAngularVelocity")
+	RotationForce.maxTorque = Vector3.new(0, math.huge, 0)
+	RotationForce.angularvelocity = Vector3.new(0, 0, 0)
+	RotationForce.Parent = Torso
+	
+	ThrustForce = Instance.new("BodyVelocity")
+	ThrustForce.maxForce = Vector3.new(math.huge, 0, math.huge)
+	ThrustForce.velocity = Vector3.new(0, 0, 0)
+	ThrustForce.P = 100
+	ThrustForce.Parent = Torso
+	
+	TurnGyro = Instance.new("BodyGyro")
+	TurnGyro.maxTorque = Vector3.new(5000, 0, 5000)
+	TurnGyro.P = 300
+	TurnGyro.D = 100
+	TurnGyro.Parent = Torso
+	
+	Body.Parent = Tool
+	
+	local RayHit, RayPos, RayNormal = RayCast(Torso.Position, Vector3.new(0, -1, 0), (Torso.Size.Y * 2), {Character})
+	if RayHit then
+		Torso.CFrame = Torso.CFrame + Vector3.new(0, ((Character:GetModelSize().Y / 2) + 1.5), 0)
+	end
+	
+	Spawn(ThrustUpdater)
+	
+end
+
+
+function CleanUp()
+	Handle.Velocity = Vector3.new(0, 0, 0)
+	Handle.RotVelocity = Vector3.new(0, 0, 0)
+	for i, v in pairs({}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	for i, v in pairs({Body, RotationForce, ThrustForce, TurnGyro}) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	for i, v in pairs(Tool:GetChildren()) do
+		if v:IsA("BasePart") and v ~= Handle then
+			v:Destroy()
+		end
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	Torso = Character:FindFirstChild("Torso")
+	if not CheckIfAlive() then
+		return
+	end
+	Spawn(CleanUp)
+	Spawn(EnableFirstPersonView)
+	Spawn(SpawnVehicle)
+	ToolEquipped = true
+end
+
+function Unequipped()
+	Spawn(CleanUp)
+	for i, v in pairs(Sounds) do
+		v:Stop()
+		Spawn(function()
+			InvokeClient("StopSound", v)
+		end)
+	end
+	if CheckIfAlive() then
+		Humanoid.PlatformStand = false
+	end
+	Handle.Transparency = 0
+	ToolEquipped = false
+end
+
+function OnServerInvoke(player, mode, value)
+	if player == Player and ToolEquipped and value and CheckIfAlive() then
+		if mode == "KeyPress" then
+			local Down = value.Down
+			local Key = value.Key
+			local ByteKey = string.byte(Key)
+			for i, v in pairs(Controls) do
+				if Key == v.Key or ByteKey == v.ByteKey then
+					Controls[i].Mode = Down
+				end
+			end
+			if Key == " " and Down then --Jump controller
+				if math.abs(tick() - Jump.LastJump) > Jump.ReloadTime and not Jump.Jumping and ThrustForce and ThrustForce.Parent then
+					Jump.Jumping = true
+					local Parts = GetAllConnectedParts(Body)
+					local Mass = 0
+					for i, v in pairs(Parts) do
+						Mass = (Mass + v:GetMass())
+					end
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, ((Mass * Gravity) * 100), ThrustForce.maxForce.Z)
+					ThrustForce.velocity = (Vector3.new(0, 1, 0) * Jump.JumpForce) + Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					wait(0.1)
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, 0, ThrustForce.maxForce.Z)
+					ThrustForce.velocity = Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					Jump.LastJump = tick()
+					Jump.Jumping = false
+				end
+			elseif Key == "x" and Down then --Toggle light(s) on/off.
+				for i, v in pairs(Lights) do
+					if v and v.Parent then
+						v.Enabled = not v.Enabled
+					end
+				end
+			elseif Key == "h" and Down then --Play honk sound.
+				local Sound = Sounds.Honk
+				if (tick() - Honk.LastHonk) >= (Sound.TimeLength + Honk.ReloadTime) and not Honk.Honking then
+					Honk.Honking = true
+					local TempSound = Sound:Clone()
+					Debris:AddItem(TempSound, Sound.TimeLength)
+					TempSound.Parent = Body
+					TempSound:Play()
+					Honk.LastHonk = tick()
+					Honk.Honking = false
+				end
+			elseif Key == "q" and Down then --Activate special.
+				if not Special.Allowed or not Special.Enabled or Special.Active then
+					return
+				end
+				Special.Enabled = false
+				Special.Active = true
+				wait(Special.Duration)
+				Special.Active = false
+				wait(Special.ReloadTime)
+				Special.Enabled = true
+			elseif ByteKey == 48 and Down then --Activate speed boost.
+				if not SpeedBoost.Allowed or not SpeedBoost.Enabled or SpeedBoost.Active then
+					return
+				end
+				SpeedBoost.Enabled = false
+				SpeedBoost.Active = true
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = true
+					end
+				end
+				MaxSpeed.Acceleration = Speed.Acceleration.Boost
+				MaxSpeed.Deceleration = Speed.Deceleration.Boost
+				MaxSpeed.Movement = Speed.MovementSpeed.Boost
+				wait(SpeedBoost.Duration)
+				MaxSpeed.Acceleration = Speed.Acceleration.Normal
+				MaxSpeed.Deceleration = Speed.Deceleration.Normal
+				MaxSpeed.Movement = Speed.MovementSpeed.Normal
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = false
+					end
+				end
+				SpeedBoost.Active = false
+				wait(SpeedBoost.ReloadTime)
+				SpeedBoost.Enabled = true
+			end
+		end
+	end
+end
+
+function InvokeClient(Mode, Value)
+	local ClientReturn = nil
+	pcall(function()
+		ClientReturn = ClientControl:InvokeClient(Player, Mode, Value)
+	end)
+	return ClientReturn
+end
+
+Spawn(CleanUp)
+
+ServerControl.OnServerInvoke = OnServerInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+Script32.Name = "TrailScript"
+Script32.Parent = Tool26
+table.insert(cors,sandbox(Script32,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Debris = game:GetService("Debris")
+
+BasePart = Instance.new("Part")
+BasePart.Shape = Enum.PartType.Block
+BasePart.Material = Enum.Material.Plastic
+BasePart.TopSurface = Enum.SurfaceType.Smooth
+BasePart.BottomSurface = Enum.SurfaceType.Smooth
+BasePart.FormFactor = Enum.FormFactor.Custom
+BasePart.Anchored = false
+BasePart.CanCollide = true
+BasePart.Locked = true
+
+BaseTrailPart = BasePart:Clone()
+BaseTrailPart.Name = "LaserTrail"
+BaseTrailPart.BrickColor = BrickColor.new("Bright green")
+BaseTrailPart.Transparency = 0.2
+BaseTrailPart.Size = Vector3.new(0.2, 5, 3)
+BaseTrailPart.Material = Enum.Material.SmoothPlastic
+BaseTrailPart.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.Anchored = true
+BaseTrailPart.CanCollide = false
+TrailLight = Instance.new("PointLight")
+TrailLight.Color = BrickColor.new("Bright green").Color
+TrailLight.Brightness = 10
+TrailLight.Range = 8
+TrailLight.Shadows = false
+TrailLight.Enabled = true
+TrailLight.Parent = BaseTrailPart
+
+Rate = (1 / 60)
+
+function StartTrail(Source, Parent)
+	
+	local TrailParts = {}
+	
+	local SourceAlive = true
+
+	local NumberOfParts = 60
+	local LastPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+	
+	Source.Changed:connect(function(Property)
+		if Property == "Parent" and not Source.Parent then
+			SourceAlive = false
+		end
+	end)
+	
+	while SourceAlive do
+		local CurrentPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+		if Source.Velocity.magnitude > 20 then
+			local TrailPart = BaseTrailPart:Clone()
+			table.insert(TrailParts, TrailPart)
+			TrailPart.Size = Vector3.new(TrailPart.Size.X, TrailPart.Size.Y, (CurrentPoint - LastPoint).magnitude)
+			TrailPart.Parent = Parent
+			TrailPart.CFrame = CFrame.new(((CurrentPoint + LastPoint) * 0.5), LastPoint)
+			if #TrailParts > NumberOfParts then
+				local TrailPart = TrailParts[1]
+				if TrailPart and TrailPart.Parent then
+					TrailPart:Destroy()
+				end
+				table.remove(TrailParts, 1)
+			end
+		else
+			local TrailPart = TrailParts[1]
+			if TrailPart and TrailPart.Parent then
+				TrailPart:Destroy()
+			end
+			table.remove(TrailParts, 1)
+		end
+		LastPoint = CurrentPoint
+		wait(Rate)
+	end
+	
+	for i, v in pairs(TrailParts) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	
+end
+
+Tool.ChildAdded:connect(function(Child)
+	if Child.Name == "Body" then
+		Spawn(function()
+			StartTrail(Child, Tool)
+		end)
+	end
+end)
+end))
+LocalScript33.Parent = Tool26
+table.insert(cors,sandbox(LocalScript33,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+RunService = game:GetService("RunService")
+
+Camera = game:GetService("Workspace").CurrentCamera
+
+Animations = {}
+LocalObjects = {}
+
+ServerControl = Tool:WaitForChild("ServerControl")
+ClientControl = Tool:WaitForChild("ClientControl")
+
+ToolEquipped = false
+
+function SetAnimation(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+		local AnimationTrack = Humanoid:LoadAnimation(value.Animation)
+		table.insert(Animations, {Animation = value.Animation, AnimationTrack = AnimationTrack})
+		AnimationTrack:Play(value.FadeTime, value.Weight, value.Speed)
+	elseif mode == "StopAnimation" and value then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+	end
+end
+
+function DisableJump(Boolean)
+	if PreventJump then
+		PreventJump:disconnect()
+	end
+	if Boolean then
+		PreventJump = Humanoid.Changed:connect(function(Property)
+			if Property ==  "Jump" then
+				Humanoid.Jump = false
+			end
+		end)
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	ToolEquipped = true
+	if not CheckIfAlive() then
+		return
+	end
+	PlayerMouse = Player:GetMouse()
+	Mouse.Button1Down:connect(function()
+		InvokeServer("MouseClick", {Down = true})
+	end)
+	Mouse.Button1Up:connect(function()
+		InvokeServer("MouseClick", {Down = false})
+	end)
+	Mouse.KeyDown:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = true})
+	end)
+	Mouse.KeyUp:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = false})
+	end)
+	Mouse.Move:connect(function()
+		InvokeServer("MouseMove", {Position = Mouse.Hit.p, Target = Mouse.Target})
+	end)
+	Humanoid:ChangeState(Enum.HumanoidStateType.None)
+end
+
+function Unequipped()
+	ToolEquipped = false
+	LocalObjects = {}
+	for i, v in pairs(Animations) do
+		if v and v.AnimationTrack then
+			v.AnimationTrack:Stop()
+		end
+	end
+	for i, v in pairs({PreventJump, ObjectLocalTransparencyModifier}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	Humanoid:ChangeState(Enum.HumanoidStateType.Freefall) --Prevent the ability to fly by constantly equipping and unequipping the tool.
+	Animations = {}
+end
+
+function InvokeServer(mode, value)
+	pcall(function()
+		local ServerReturn = ServerControl:InvokeServer(mode, value)
+		return ServerReturn
+	end)
+end
+
+function OnClientInvoke(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		SetAnimation("PlayAnimation", value)
+	elseif mode == "StopAnimation" and value then
+		SetAnimation("StopAnimation", value)
+	elseif mode == "PlaySound" and value then
+		value:Play()
+	elseif mode == "StopSound" and value then
+		value:Stop()
+	elseif mode == "MousePosition" then
+		return {Position = PlayerMouse.Hit.p, Target = PlayerMouse.Target}
+	elseif mode == "DisableJump" then
+		DisableJump(value)
+	elseif mode == "SetLocalTransparencyModifier" and value and ToolEquipped then
+		pcall(function()
+			local ObjectFound = false
+			for i, v in pairs(LocalObjects) do
+				if v == value then
+					ObjectFound = true
+				end
+			end
+			if not ObjectFound then
+				table.insert(LocalObjects, value)
+				if ObjectLocalTransparencyModifier then
+					ObjectLocalTransparencyModifier:disconnect()
+				end
+				ObjectLocalTransparencyModifier = RunService.RenderStepped:connect(function()
+					for i, v in pairs(LocalObjects) do
+						if v.Object and v.Object.Parent then
+							local CurrentTransparency = v.Object.LocalTransparencyModifier
+							if ((not v.AutoUpdate and (CurrentTransparency == 1 or  CurrentTransparency == 0)) or v.AutoUpdate) then
+								v.Object.LocalTransparencyModifier = v.Transparency
+							end
+						else
+							table.remove(LocalObjects, i)
+						end
+					end
+				end)
+			end
+		end)
+	end
+end
+
+ClientControl.OnClientInvoke = OnClientInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+LocalScript34.Name = "MouseIcon"
+LocalScript34.Parent = Tool26
+table.insert(cors,sandbox(LocalScript34,function()
+--Made by Luckymaxer
+
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = script.Parent
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:connect(OnEquipped)
+Tool.Changed:connect(OnChanged)
+end))
+ModuleScript35.Name = "Assets"
+ModuleScript35.Parent = Tool26
+table.insert(cors,sandbox(ModuleScript35,function()
+--Made by Luckymaxer
+
+BaseUrl = "http://www.roblox.com/asset/?id="
+
+local function Create_PrivImpl(objectType)
+	if type(objectType) ~= 'string' then
+		error("Argument of Create must be a string", 2)
+	end
+	--return the proxy function that gives us the nice Create'string'{data} syntax
+	--The first function call is a function call using Lua's single-string-argument syntax
+	--The second function call is using Lua's single-table-argument syntax
+	--Both can be chained together for the nice effect.
+	return function(dat)
+		--default to nothing, to handle the no argument given case
+		dat = dat or {}
+
+		--make the object to mutate
+		local obj = Instance.new(objectType)
+		local parent = nil
+
+		--stored constructor function to be called after other initialization
+		local ctor = nil
+
+		for k, v in pairs(dat) do
+			--add property
+			if type(k) == 'string' then
+				if k == 'Parent' then
+					-- Parent should always be set last, setting the Parent of a new object
+					-- immediately makes performance worse for all subsequent property updates.
+					parent = v
+				else
+					obj[k] = v
+				end
+
+
+			--add child
+			elseif type(k) == 'number' then
+				if type(v) ~= 'userdata' then
+					error("Bad entry in Create body: Numeric keys must be paired with children, got a: "..type(v), 2)
+				end
+				v.Parent = obj
+
+
+			--event connect
+			elseif type(k) == 'table' and k.__eventname then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create.E\'"..k.__eventname.."\']` must have a function value\
+							got: "..tostring(v), 2)
+				end
+				obj[k.__eventname]:connect(v)
+
+
+			--define constructor function
+			elseif k == t.Create then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create]` should be paired with a constructor function, \
+							got: "..tostring(v), 2)
+				elseif ctor then
+					--ctor already exists, only one allowed
+					error("Bad entry in Create body: Only one constructor function is allowed", 2)
+				end
+				ctor = v
+
+
+			else
+				error("Bad entry ("..tostring(k).." => "..tostring(v)..") in Create body", 2)
+			end
+		end
+
+		--apply constructor function if it exists
+		if ctor then
+			ctor(obj)
+		end
+
+		if parent then
+			obj.Parent = parent
+		end
+
+		--return the completed object
+		return obj
+	end
+end
+
+--now, create the functor:
+Create = setmetatable({}, {__call = function(tb, ...) return Create_PrivImpl(...) end})
+
+--and create the "Event.E" syntax stub. Really it's just a stub to construct a table which our Create
+--function can recognize as special.
+Create.E = function(eventName)
+	return {__eventname = eventName}
+end
+
+
+BasePart = Create("Part"){
+	Material = Enum.Material.Plastic,
+	Shape = Enum.PartType.Block,
+	TopSurface = Enum.SurfaceType.Smooth,
+	BottomSurface = Enum.SurfaceType.Smooth,
+	FormFactor = Enum.FormFactor.Custom,
+	Size = Vector3.new(0.2, 0.2, 0.2),
+	Anchored = false,
+	CanCollide = true,
+	Locked = true
+}
+
+MeshData = {
+	Meshes = {
+		Body = 206414124,
+		Wheel = 206414152,
+	},
+	TextureId = 204410898
+}
+
+function CreateVehicle()
+
+	local ExhaustSmoke = {}
+	local Lights = {}
+	local Sparkles = {}
+
+	local Body = BasePart:Clone()
+	Body.Name = "Body"
+	Body.Size = Vector3.new(1, 3.625, 8)
+	local BodyMesh = Create("SpecialMesh"){
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = MeshData.Meshes.Body,
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(1.25, 1.25, 1.25),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = Body
+	}
+	
+	local BaseWheel = BasePart:Clone()
+	BaseWheel.Size = Vector3.new(0.5, 1, 1)
+	BaseWheel.CanCollide = false
+	local WheelMesh = Create("SpecialMesh"){
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = "",
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(1.25, 1.25, 1.25),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = BaseWheel,
+	}
+
+	local BaseFrontWheel = BaseWheel:Clone()
+	BaseFrontWheel.Name = "FrontWheel"
+	BaseFrontWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+	
+	local BaseBackWheel = BaseWheel:Clone()
+	BaseBackWheel.Name = "BackWheel"
+	BaseBackWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+
+	local BaseSmokePart = BasePart:Clone()
+	BaseSmokePart.Name = "SmokePart"
+	BaseSmokePart.Transparency = 1
+	local BaseExhaustSmoke = Create("Smoke"){
+		Name = "ExhaustSmoke",
+		Size = 0.1,
+		RiseVelocity = 0.01,
+		Color = Color3.new((127 / 255), (127 / 255), (127 / 255)),
+		Enabled = true,
+		Parent = BaseSmokePart,
+	}
+
+	local BaseLightPart = BasePart:Clone()
+	BaseLightPart.Name = "LightPart"
+	BaseLightPart.Transparency = 1
+	local Light = Create("SpotLight"){
+		Name = "Light",
+		Brightness = 50,
+		Angle = 45,
+		Color = Color3.new((40 / 255), (127 / 255), (71 / 255)),
+		Range = 20,
+		Shadows = false,
+		Enabled = false,
+		Parent = BaseLightPart,
+	}
+			
+	local FrontWheel = BaseFrontWheel:Clone()
+	FrontWheel.Parent = Body
+	
+	local FrontMotor = Create("Motor6D"){
+		Name = "FrontMotor",
+		Part0 = Body,
+		Part1 = FrontWheel,
+		C0 = CFrame.new(0, -0.5, -3.375) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local BackWheel = BaseBackWheel:Clone()
+	BackWheel.Parent = Body
+	
+	local BackMotor = Create("Motor6D"){
+		Name = "BackMotor",
+		Part0 = Body,
+		Part1 = BackWheel,
+		C0 = CFrame.new(0, -0.5, 3.1) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local HeadLight = BaseLightPart:Clone()
+	HeadLight.Parent = Body
+	table.insert(Lights, HeadLight.Light)
+	for i, v in pairs(HeadLight:GetChildren()) do
+		if v:IsA("Sparkles") then
+			table.insert(Sparkles, v)
+		end
+	end
+	
+	local LightWeld = Create("Weld"){
+		Part0 = Body,
+		Part1 = HeadLight,
+		C0 = CFrame.new(0, 1.25, -1.9) * CFrame.Angles(0, 0, 0),
+		Parent = HeadLight
+	}
+
+	local Tables = {
+		ExhaustSmoke = ExhaustSmoke,
+		Lights = Lights,
+		Sparkles = Sparkles
+	}
+	
+	return {
+		Vehicle = Body,
+		Tables = Tables
+	}
+	
+end
+
+for i, v in pairs(MeshData) do
+	if type(v) == "table" then
+		for ii, vv in pairs(v) do
+			if type(vv) == "string" or type(vv) == "number" then
+				MeshData[i][ii] = (BaseUrl .. tostring(vv))
+			end
+		end
+	elseif type(v) == "string" or type(v) == "number" then
+		MeshData[i] = (BaseUrl .. tostring(v))
+	end
+end
+
+return {
+	BaseUrl = BaseUrl,
+	MeshData = MeshData,
+	CreateVehicle = CreateVehicle
+}
+end))
+Animation36.Name = "Hold"
+Animation36.Parent = Tool26
+Animation36.AnimationId = "http://www.roblox.com/asset/?id=214738896"
+Camera37.Name = "ThumbnailCamera"
+Camera37.Parent = Tool26
+Camera37.CFrame = CFrame.new(-3.85137248, 3.27106595, -5.32035971, -0.695696652, 0.39228341, -0.601764023, -0, 0.837719798, 0.546100378, 0.718335748, 0.379920214, -0.582798839)
+Camera37.CameraType = Enum.CameraType.Custom
+Camera37.CoordinateFrame = CFrame.new(-3.85137248, 3.27106595, -5.32035971, -0.695696652, 0.39228341, -0.601764023, -0, 0.837719798, 0.546100378, 0.718335748, 0.379920214, -0.582798839)
+Camera37.Focus = CFrame.new(-2.11829376, 1.69829845, -3.64190078, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera37.focus = CFrame.new(-2.11829376, 1.69829845, -3.64190078, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool38.Name = "DiscoHyperbike"
+Tool38.Parent = Model0
+Tool38.TextureId = "http://www.roblox.com/asset/?id=212658181"
+Tool38.Grip = CFrame.new(1.5, 2.20000005, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool38.GripPos = Vector3.new(1.5, 2.200000047683716, -2)
+Part39.Name = "Handle"
+Part39.Parent = Tool38
+Part39.CFrame = CFrame.new(7.34539795, 19.8388863, 23.8061466, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part39.Position = Vector3.new(7.34539794921875, 19.838886260986328, 23.8061466217041)
+Part39.Size = Vector3.new(0.20000000298023224, 3.625, 9)
+Part39.BottomSurface = Enum.SurfaceType.Smooth
+Part39.CustomPhysicalProperties = 0.699999988, 0, 0, 1, 1
+Part39.TopSurface = Enum.SurfaceType.Smooth
+Part39.FormFactor = Enum.FormFactor.Custom
+Part39.formFactor = Enum.FormFactor.Custom
+SpecialMesh40.Parent = Part39
+SpecialMesh40.MeshId = "http://www.roblox.com/asset/?id=204410623"
+SpecialMesh40.Scale = Vector3.new(1.25, 1.25, 1.25)
+SpecialMesh40.TextureId = "http://www.roblox.com/asset/?id=212658075"
+SpecialMesh40.MeshType = Enum.MeshType.FileMesh
+Sound41.Name = "Running"
+Sound41.Parent = Part39
+Sound41.Looped = true
+Sound41.Pitch = 1.7471721172332764
+Sound41.PlaybackSpeed = 1.7471721172332764
+Sound41.SoundId = "http://www.roblox.com/asset/?id=130091914"
+Sound42.Name = "Honk"
+Sound42.Parent = Part39
+Script43.Parent = Tool38
+table.insert(cors,sandbox(Script43,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+
+Assets = require(Tool:WaitForChild("Assets"))
+Data = Assets.Data
+
+ColorValue = Tool:WaitForChild("CurrentColor")
+
+BaseUrl = Assets.BaseUrl
+
+
+Colors = {
+	{Texture = 212640675, Color = BrickColor.new("Bright red")}, --Red
+	{Texture = 212640593, Color = BrickColor.new("Bright orange")}, --Orange
+	{Texture = 204410898, Color = BrickColor.new("Bright green")}, --Green
+	{Texture = 212640633, Color = BrickColor.new("Bright blue")}, --Blue
+	{Texture = 212640526, Color = BrickColor.new("Light blue")}, --Light Blue
+	{Texture = 212640552, Color = BrickColor.new("Magenta")}, --Magenta
+}
+
+CurrentColor = 0
+CycleTick = 0
+CycleTime = 1
+
+Animations = {
+	Hold = {Animation = Tool:WaitForChild("Hold"), FadeTime = nil, Weight = nil, Speed = nil}
+}
+
+Sounds = {
+	Honk = Handle:WaitForChild("Honk"),
+	Engine = Handle:WaitForChild("Running")
+}
+
+Controls = {
+	Forward = {Key = "w", ByteKey = 17, Mode = false},
+	Backward = {Key = "s", ByteKey = 18, Mode = false},
+	Left = {Key = "a", ByteKey = 20, Mode = false},
+	Right = {Key = "d", ByteKey = 19, Mode = false}
+}
+	
+Rate = (1 / 60)
+	
+Gravity = 196.20
+	
+PoseOffset = CFrame.new(0, -2, 0.5) * CFrame.Angles(0, 0, 0) --The offset your character is from the center of the vehicle.
+
+SpeedBoost = {
+	Allowed = false,
+	Active = false,
+	Enabled = true,
+	Duration = 10,
+	ReloadTime = 30
+}
+
+Special = {
+	Allowed = false,
+	Enabled = true,
+	Active = false,
+	Duration = 0,
+	ReloadTime = 60
+}
+
+Speed = {
+	Acceleration = {
+		Normal = 40,
+		Boost = 40
+	},
+	Deceleration = {
+		Normal = 40,
+		Boost = 40
+	},
+	MovementSpeed = {
+		Normal = {Min = 20, Max = 70},
+		Boost = {Min = 20, Max = 70}
+	},
+	TurnSpeed = {
+		Speed = {Min = 5, Max = 5},
+		TurnAlpha = 0.30,
+		AlphaDampening = 0.2
+	},
+}
+
+MaxSpeed = { --Maximum speed which the vehicle can move and turn at.
+	Movement = Speed.MovementSpeed.Normal,
+	Turn = Speed.TurnSpeed.Speed,
+	Acceleration = Speed.Acceleration.Normal,
+	Deceleration = Speed.Deceleration.Normal
+}
+
+CurrentSpeed = { --The speed which the vehicle is moving and turning at.
+	Movement = 0,
+	Turn = 0
+}
+
+Honk = {
+	Honking = false,
+	LastHonk = 0,
+	ReloadTime = 1
+}
+
+Jump = {
+	Jumping = false,
+	LastJump = 0,
+	ReloadTime = 1.9,
+	JumpForce = 30
+}
+
+ToolEquipped = false
+
+ServerControl = (Tool:FindFirstChild("ServerControl") or Instance.new("RemoteFunction"))
+ServerControl.Name = "ServerControl"
+ServerControl.Parent = Tool
+
+ClientControl = (Tool:FindFirstChild("ClientControl") or Instance.new("RemoteFunction"))
+ClientControl.Name = "ClientControl"
+ClientControl.Parent = Tool
+
+Tool.Enabled = true
+
+function RayCast(Position, Direction, MaxDistance, IgnoreList)
+	local IgnoreList = ((type(IgnoreList) == "table" and IgnoreList) or {IgnoreList})
+	return game:GetService("Workspace"):FindPartOnRayWithIgnoreList(Ray.new(Position, Direction.unit * (MaxDistance or 999.999)), IgnoreList)
+end
+
+function GetAllConnectedParts(Object)
+	local Parts = {}
+	local function GetConnectedParts(Object)
+		for i, v in pairs(Object:GetConnectedParts()) do
+			local Ignore = false
+			for ii, vv in pairs(Parts) do
+				if v == vv then
+					Ignore = true
+				end
+			end
+			if not Ignore then
+				table.insert(Parts, v)
+				GetConnectedParts(v)
+			end
+		end
+	end
+	GetConnectedParts(Object)
+	return Parts
+end
+
+function EnableFirstPersonView()
+	if not CheckIfAlive() or not ToolEquipped then
+		return
+	end
+	local Limbs = {"Left Arm", "Right Arm"}
+	for i, v in pairs(Limbs) do
+		local Limb = Character:FindFirstChild(v)
+		if Limb:IsA("BasePart") then
+			Spawn(function()
+				InvokeClient("SetLocalTransparencyModifier", {Object = Limb, Transparency = 0, AutoUpdate = false})
+			end)
+		end
+	end
+end
+
+function ThrustUpdater()
+	
+	for i, v in pairs(CurrentSpeed) do
+		CurrentSpeed[i] = 0
+	end
+	for i, v in pairs(Controls) do
+		Controls[i].Mode = false
+	end
+
+	while ToolEquipped and Body and Body.Parent and CheckIfAlive() and RotationForce and RotationForce.Parent and ThrustForce and ThrustForce.Parent and TurnGyro and TurnGyro.Parent do
+		
+		RotationForce.angularvelocity = Vector3.new(0, CurrentSpeed.Turn, 0)
+		if math.abs(CurrentSpeed.Turn) > Speed.TurnSpeed.AlphaDampening then
+			CurrentSpeed.Turn = (CurrentSpeed.Turn - (Speed.TurnSpeed.AlphaDampening * (math.abs(CurrentSpeed.Turn) / CurrentSpeed.Turn)))
+		else 
+			CurrentSpeed.Turn = 0		
+		end
+				
+		if not Controls.Forward.Mode or Controls.Backward.Mode then --Slow down if not controlling.
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.99)
+		end
+		
+		local MySpeed = Vector3.new(Body.Velocity.X, 0, Body.Velocity.Z).magnitude
+		local VelocityDifference = math.abs((MySpeed - (ThrustForce.velocity.magnitude)))
+		if MySpeed > 3 and ThrustForce.velocity.magnitude > 3 and VelocityDifference > (0.7 * ThrustForce.velocity.magnitude) then
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.9)
+		end
+		
+		if Controls.Forward.Mode then --Handle acceleration
+			CurrentSpeed.Movement = math.min(MaxSpeed.Movement.Max, (CurrentSpeed.Movement + (MaxSpeed.Acceleration * Rate)))
+		end
+		if Controls.Backward.Mode then --Handle deceleration, if speed is more than 0, decrease quicker.
+			CurrentSpeed.Movement = math.max(-MaxSpeed.Movement.Min, (CurrentSpeed.Movement - (MaxSpeed.Deceleration * ((CurrentSpeed.Movement > 0 and 2.8) or 1) * Rate)))
+		end
+		
+		if Controls.Left.Mode then --Handle left turn speed
+			CurrentSpeed.Turn = math.min(Speed.TurnSpeed.Speed.Max, (CurrentSpeed.Turn + (Speed.TurnSpeed.TurnAlpha)))
+		end
+		if Controls.Right.Mode then --Handle right turn speed
+			CurrentSpeed.Turn = math.max(-Speed.TurnSpeed.Speed.Min, (CurrentSpeed.Turn - (Speed.TurnSpeed.TurnAlpha)))
+		end
+		
+		local Direction = Torso.CFrame.lookVector
+		Direction = Vector3.new(Direction.x, 0, Direction.z).unit
+		
+		local Velocity = (Direction * CurrentSpeed.Movement) --The thrust force which you move.
+		ThrustForce.velocity = Vector3.new(Velocity.X, ThrustForce.velocity.Y, Velocity.Z)
+		
+		local LeanAmount = (-CurrentSpeed.Turn * (math.pi / 6) / 4) --Amount your character leans over.
+		local XZAngle = math.atan2(Torso.CFrame.lookVector.z, 0, Torso.CFrame.lookVector.x) --Handle rotation
+		TurnGyro.cframe = CFrame.Angles((LeanAmount * Direction.x), 0, (LeanAmount * Direction.z))
+		
+		--Wheel animation
+		local DesiredAngle = (999999999 * (-CurrentSpeed.Movement / math.abs(CurrentSpeed.Movement)))
+		local MaxVelocity = (CurrentSpeed.Movement / 250)
+		for i, v in pairs({FrontMotor, BackMotor}) do
+			if v and v.Parent then
+				v.DesiredAngle = DesiredAngle
+				v.MaxVelocity = MaxVelocity
+			end
+		end
+		
+		--Smoke exhaust from vehicle running.
+		for i, v in pairs(ExhaustSmoke) do
+			if v and v.Parent then
+				v.Opacity = ((math.min(math.abs(CurrentSpeed.Movement), 10) / 10) * 0.5)
+			end
+		end
+		
+		--Engine running sound which pitch changes while in motion.
+		Sounds.Engine.Pitch = (1 + (math.abs(CurrentSpeed.Movement / MaxSpeed.Movement.Max) * 1))
+		
+		if (tick() - CycleTick) >= CycleTime then
+			CycleTick = tick()
+			CurrentColor = (CurrentColor + 1)
+			CurrentColor = ((CurrentColor > #Colors and 1) or CurrentColor)
+			local ColorTable = Colors[CurrentColor]
+			ColorValue.Value = ColorTable.Color.Color
+			local Parts = {Body}
+			for i, v in pairs(Body:GetChildren()) do
+				if v:IsA("BasePart") then
+					table.insert(Parts, v)
+				end
+			end
+			for i, v in pairs(Parts) do
+				if v ~= Body then
+					v.BrickColor = ColorTable.Color
+				end
+				for ii, vv in pairs(v:GetChildren()) do
+					if vv:IsA("FileMesh") then
+						vv.TextureId = (BaseUrl .. ColorTable.Texture)
+					elseif vv:IsA("Light") then
+						vv.Color = ColorTable.Color.Color
+					elseif vv:IsA("BasePart") then
+					end
+				end
+			end
+		end
+		
+		wait(Rate)
+		
+	end
+end
+
+function SpawnVehicle()
+	
+	Handle.Transparency = 1
+	
+	Spawn(function()
+		InvokeClient("PlaySound", Sounds.Engine)
+		InvokeClient("PlayAnimation", Animations.Hold)
+	end)	
+	
+	Humanoid.PlatformStand = true
+	
+	CurrentColor = math.random(1, #Colors)
+	ColorValue.Value = Colors[CurrentColor].Color.Color
+	
+	local VehicleData = Assets.CreateVehicle()
+	Body = VehicleData.Vehicle
+	local ParticleTable = VehicleData.Tables
+	
+	FrontMotor = Body.FrontMotor
+	BackMotor = Body.BackMotor
+	
+	ExhaustSmoke = ParticleTable.ExhaustSmoke
+	Lights = ParticleTable.Lights
+	Sparkles = ParticleTable.Sparkles
+	
+	if SpeedBoost.Active then
+		for i, v in pairs(Sparkles) do
+			if v and v.Parent then
+				v.Enabled = true
+			end
+		end
+	end
+	
+	local TorsoWeld = Instance.new("Weld")
+	TorsoWeld.C0 = PoseOffset
+	TorsoWeld.Part0 = Torso
+	TorsoWeld.Part1 = Body
+	TorsoWeld.Parent = Body
+	
+	Body.CanCollide = true
+
+	RotationForce = Instance.new("BodyAngularVelocity")
+	RotationForce.maxTorque = Vector3.new(0, math.huge, 0)
+	RotationForce.angularvelocity = Vector3.new(0, 0, 0)
+	RotationForce.Parent = Torso
+	
+	ThrustForce = Instance.new("BodyVelocity")
+	ThrustForce.maxForce = Vector3.new(math.huge, 0, math.huge)
+	ThrustForce.velocity = Vector3.new(0, 0, 0)
+	ThrustForce.P = 100
+	ThrustForce.Parent = Torso
+	
+	TurnGyro = Instance.new("BodyGyro")
+	TurnGyro.maxTorque = Vector3.new(5000, 0, 5000)
+	TurnGyro.P = 300
+	TurnGyro.D = 100
+	TurnGyro.Parent = Torso
+	
+	Body.Parent = Tool
+	
+	local RayHit, RayPos, RayNormal = RayCast(Torso.Position, Vector3.new(0, -1, 0), (Torso.Size.Y * 2), {Character})
+	if RayHit then
+		Torso.CFrame = Torso.CFrame + Vector3.new(0, ((Character:GetModelSize().Y / 2) + 1.5), 0)
+	end
+	
+	Spawn(ThrustUpdater)
+	
+end
+
+
+function CleanUp()
+	Handle.Velocity = Vector3.new(0, 0, 0)
+	Handle.RotVelocity = Vector3.new(0, 0, 0)
+	for i, v in pairs({}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	for i, v in pairs({Body, RotationForce, ThrustForce, TurnGyro}) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	for i, v in pairs(Tool:GetChildren()) do
+		if v:IsA("BasePart") and v ~= Handle then
+			v:Destroy()
+		end
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	Torso = Character:FindFirstChild("Torso")
+	if not CheckIfAlive() then
+		return
+	end
+	for i, v in pairs(Colors) do
+		Spawn(function()
+			InvokeClient("Preload", (BaseUrl .. v.Texture))
+		end)
+	end
+	Spawn(CleanUp)
+	Spawn(EnableFirstPersonView)
+	Spawn(SpawnVehicle)
+	ToolEquipped = true
+end
+
+function Unequipped()
+	Spawn(CleanUp)
+	for i, v in pairs(Sounds) do
+		v:Stop()
+		Spawn(function()
+			InvokeClient("StopSound", v)
+		end)
+	end
+	if CheckIfAlive() then
+		Humanoid.PlatformStand = false
+	end
+	Handle.Transparency = 0
+	ToolEquipped = false
+end
+
+function OnServerInvoke(player, mode, value)
+	if player == Player and ToolEquipped and value and CheckIfAlive() then
+		if mode == "KeyPress" then
+			local Down = value.Down
+			local Key = value.Key
+			local ByteKey = string.byte(Key)
+			for i, v in pairs(Controls) do
+				if Key == v.Key or ByteKey == v.ByteKey then
+					Controls[i].Mode = Down
+				end
+			end
+			if Key == " " and Down then --Jump controller
+				if math.abs(tick() - Jump.LastJump) > Jump.ReloadTime and not Jump.Jumping and ThrustForce and ThrustForce.Parent then
+					Jump.Jumping = true
+					local Parts = GetAllConnectedParts(Body)
+					local Mass = 0
+					for i, v in pairs(Parts) do
+						Mass = (Mass + v:GetMass())
+					end
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, ((Mass * Gravity) * 100), ThrustForce.maxForce.Z)
+					ThrustForce.velocity = (Vector3.new(0, 1, 0) * Jump.JumpForce) + Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					wait(0.1)
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, 0, ThrustForce.maxForce.Z)
+					ThrustForce.velocity = Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					Jump.LastJump = tick()
+					Jump.Jumping = false
+				end
+			elseif Key == "x" and Down then --Toggle light(s) on/off.
+				for i, v in pairs(Lights) do
+					if v and v.Parent then
+						v.Enabled = not v.Enabled
+					end
+				end
+			elseif Key == "h" and Down then --Play honk sound.
+				local Sound = Sounds.Honk
+				if (tick() - Honk.LastHonk) >= (Sound.TimeLength + Honk.ReloadTime) and not Honk.Honking then
+					Honk.Honking = true
+					local TempSound = Sound:Clone()
+					Debris:AddItem(TempSound, Sound.TimeLength)
+					TempSound.Parent = Body
+					TempSound:Play()
+					Honk.LastHonk = tick()
+					Honk.Honking = false
+				end
+			elseif Key == "q" and Down then --Activate special.
+				if not Special.Allowed or not Special.Enabled or Special.Active then
+					return
+				end
+				Special.Enabled = false
+				Special.Active = true
+				wait(Special.Duration)
+				Special.Active = false
+				wait(Special.ReloadTime)
+				Special.Enabled = true
+			elseif ByteKey == 48 and Down then --Activate speed boost.
+				if not SpeedBoost.Allowed or not SpeedBoost.Enabled or SpeedBoost.Active then
+					return
+				end
+				SpeedBoost.Enabled = false
+				SpeedBoost.Active = true
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = true
+					end
+				end
+				MaxSpeed.Acceleration = Speed.Acceleration.Boost
+				MaxSpeed.Deceleration = Speed.Deceleration.Boost
+				MaxSpeed.Movement = Speed.MovementSpeed.Boost
+				wait(SpeedBoost.Duration)
+				MaxSpeed.Acceleration = Speed.Acceleration.Normal
+				MaxSpeed.Deceleration = Speed.Deceleration.Normal
+				MaxSpeed.Movement = Speed.MovementSpeed.Normal
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = false
+					end
+				end
+				SpeedBoost.Active = false
+				wait(SpeedBoost.ReloadTime)
+				SpeedBoost.Enabled = true
+			end
+		end
+	end
+end
+
+function InvokeClient(Mode, Value)
+	local ClientReturn = nil
+	pcall(function()
+		ClientReturn = ClientControl:InvokeClient(Player, Mode, Value)
+	end)
+	return ClientReturn
+end
+
+Spawn(CleanUp)
+
+ServerControl.OnServerInvoke = OnServerInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+Script44.Name = "TrailScript"
+Script44.Parent = Tool38
+table.insert(cors,sandbox(Script44,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Debris = game:GetService("Debris")
+
+CurrentColor = Tool:WaitForChild("CurrentColor")
+
+BasePart = Instance.new("Part")
+BasePart.Shape = Enum.PartType.Block
+BasePart.Material = Enum.Material.Plastic
+BasePart.TopSurface = Enum.SurfaceType.Smooth
+BasePart.BottomSurface = Enum.SurfaceType.Smooth
+BasePart.FormFactor = Enum.FormFactor.Custom
+BasePart.Anchored = false
+BasePart.CanCollide = true
+BasePart.Locked = true
+
+BaseTrailPart = BasePart:Clone()
+BaseTrailPart.Name = "LaserTrail"
+BaseTrailPart.Transparency = 0.2
+BaseTrailPart.Size = Vector3.new(0.2, 5, 3)
+BaseTrailPart.Material = Enum.Material.SmoothPlastic
+BaseTrailPart.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.Anchored = true
+BaseTrailPart.CanCollide = false
+TrailLight = Instance.new("PointLight")
+TrailLight.Name = "Light"
+TrailLight.Brightness = 10
+TrailLight.Range = 8
+TrailLight.Shadows = false
+TrailLight.Enabled = true
+TrailLight.Parent = BaseTrailPart
+
+Rate = (1 / 60)
+
+function StartTrail(Source, Parent)
+	
+	local TrailParts = {}
+	
+	local SourceAlive = true
+
+	local NumberOfParts = 60
+	local LastPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+	
+	Source.Changed:connect(function(Property)
+		if Property == "Parent" and not Source.Parent then
+			SourceAlive = false
+		end
+	end)
+	
+	while SourceAlive do
+		local CurrentPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+		if Source.Velocity.magnitude > 20 then
+			local TrailPart = BaseTrailPart:Clone()
+			TrailPart.BrickColor = BrickColor.new(CurrentColor.Value)
+			TrailPart.Light.Color = CurrentColor.Value
+			TrailPart.Size = Vector3.new(TrailPart.Size.X, TrailPart.Size.Y, (CurrentPoint - LastPoint).magnitude)
+			table.insert(TrailParts, TrailPart)
+			TrailPart.Parent = Parent
+			TrailPart.CFrame = CFrame.new(((CurrentPoint + LastPoint) * 0.5), LastPoint)
+			if #TrailParts > NumberOfParts then
+				local TrailPart = TrailParts[1]
+				if TrailPart and TrailPart.Parent then
+					TrailPart:Destroy()
+				end
+				table.remove(TrailParts, 1)
+			end
+		else
+			local TrailPart = TrailParts[1]
+			if TrailPart and TrailPart.Parent then
+				TrailPart:Destroy()
+			end
+			table.remove(TrailParts, 1)
+		end
+		LastPoint = CurrentPoint
+		wait(Rate)
+	end
+	
+	for i, v in pairs(TrailParts) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	
+end
+
+Tool.ChildAdded:connect(function(Child)
+	if Child.Name == "Body" then
+		Spawn(function()
+			StartTrail(Child, Tool)
+		end)
+	end
+end)
+end))
+LocalScript45.Name = "MouseIcon"
+LocalScript45.Parent = Tool38
+table.insert(cors,sandbox(LocalScript45,function()
+--Made by Luckymaxer
+
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = script.Parent
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:connect(OnEquipped)
+Tool.Changed:connect(OnChanged)
+end))
+ModuleScript46.Name = "Assets"
+ModuleScript46.Parent = Tool38
+table.insert(cors,sandbox(ModuleScript46,function()
+--Made by Luckymaxer
+
+BaseUrl = "http://www.roblox.com/asset/?id="
+
+local function Create_PrivImpl(objectType)
+	if type(objectType) ~= 'string' then
+		error("Argument of Create must be a string", 2)
+	end
+	--return the proxy function that gives us the nice Create'string'{data} syntax
+	--The first function call is a function call using Lua's single-string-argument syntax
+	--The second function call is using Lua's single-table-argument syntax
+	--Both can be chained together for the nice effect.
+	return function(dat)
+		--default to nothing, to handle the no argument given case
+		dat = dat or {}
+
+		--make the object to mutate
+		local obj = Instance.new(objectType)
+		local parent = nil
+
+		--stored constructor function to be called after other initialization
+		local ctor = nil
+
+		for k, v in pairs(dat) do
+			--add property
+			if type(k) == 'string' then
+				if k == 'Parent' then
+					-- Parent should always be set last, setting the Parent of a new object
+					-- immediately makes performance worse for all subsequent property updates.
+					parent = v
+				else
+					obj[k] = v
+				end
+
+
+			--add child
+			elseif type(k) == 'number' then
+				if type(v) ~= 'userdata' then
+					error("Bad entry in Create body: Numeric keys must be paired with children, got a: "..type(v), 2)
+				end
+				v.Parent = obj
+
+
+			--event connect
+			elseif type(k) == 'table' and k.__eventname then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create.E\'"..k.__eventname.."\']` must have a function value\
+							got: "..tostring(v), 2)
+				end
+				obj[k.__eventname]:connect(v)
+
+
+			--define constructor function
+			elseif k == t.Create then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create]` should be paired with a constructor function, \
+							got: "..tostring(v), 2)
+				elseif ctor then
+					--ctor already exists, only one allowed
+					error("Bad entry in Create body: Only one constructor function is allowed", 2)
+				end
+				ctor = v
+
+
+			else
+				error("Bad entry ("..tostring(k).." => "..tostring(v)..") in Create body", 2)
+			end
+		end
+
+		--apply constructor function if it exists
+		if ctor then
+			ctor(obj)
+		end
+
+		if parent then
+			obj.Parent = parent
+		end
+
+		--return the completed object
+		return obj
+	end
+end
+
+--now, create the functor:
+Create = setmetatable({}, {__call = function(tb, ...) return Create_PrivImpl(...) end})
+
+--and create the "Event.E" syntax stub. Really it's just a stub to construct a table which our Create
+--function can recognize as special.
+Create.E = function(eventName)
+	return {__eventname = eventName}
+end
+
+
+BasePart = Create("Part"){
+	Material = Enum.Material.Plastic,
+	Shape = Enum.PartType.Block,
+	TopSurface = Enum.SurfaceType.Smooth,
+	BottomSurface = Enum.SurfaceType.Smooth,
+	FormFactor = Enum.FormFactor.Custom,
+	Size = Vector3.new(0.2, 0.2, 0.2),
+	Anchored = false,
+	CanCollide = true,
+	Locked = true
+}
+
+MeshData = {
+	Meshes = {
+		Body = 206414124,
+		Wheel = 206414152,
+	},
+	TextureId = 204410898
+}
+
+function CreateVehicle()
+
+	local ExhaustSmoke = {}
+	local Lights = {}
+	local Sparkles = {}
+
+	local Body = BasePart:Clone()
+	Body.Name = "Body"
+	Body.Size = Vector3.new(1, 3.625, 8)
+	local BodyMesh = Create("SpecialMesh"){
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = MeshData.Meshes.Body,
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(1.25, 1.25, 1.25),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = Body
+	}
+	
+	local BaseWheel = BasePart:Clone()
+	BaseWheel.Size = Vector3.new(0.5, 1, 1)
+	BaseWheel.CanCollide = false
+	local WheelMesh = Create("SpecialMesh"){
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = "",
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(1.25, 1.25, 1.25),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = BaseWheel,
+	}
+
+	local BaseFrontWheel = BaseWheel:Clone()
+	BaseFrontWheel.Name = "FrontWheel"
+	BaseFrontWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+	
+	local BaseBackWheel = BaseWheel:Clone()
+	BaseBackWheel.Name = "BackWheel"
+	BaseBackWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+
+	local BaseSmokePart = BasePart:Clone()
+	BaseSmokePart.Name = "SmokePart"
+	BaseSmokePart.Transparency = 1
+	local BaseExhaustSmoke = Create("Smoke"){
+		Name = "ExhaustSmoke",
+		Size = 0.1,
+		RiseVelocity = 0.01,
+		Color = Color3.new((127 / 255), (127 / 255), (127 / 255)),
+		Enabled = true,
+		Parent = BaseSmokePart,
+	}
+
+	local BaseLightPart = BasePart:Clone()
+	BaseLightPart.Name = "LightPart"
+	BaseLightPart.Transparency = 1
+	local Light = Create("SpotLight"){
+		Name = "Light",
+		Brightness = 50,
+		Angle = 45,
+		Color = Color3.new((40 / 255), (127 / 255), (71 / 255)),
+		Range = 20,
+		Shadows = false,
+		Enabled = false,
+		Parent = BaseLightPart,
+	}
+			
+	local FrontWheel = BaseFrontWheel:Clone()
+	FrontWheel.Parent = Body
+	
+	local FrontMotor = Create("Motor6D"){
+		Name = "FrontMotor",
+		Part0 = Body,
+		Part1 = FrontWheel,
+		C0 = CFrame.new(0, -0.5, -3.375) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local BackWheel = BaseBackWheel:Clone()
+	BackWheel.Parent = Body
+	
+	local BackMotor = Create("Motor6D"){
+		Name = "BackMotor",
+		Part0 = Body,
+		Part1 = BackWheel,
+		C0 = CFrame.new(0, -0.5, 3.1) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local HeadLight = BaseLightPart:Clone()
+	HeadLight.Parent = Body
+	table.insert(Lights, HeadLight.Light)
+	for i, v in pairs(HeadLight:GetChildren()) do
+		if v:IsA("Sparkles") then
+			table.insert(Sparkles, v)
+		end
+	end
+	
+	local LightWeld = Create("Weld"){
+		Part0 = Body,
+		Part1 = HeadLight,
+		C0 = CFrame.new(0, 1.25, -1.9) * CFrame.Angles(0, 0, 0),
+		Parent = HeadLight
+	}
+
+	local Tables = {
+		ExhaustSmoke = ExhaustSmoke,
+		Lights = Lights,
+		Sparkles = Sparkles
+	}
+	
+	return {
+		Vehicle = Body,
+		Tables = Tables
+	}
+	
+end
+
+for i, v in pairs(MeshData) do
+	if type(v) == "table" then
+		for ii, vv in pairs(v) do
+			if type(vv) == "string" or type(vv) == "number" then
+				MeshData[i][ii] = (BaseUrl .. tostring(vv))
+			end
+		end
+	elseif type(v) == "string" or type(v) == "number" then
+		MeshData[i] = (BaseUrl .. tostring(v))
+	end
+end
+
+return {
+	BaseUrl = BaseUrl,
+	MeshData = MeshData,
+	CreateVehicle = CreateVehicle
+}
+end))
+Animation47.Name = "Hold"
+Animation47.Parent = Tool38
+Animation47.AnimationId = "http://www.roblox.com/asset/?id=214738896"
+Color3Value48.Name = "CurrentColor"
+Color3Value48.Parent = Tool38
+Color3Value48.Value = Color3.new(0.666667, 0, 0.666667)
+LocalScript49.Parent = Tool38
+table.insert(cors,sandbox(LocalScript49,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+RunService = game:GetService("RunService")
+ContentProvider = game:GetService("ContentProvider")
+
+Camera = game:GetService("Workspace").CurrentCamera
+
+Animations = {}
+LocalObjects = {}
+
+ServerControl = Tool:WaitForChild("ServerControl")
+ClientControl = Tool:WaitForChild("ClientControl")
+
+ToolEquipped = false
+
+function SetAnimation(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+		local AnimationTrack = Humanoid:LoadAnimation(value.Animation)
+		table.insert(Animations, {Animation = value.Animation, AnimationTrack = AnimationTrack})
+		AnimationTrack:Play(value.FadeTime, value.Weight, value.Speed)
+	elseif mode == "StopAnimation" and value then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+	end
+end
+
+function DisableJump(Boolean)
+	if PreventJump then
+		PreventJump:disconnect()
+	end
+	if Boolean then
+		PreventJump = Humanoid.Changed:connect(function(Property)
+			if Property ==  "Jump" then
+				Humanoid.Jump = false
+			end
+		end)
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	ToolEquipped = true
+	if not CheckIfAlive() then
+		return
+	end
+	PlayerMouse = Player:GetMouse()
+	Mouse.Button1Down:connect(function()
+		InvokeServer("MouseClick", {Down = true})
+	end)
+	Mouse.Button1Up:connect(function()
+		InvokeServer("MouseClick", {Down = false})
+	end)
+	Mouse.KeyDown:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = true})
+	end)
+	Mouse.KeyUp:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = false})
+	end)
+	Mouse.Move:connect(function()
+		InvokeServer("MouseMove", {Position = Mouse.Hit.p, Target = Mouse.Target})
+	end)
+	Humanoid:ChangeState(Enum.HumanoidStateType.None)
+end
+
+function Unequipped()
+	ToolEquipped = false
+	LocalObjects = {}
+	for i, v in pairs(Animations) do
+		if v and v.AnimationTrack then
+			v.AnimationTrack:Stop()
+		end
+	end
+	for i, v in pairs({PreventJump, ObjectLocalTransparencyModifier}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	Humanoid:ChangeState(Enum.HumanoidStateType.Freefall) --Prevent the ability to fly by constantly equipping and unequipping the tool.
+	Animations = {}
+end
+
+function InvokeServer(mode, value)
+	pcall(function()
+		local ServerReturn = ServerControl:InvokeServer(mode, value)
+		return ServerReturn
+	end)
+end
+
+function OnClientInvoke(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		SetAnimation("PlayAnimation", value)
+	elseif mode == "StopAnimation" and value then
+		SetAnimation("StopAnimation", value)
+	elseif mode == "PlaySound" and value then
+		value:Play()
+	elseif mode == "StopSound" and value then
+		value:Stop()
+	elseif mode == "MousePosition" then
+		return {Position = PlayerMouse.Hit.p, Target = PlayerMouse.Target}
+	elseif mode == "DisableJump" then
+		DisableJump(value)
+	elseif mode == "Preload" and value then
+		ContentProvider:Preload(value)
+	elseif mode == "SetLocalTransparencyModifier" and value and ToolEquipped then
+		pcall(function()
+			local ObjectFound = false
+			for i, v in pairs(LocalObjects) do
+				if v == value then
+					ObjectFound = true
+				end
+			end
+			if not ObjectFound then
+				table.insert(LocalObjects, value)
+				if ObjectLocalTransparencyModifier then
+					ObjectLocalTransparencyModifier:disconnect()
+				end
+				ObjectLocalTransparencyModifier = RunService.RenderStepped:connect(function()
+					for i, v in pairs(LocalObjects) do
+						if v.Object and v.Object.Parent then
+							local CurrentTransparency = v.Object.LocalTransparencyModifier
+							if ((not v.AutoUpdate and (CurrentTransparency == 1 or  CurrentTransparency == 0)) or v.AutoUpdate) then
+								v.Object.LocalTransparencyModifier = v.Transparency
+							end
+						else
+							table.remove(LocalObjects, i)
+						end
+					end
+				end)
+			end
+		end)
+	end
+end
+
+ClientControl.OnClientInvoke = OnClientInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+Camera50.Name = "ThumbnailCamera"
+Camera50.Parent = Tool38
+Camera50.CFrame = CFrame.new(-3.85137248, 3.27106595, -5.32035971, -0.695696652, 0.39228341, -0.601764023, -0, 0.837719798, 0.546100378, 0.718335748, 0.379920214, -0.582798839)
+Camera50.CameraType = Enum.CameraType.Custom
+Camera50.CoordinateFrame = CFrame.new(-3.85137248, 3.27106595, -5.32035971, -0.695696652, 0.39228341, -0.601764023, -0, 0.837719798, 0.546100378, 0.718335748, 0.379920214, -0.582798839)
+Camera50.Focus = CFrame.new(-2.11829376, 1.69829845, -3.64190078, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera50.focus = CFrame.new(-2.11829376, 1.69829845, -3.64190078, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool51.Name = "DiscoHyperbikeWithSideCar"
+Tool51.Parent = Model0
+Tool51.TextureId = "http://www.roblox.com/asset/?id=212658181"
+Tool51.Grip = CFrame.new(1.5, 2.20000005, -2, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool51.GripPos = Vector3.new(1.5, 2.200000047683716, -2)
+Part52.Name = "Handle"
+Part52.Parent = Tool51
+Part52.CFrame = CFrame.new(4.145401, 19.8388863, 23.8061466, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part52.Position = Vector3.new(4.1454010009765625, 19.838886260986328, 23.8061466217041)
+Part52.Size = Vector3.new(0.20000000298023224, 3.625, 9)
+Part52.BottomSurface = Enum.SurfaceType.Smooth
+Part52.CustomPhysicalProperties = 0.699999988, 0, 0, 1, 1
+Part52.TopSurface = Enum.SurfaceType.Smooth
+Part52.FormFactor = Enum.FormFactor.Custom
+Part52.formFactor = Enum.FormFactor.Custom
+SpecialMesh53.Parent = Part52
+SpecialMesh53.MeshId = "http://www.roblox.com/asset/?id=204410623"
+SpecialMesh53.Scale = Vector3.new(1.25, 1.25, 1.25)
+SpecialMesh53.TextureId = "http://www.roblox.com/asset/?id=212658075"
+SpecialMesh53.MeshType = Enum.MeshType.FileMesh
+Sound54.Name = "Running"
+Sound54.Parent = Part52
+Sound54.Looped = true
+Sound54.Pitch = 1.7471721172332764
+Sound54.PlaybackSpeed = 1.7471721172332764
+Sound54.SoundId = "http://www.roblox.com/asset/?id=130091914"
+Sound55.Name = "Honk"
+Sound55.Parent = Part52
+Animation56.Name = "Hold"
+Animation56.Parent = Tool51
+Animation56.AnimationId = "http://www.roblox.com/asset/?id=214738896"
+Color3Value57.Name = "CurrentColor"
+Color3Value57.Parent = Tool51
+Color3Value57.Value = Color3.new(0.666667, 0, 0.666667)
+Model58.Name = "DisplayModel"
+Model58.Parent = Tool51
+Part59.Parent = Model58
+Part59.CFrame = CFrame.new(0.345400095, 20.5513859, 23.0061474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part59.Position = Vector3.new(0.3454000949859619, 20.5513858795166, 23.006147384643555)
+Part59.Transparency = 1
+Part59.Size = Vector3.new(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)
+Part59.BottomSurface = Enum.SurfaceType.Smooth
+Part59.CanCollide = false
+Part59.CustomPhysicalProperties = 0.699999988, 0, 0, 1, 1
+Part59.TopSurface = Enum.SurfaceType.Smooth
+Part59.FormFactor = Enum.FormFactor.Custom
+Part59.formFactor = Enum.FormFactor.Custom
+Weld60.Parent = Part59
+Weld60.C0 = CFrame.new(-0, -1.7387867, -0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld60.C1 = CFrame.new(3.80000091, -2.4512856, 0.799999714, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld60.Part0 = Part52
+Weld60.Part1 = Part59
+Weld60.part1 = Part59
+Part61.Parent = Model58
+Part61.CFrame = CFrame.new(4.145401, 21.5513859, 18.8061466, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part61.Position = Vector3.new(4.1454010009765625, 21.5513858795166, 18.8061466217041)
+Part61.Transparency = 1
+Part61.Size = Vector3.new(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)
+Part61.BottomSurface = Enum.SurfaceType.Smooth
+Part61.CanCollide = false
+Part61.CustomPhysicalProperties = 0.699999988, 0, 0, 1, 1
+Part61.TopSurface = Enum.SurfaceType.Smooth
+Part61.FormFactor = Enum.FormFactor.Custom
+Part61.formFactor = Enum.FormFactor.Custom
+Weld62.Parent = Part61
+Weld62.C0 = CFrame.new(-0, -1.7387867, -0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld62.C1 = CFrame.new(0, -3.45128584, 5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld62.Part0 = Part52
+Weld62.Part1 = Part61
+Weld62.part1 = Part61
+Part63.Name = "SideCar"
+Part63.Parent = Model58
+Part63.CFrame = CFrame.new(1.74540091, 19.5446358, 25.0061474, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part63.Position = Vector3.new(1.7454009056091309, 19.544635772705078, 25.006147384643555)
+Part63.Size = Vector3.new(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)
+Part63.BottomSurface = Enum.SurfaceType.Smooth
+Part63.CustomPhysicalProperties = 0.699999988, 0, 0, 1, 1
+Part63.TopSurface = Enum.SurfaceType.Smooth
+Part63.FormFactor = Enum.FormFactor.Custom
+Part63.formFactor = Enum.FormFactor.Custom
+SpecialMesh64.Parent = Part63
+SpecialMesh64.MeshId = "rbxassetid://477751137"
+SpecialMesh64.Scale = Vector3.new(1.25, 1.25, 1.25)
+SpecialMesh64.TextureId = "http://www.roblox.com/asset/?id=212658075"
+SpecialMesh64.MeshType = Enum.MeshType.FileMesh
+Sound65.Name = "Running"
+Sound65.Parent = Part63
+Sound65.Looped = true
+Sound65.Pitch = 1.7471721172332764
+Sound65.PlaybackSpeed = 1.7471721172332764
+Sound65.SoundId = "http://www.roblox.com/asset/?id=130091914"
+Sound66.Name = "Honk"
+Sound66.Parent = Part63
+Weld67.Parent = Part63
+Weld67.C0 = CFrame.new(-0, -1.7387867, -0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld67.C1 = CFrame.new(2.4000001, -1.44453585, -1.19999993, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld67.Part0 = Part52
+Weld67.Part1 = Part63
+Weld67.part1 = Part63
+Script68.Name = "TrailScript"
+Script68.Parent = Tool51
+table.insert(cors,sandbox(Script68,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Debris = game:GetService("Debris")
+
+CurrentColor = Tool:WaitForChild("CurrentColor")
+
+BasePart = Instance.new("Part")
+BasePart.Shape = Enum.PartType.Block
+BasePart.Material = Enum.Material.Plastic
+BasePart.TopSurface = Enum.SurfaceType.Smooth
+BasePart.BottomSurface = Enum.SurfaceType.Smooth
+BasePart.FormFactor = Enum.FormFactor.Custom
+BasePart.Anchored = false
+BasePart.CanCollide = true
+BasePart.Locked = true
+
+BaseTrailPart = BasePart:Clone()
+BaseTrailPart.Name = "LaserTrail"
+BaseTrailPart.Transparency = 0.2
+BaseTrailPart.Size = Vector3.new(0.5, 5, 3)
+BaseTrailPart.Material = Enum.Material.SmoothPlastic
+BaseTrailPart.TopSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BottomSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.LeftSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.RightSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.FrontSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.BackSurface = Enum.SurfaceType.SmoothNoOutlines
+BaseTrailPart.Anchored = true
+BaseTrailPart.CanCollide = false
+TrailLight = Instance.new("PointLight")
+TrailLight.Name = "Light"
+TrailLight.Brightness = 10
+TrailLight.Range = 8
+TrailLight.Shadows = false
+TrailLight.Enabled = true
+TrailLight.Parent = BaseTrailPart
+
+Rate = (1 / 60)
+
+function StartTrail(Source, Parent)
+	
+	local TrailParts = {}
+	
+	local SourceAlive = true
+
+	local NumberOfParts = 60
+	local LastPoint = (Source.CFrame * CFrame.new(0, 0, 4)).p
+	
+	Source.Changed:connect(function(Property)
+		if Property == "Parent" and not Source.Parent then
+			SourceAlive = false
+		end
+	end)
+	
+	while SourceAlive do
+		local CurrentPoint = (Source.CFrame * CFrame.new(-1.125, 0, 4)).p
+		if Source.Velocity.magnitude > 20 then
+			local TrailPart = BaseTrailPart:Clone()
+			TrailPart.BrickColor = BrickColor.new(CurrentColor.Value)
+			TrailPart.Light.Color = CurrentColor.Value
+			TrailPart.Size = Vector3.new(TrailPart.Size.X, TrailPart.Size.Y, (CurrentPoint - LastPoint).magnitude)
+			table.insert(TrailParts, TrailPart)
+			TrailPart.Parent = Parent
+			TrailPart.CFrame = CFrame.new(((CurrentPoint + LastPoint) * 0.5), LastPoint)
+			if #TrailParts > NumberOfParts then
+				local TrailPart = TrailParts[1]
+				if TrailPart and TrailPart.Parent then
+					TrailPart:Destroy()
+				end
+				table.remove(TrailParts, 1)
+			end
+		else
+			local TrailPart = TrailParts[1]
+			if TrailPart and TrailPart.Parent then
+				TrailPart:Destroy()
+			end
+			table.remove(TrailParts, 1)
+		end
+		LastPoint = CurrentPoint
+		wait(Rate)
+	end
+	
+	for i, v in pairs(TrailParts) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	
+end
+
+Tool.ChildAdded:connect(function(Child)
+	if Child.Name == "Body" then
+		Spawn(function()
+			StartTrail(Child, Tool)
+		end)
+	end
+end)
+end))
+Script69.Parent = Tool51
+table.insert(cors,sandbox(Script69,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+Debris = game:GetService("Debris")
+
+Assets = require(Tool:WaitForChild("Assets"))
+Data = Assets.Data
+
+ColorValue = Tool:WaitForChild("CurrentColor")
+
+BaseUrl = Assets.BaseUrl
+Colors = {
+	{Texture = 212640675, Color = BrickColor.new("Bright red")}, --Red
+	{Texture = 212640593, Color = BrickColor.new("Bright orange")}, --Orange
+	{Texture = 204410898, Color = BrickColor.new("Bright green")}, --Green
+	{Texture = 212640633, Color = BrickColor.new("Bright blue")}, --Blue
+	{Texture = 212640526, Color = BrickColor.new("Light blue")}, --Light Blue
+	{Texture = 212640552, Color = BrickColor.new("Magenta")}, --Magenta
+}
+
+CurrentColor = 0
+CycleTick = 0
+CycleTime = 1
+
+Animations = {
+	Hold = {Animation = Tool:WaitForChild("Hold"), FadeTime = nil, Weight = nil, Speed = nil}
+}
+
+Sounds = {
+	Honk = Handle:WaitForChild("Honk"),
+	Engine = Handle:WaitForChild("Running")
+}
+
+Controls = {
+	Forward = {Key = "w", ByteKey = 17, Mode = false},
+	Backward = {Key = "s", ByteKey = 18, Mode = false},
+	Left = {Key = "a", ByteKey = 20, Mode = false},
+	Right = {Key = "d", ByteKey = 19, Mode = false}
+}
+	
+Rate = (1 / 60)
+	
+Gravity = 196.20
+	
+PoseOffset = CFrame.new(0, -2, 0.5) * CFrame.Angles(0, 0, 0) --The offset your character is from the center of the vehicle.
+
+SpeedBoost = {
+	Allowed = false,
+	Active = false,
+	Enabled = true,
+	Duration = 10,
+	ReloadTime = 30
+}
+
+Special = {
+	Allowed = false,
+	Enabled = true,
+	Active = false,
+	Duration = 0,
+	ReloadTime = 60
+}
+
+Speed = {
+	Acceleration = {
+		Normal = 40,
+		Boost = 40
+	},
+	Deceleration = {
+		Normal = 40,
+		Boost = 40
+	},
+	MovementSpeed = {
+		Normal = {Min = 20, Max = 70},
+		Boost = {Min = 20, Max = 70}
+	},
+	TurnSpeed = {
+		Speed = {Min = 5, Max = 5},
+		TurnAlpha = 0.30,
+		AlphaDampening = 0.2
+	},
+}
+
+MaxSpeed = { --Maximum speed which the vehicle can move and turn at.
+	Movement = Speed.MovementSpeed.Normal,
+	Turn = Speed.TurnSpeed.Speed,
+	Acceleration = Speed.Acceleration.Normal,
+	Deceleration = Speed.Deceleration.Normal
+}
+
+CurrentSpeed = { --The speed which the vehicle is moving and turning at.
+	Movement = 0,
+	Turn = 0
+}
+
+Honk = {
+	Honking = false,
+	LastHonk = 0,
+	ReloadTime = 1
+}
+
+Jump = {
+	Jumping = false,
+	LastJump = 0,
+	ReloadTime = 1.9,
+	JumpForce = 30
+}
+
+ToolEquipped = false
+
+DisplayModel = Tool:FindFirstChild("DisplayModel")
+if DisplayModel then
+	DisplayModel:Destroy()
+end
+
+ServerControl = (Tool:FindFirstChild("ServerControl") or Instance.new("RemoteFunction"))
+ServerControl.Name = "ServerControl"
+ServerControl.Parent = Tool
+
+ClientControl = (Tool:FindFirstChild("ClientControl") or Instance.new("RemoteFunction"))
+ClientControl.Name = "ClientControl"
+ClientControl.Parent = Tool
+
+Tool.Enabled = true
+
+function RayCast(Position, Direction, MaxDistance, IgnoreList)
+	local IgnoreList = ((type(IgnoreList) == "table" and IgnoreList) or {IgnoreList})
+	return game:GetService("Workspace"):FindPartOnRayWithIgnoreList(Ray.new(Position, Direction.unit * (MaxDistance or 999.999)), IgnoreList)
+end
+
+function GetAllConnectedParts(Object)
+	local Parts = {}
+	local function GetConnectedParts(Object)
+		for i, v in pairs(Object:GetConnectedParts()) do
+			local Ignore = false
+			for ii, vv in pairs(Parts) do
+				if v == vv then
+					Ignore = true
+				end
+			end
+			if not Ignore then
+				table.insert(Parts, v)
+				GetConnectedParts(v)
+			end
+		end
+	end
+	GetConnectedParts(Object)
+	return Parts
+end
+
+function EnableFirstPersonView()
+	if not CheckIfAlive() or not ToolEquipped then
+		return
+	end
+	local Limbs = {"Left Arm", "Right Arm"}
+	for i, v in pairs(Limbs) do
+		local Limb = Character:FindFirstChild(v)
+		if Limb:IsA("BasePart") then
+			Spawn(function()
+				InvokeClient("SetLocalTransparencyModifier", {Object = Limb, Transparency = 0, AutoUpdate = false})
+			end)
+		end
+	end
+end
+
+function ThrustUpdater()
+	
+	for i, v in pairs(CurrentSpeed) do
+		CurrentSpeed[i] = 0
+	end
+	for i, v in pairs(Controls) do
+		Controls[i].Mode = false
+	end
+
+	while ToolEquipped and Body and Body.Parent and CheckIfAlive() and RotationForce and RotationForce.Parent and ThrustForce and ThrustForce.Parent and TurnGyro and TurnGyro.Parent do
+		
+		RotationForce.angularvelocity = Vector3.new(0, CurrentSpeed.Turn, 0)
+		if math.abs(CurrentSpeed.Turn) > Speed.TurnSpeed.AlphaDampening then
+			CurrentSpeed.Turn = (CurrentSpeed.Turn - (Speed.TurnSpeed.AlphaDampening * (math.abs(CurrentSpeed.Turn) / CurrentSpeed.Turn)))
+		else 
+			CurrentSpeed.Turn = 0		
+		end
+				
+		if not Controls.Forward.Mode or Controls.Backward.Mode then --Slow down if not controlling.
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.99)
+		end
+		
+		local MySpeed = Vector3.new(Body.Velocity.X, 0, Body.Velocity.Z).magnitude
+		local VelocityDifference = math.abs((MySpeed - (ThrustForce.velocity.magnitude)))
+		if MySpeed > 3 and ThrustForce.velocity.magnitude > 3 and VelocityDifference > (0.7 * ThrustForce.velocity.magnitude) then
+			CurrentSpeed.Movement = (CurrentSpeed.Movement * 0.9)
+		end
+		
+		if Controls.Forward.Mode then --Handle acceleration
+			CurrentSpeed.Movement = math.min(MaxSpeed.Movement.Max, (CurrentSpeed.Movement + (MaxSpeed.Acceleration * Rate)))
+		end
+		if Controls.Backward.Mode then --Handle deceleration, if speed is more than 0, decrease quicker.
+			CurrentSpeed.Movement = math.max(-MaxSpeed.Movement.Min, (CurrentSpeed.Movement - (MaxSpeed.Deceleration * ((CurrentSpeed.Movement > 0 and 2.8) or 1) * Rate)))
+		end
+		
+		if Controls.Left.Mode then --Handle left turn speed
+			CurrentSpeed.Turn = math.min(Speed.TurnSpeed.Speed.Max, (CurrentSpeed.Turn + (Speed.TurnSpeed.TurnAlpha)))
+		end
+		if Controls.Right.Mode then --Handle right turn speed
+			CurrentSpeed.Turn = math.max(-Speed.TurnSpeed.Speed.Min, (CurrentSpeed.Turn - (Speed.TurnSpeed.TurnAlpha)))
+		end
+		
+		local Direction = Torso.CFrame.lookVector
+		Direction = Vector3.new(Direction.x, 0, Direction.z).unit
+		
+		local Velocity = (Direction * CurrentSpeed.Movement) --The thrust force which you move.
+		ThrustForce.velocity = Vector3.new(Velocity.X, ThrustForce.velocity.Y, Velocity.Z)
+		
+		local LeanAmount = (-CurrentSpeed.Turn * (math.pi / 6) / 4) --Amount your character leans over.
+		local XZAngle = math.atan2(Torso.CFrame.lookVector.z, 0, Torso.CFrame.lookVector.x) --Handle rotation
+		TurnGyro.cframe = CFrame.Angles((LeanAmount * Direction.x), 0, (LeanAmount * Direction.z))
+		
+		--Wheel animation
+		local DesiredAngle = (999999999 * (-CurrentSpeed.Movement / math.abs(CurrentSpeed.Movement)))
+		local MaxVelocity = (CurrentSpeed.Movement / 250)
+		for i, v in pairs({FrontMotor, BackMotor, LeftMotor, RightMotor}) do
+			if v and v.Parent then
+				v.DesiredAngle = DesiredAngle
+				v.MaxVelocity = MaxVelocity
+			end
+		end
+		
+		--Smoke exhaust from vehicle running.
+		for i, v in pairs(ExhaustSmoke) do
+			if v and v.Parent then
+				v.Opacity = ((math.min(math.abs(CurrentSpeed.Movement), 10) / 10) * 0.5)
+			end
+		end
+		
+		--Engine running sound which pitch changes while in motion.
+		Sounds.Engine.Pitch = (1 + (math.abs(CurrentSpeed.Movement / MaxSpeed.Movement.Max) * 1))
+		
+		if (tick() - CycleTick) >= CycleTime then
+			CycleTick = tick()
+			CurrentColor = (CurrentColor + 1)
+			CurrentColor = ((CurrentColor > #Colors and 1) or CurrentColor)
+			local ColorTable = Colors[CurrentColor]
+			ColorValue.Value = ColorTable.Color.Color
+			local Parts = {Body}
+			for i, v in pairs(Body:GetChildren()) do
+				if v:IsA("BasePart") then
+					table.insert(Parts, v)
+				end
+			end
+			for i, v in pairs(Parts) do
+				if v ~= Body then
+					v.BrickColor = ColorTable.Color
+				end
+				for ii, vv in pairs(v:GetChildren()) do
+					if vv:IsA("FileMesh") then
+						vv.TextureId = (BaseUrl .. ColorTable.Texture)
+					elseif vv:IsA("Light") then
+						vv.Color = ColorTable.Color.Color
+					elseif vv:IsA("BasePart") then
+					end
+				end
+			end
+		end
+		
+		wait(Rate)
+		
+	end
+end
+
+function SpawnVehicle()
+	
+	Handle.Transparency = 1
+	
+	Spawn(function()
+		InvokeClient("PlaySound", Sounds.Engine)
+		InvokeClient("PlayAnimation", Animations.Hold)
+	end)	
+	
+	Humanoid.PlatformStand = true
+	
+	CurrentColor = math.random(1, #Colors)
+	ColorValue.Value = Colors[CurrentColor].Color.Color
+	
+	local OrigCF = Torso.CFrame
+	
+	local VehicleData = Assets.CreateVehicle()
+	Body = VehicleData.Vehicle
+	local ParticleTable = VehicleData.Tables
+	
+	FrontMotor = Body.FrontMotor
+	BackMotor = Body.BackMotor
+	LeftMotor = Body.LeftMotor
+	RightMotor = Body.RightMotor
+	
+	Seat = Body.Seat
+	Seat.ChildAdded:connect(function(Child)
+		if Child:IsA("Weld") and Child.Name == "SeatWeld" then
+			Child.C1 = (CFrame.new(0, 0.75, -1) * CFrame.Angles(Child.C1:toEulerAnglesXYZ()))
+		end
+	end)
+	
+	ExhaustSmoke = ParticleTable.ExhaustSmoke
+	Lights = ParticleTable.Lights
+	Sparkles = ParticleTable.Sparkles
+	
+	if SpeedBoost.Active then
+		for i, v in pairs(Sparkles) do
+			if v and v.Parent then
+				v.Enabled = true
+			end
+		end
+	end
+	
+	local TorsoWeld = Instance.new("Weld")
+	TorsoWeld.C0 = PoseOffset
+	TorsoWeld.Part0 = Torso
+	TorsoWeld.Part1 = Body
+	TorsoWeld.Parent = Body
+	
+	Body.CanCollide = true
+
+	RotationForce = Instance.new("BodyAngularVelocity")
+	RotationForce.maxTorque = Vector3.new(0, math.huge, 0)
+	RotationForce.angularvelocity = Vector3.new(0, 0, 0)
+	RotationForce.Parent = Torso
+	
+	ThrustForce = Instance.new("BodyVelocity")
+	ThrustForce.maxForce = Vector3.new(math.huge, 0, math.huge)
+	ThrustForce.velocity = Vector3.new(0, 0, 0)
+	ThrustForce.P = 100
+	ThrustForce.Parent = Torso
+	
+	TurnGyro = Instance.new("BodyGyro")
+	TurnGyro.maxTorque = Vector3.new(5000, 0, 5000)
+	TurnGyro.P = 300
+	TurnGyro.D = 100
+	TurnGyro.Parent = Torso
+	
+	Body.Parent = Tool
+	
+	Torso.CFrame = OrigCF
+	
+	local RayHit, RayPos, RayNormal = RayCast(Torso.Position, Vector3.new(0, -1, 0), (Torso.Size.Y * 2), {Character})
+	if RayHit then
+		Torso.CFrame = Torso.CFrame + Vector3.new(0, ((Character:GetModelSize().Y / 2) + 1.5), 0)
+	end
+	
+	Spawn(ThrustUpdater)
+	
+end
+
+
+function CleanUp()
+	Handle.Velocity = Vector3.new(0, 0, 0)
+	Handle.RotVelocity = Vector3.new(0, 0, 0)
+	for i, v in pairs({}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	if Seat and Seat.Parent and Seat.Occupant then
+		local humanoid = Seat.Occupant
+		if humanoid and humanoid:IsA("Humanoid") then
+			humanoid.Sit = false
+		end
+	end
+	for i, v in pairs({Body, RotationForce, ThrustForce, TurnGyro}) do
+		if v and v.Parent then
+			v:Destroy()
+		end
+	end
+	for i, v in pairs(Tool:GetChildren()) do
+		if v:IsA("BasePart") and v ~= Handle then
+			v:Destroy()
+		end
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Torso and Torso.Parent and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	Torso = Character:FindFirstChild("Torso")
+	if not CheckIfAlive() then
+		return
+	end
+	for i, v in pairs(Colors) do
+		Spawn(function()
+			InvokeClient("Preload", (BaseUrl .. v.Texture))
+		end)
+	end
+	Spawn(CleanUp)
+	Spawn(EnableFirstPersonView)
+	Spawn(SpawnVehicle)
+	ToolEquipped = true
+end
+
+function Unequipped()
+	Spawn(CleanUp)
+	for i, v in pairs(Sounds) do
+		v:Stop()
+		Spawn(function()
+			InvokeClient("StopSound", v)
+		end)
+	end
+	if CheckIfAlive() then
+		Humanoid.PlatformStand = false
+	end
+	Handle.Transparency = 0
+	ToolEquipped = false
+end
+
+function OnServerInvoke(player, mode, value)
+	if player == Player and ToolEquipped and value and CheckIfAlive() then
+		if mode == "KeyPress" then
+			local Down = value.Down
+			local Key = value.Key
+			local ByteKey = string.byte(Key)
+			for i, v in pairs(Controls) do
+				if Key == v.Key or ByteKey == v.ByteKey then
+					Controls[i].Mode = Down
+				end
+			end
+			if Key == " " and Down then --Jump controller
+				if math.abs(tick() - Jump.LastJump) > Jump.ReloadTime and not Jump.Jumping and ThrustForce and ThrustForce.Parent then
+					Jump.Jumping = true
+					local Parts = GetAllConnectedParts(Body)
+					local Mass = 0
+					for i, v in pairs(Parts) do
+						Mass = (Mass + v:GetMass())
+					end
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, ((Mass * Gravity) * 100), ThrustForce.maxForce.Z)
+					ThrustForce.velocity = (Vector3.new(0, 1, 0) * Jump.JumpForce) + Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					wait(0.1)
+					ThrustForce.maxForce = Vector3.new(ThrustForce.maxForce.X, 0, ThrustForce.maxForce.Z)
+					ThrustForce.velocity = Vector3.new(ThrustForce.velocity.X, 0, ThrustForce.velocity.Z)
+					Jump.LastJump = tick()
+					Jump.Jumping = false
+				end
+			elseif Key == "x" and Down then --Toggle light(s) on/off.
+				for i, v in pairs(Lights) do
+					if v and v.Parent then
+						v.Enabled = not v.Enabled
+					end
+				end
+			elseif Key == "h" and Down then --Play honk sound.
+				local Sound = Sounds.Honk
+				if (tick() - Honk.LastHonk) >= (Sound.TimeLength + Honk.ReloadTime) and not Honk.Honking then
+					Honk.Honking = true
+					local TempSound = Sound:Clone()
+					Debris:AddItem(TempSound, Sound.TimeLength)
+					TempSound.Parent = Body
+					TempSound:Play()
+					Honk.LastHonk = tick()
+					Honk.Honking = false
+				end
+			elseif Key == "q" and Down then --Activate special.
+				if not Special.Allowed or not Special.Enabled or Special.Active then
+					return
+				end
+				Special.Enabled = false
+				Special.Active = true
+				wait(Special.Duration)
+				Special.Active = false
+				wait(Special.ReloadTime)
+				Special.Enabled = true
+			elseif ByteKey == 48 and Down then --Activate speed boost.
+				if not SpeedBoost.Allowed or not SpeedBoost.Enabled or SpeedBoost.Active then
+					return
+				end
+				SpeedBoost.Enabled = false
+				SpeedBoost.Active = true
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = true
+					end
+				end
+				MaxSpeed.Acceleration = Speed.Acceleration.Boost
+				MaxSpeed.Deceleration = Speed.Deceleration.Boost
+				MaxSpeed.Movement = Speed.MovementSpeed.Boost
+				wait(SpeedBoost.Duration)
+				MaxSpeed.Acceleration = Speed.Acceleration.Normal
+				MaxSpeed.Deceleration = Speed.Deceleration.Normal
+				MaxSpeed.Movement = Speed.MovementSpeed.Normal
+				for i, v in pairs(Sparkles) do
+					if v and v.Parent then
+						v.Enabled = false
+					end
+				end
+				SpeedBoost.Active = false
+				wait(SpeedBoost.ReloadTime)
+				SpeedBoost.Enabled = true
+			end
+		end
+	end
+end
+
+function InvokeClient(Mode, Value)
+	local ClientReturn = nil
+	pcall(function()
+		ClientReturn = ClientControl:InvokeClient(Player, Mode, Value)
+	end)
+	return ClientReturn
+end
+
+Spawn(CleanUp)
+
+ServerControl.OnServerInvoke = OnServerInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+LocalScript70.Parent = Tool51
+table.insert(cors,sandbox(LocalScript70,function()
+--Made by Luckymaxer
+
+Tool = script.Parent
+Handle = Tool:WaitForChild("Handle")
+
+Players = game:GetService("Players")
+RunService = game:GetService("RunService")
+ContentProvider = game:GetService("ContentProvider")
+
+Camera = game:GetService("Workspace").CurrentCamera
+
+Animations = {}
+LocalObjects = {}
+
+ServerControl = Tool:WaitForChild("ServerControl")
+ClientControl = Tool:WaitForChild("ClientControl")
+
+ToolEquipped = false
+
+function SetAnimation(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+		local AnimationTrack = Humanoid:LoadAnimation(value.Animation)
+		table.insert(Animations, {Animation = value.Animation, AnimationTrack = AnimationTrack})
+		AnimationTrack:Play(value.FadeTime, value.Weight, value.Speed)
+	elseif mode == "StopAnimation" and value then
+		for i, v in pairs(Animations) do
+			if v.Animation == value.Animation then
+				v.AnimationTrack:Stop()
+				table.remove(Animations, i)
+			end
+		end
+	end
+end
+
+function DisableJump(Boolean)
+	if PreventJump then
+		PreventJump:disconnect()
+	end
+	if Boolean then
+		PreventJump = Humanoid.Changed:connect(function(Property)
+			if Property ==  "Jump" then
+				Humanoid.Jump = false
+			end
+		end)
+	end
+end
+
+function CheckIfAlive()
+	return (((Character and Character.Parent and Humanoid and Humanoid.Parent and Humanoid.Health > 0 and Player and Player.Parent) and true) or false)
+end
+
+function Equipped(Mouse)
+	Character = Tool.Parent
+	Player = Players:GetPlayerFromCharacter(Character)
+	Humanoid = Character:FindFirstChild("Humanoid")
+	ToolEquipped = true
+	if not CheckIfAlive() then
+		return
+	end
+	PlayerMouse = Player:GetMouse()
+	Mouse.Button1Down:connect(function()
+		InvokeServer("MouseClick", {Down = true})
+	end)
+	Mouse.Button1Up:connect(function()
+		InvokeServer("MouseClick", {Down = false})
+	end)
+	Mouse.KeyDown:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = true})
+	end)
+	Mouse.KeyUp:connect(function(Key)
+		InvokeServer("KeyPress", {Key = Key, Down = false})
+	end)
+	Mouse.Move:connect(function()
+		InvokeServer("MouseMove", {Position = Mouse.Hit.p, Target = Mouse.Target})
+	end)
+	Humanoid:ChangeState(Enum.HumanoidStateType.None)
+end
+
+function Unequipped()
+	ToolEquipped = false
+	LocalObjects = {}
+	for i, v in pairs(Animations) do
+		if v and v.AnimationTrack then
+			v.AnimationTrack:Stop()
+		end
+	end
+	for i, v in pairs({PreventJump, ObjectLocalTransparencyModifier}) do
+		if v then
+			v:disconnect()
+		end
+	end
+	Humanoid:ChangeState(Enum.HumanoidStateType.Freefall) --Prevent the ability to fly by constantly equipping and unequipping the tool.
+	Animations = {}
+end
+
+function InvokeServer(mode, value)
+	pcall(function()
+		local ServerReturn = ServerControl:InvokeServer(mode, value)
+		return ServerReturn
+	end)
+end
+
+function OnClientInvoke(mode, value)
+	if mode == "PlayAnimation" and value and ToolEquipped and Humanoid then
+		SetAnimation("PlayAnimation", value)
+	elseif mode == "StopAnimation" and value then
+		SetAnimation("StopAnimation", value)
+	elseif mode == "PlaySound" and value then
+		value:Play()
+	elseif mode == "StopSound" and value then
+		value:Stop()
+	elseif mode == "MousePosition" then
+		return {Position = PlayerMouse.Hit.p, Target = PlayerMouse.Target}
+	elseif mode == "DisableJump" then
+		DisableJump(value)
+	elseif mode == "Preload" and value then
+		ContentProvider:Preload(value)
+	elseif mode == "SetLocalTransparencyModifier" and value and ToolEquipped then
+		pcall(function()
+			local ObjectFound = false
+			for i, v in pairs(LocalObjects) do
+				if v == value then
+					ObjectFound = true
+				end
+			end
+			if not ObjectFound then
+				table.insert(LocalObjects, value)
+				if ObjectLocalTransparencyModifier then
+					ObjectLocalTransparencyModifier:disconnect()
+				end
+				ObjectLocalTransparencyModifier = RunService.RenderStepped:connect(function()
+					for i, v in pairs(LocalObjects) do
+						if v.Object and v.Object.Parent then
+							local CurrentTransparency = v.Object.LocalTransparencyModifier
+							if ((not v.AutoUpdate and (CurrentTransparency == 1 or  CurrentTransparency == 0)) or v.AutoUpdate) then
+								v.Object.LocalTransparencyModifier = v.Transparency
+							end
+						else
+							table.remove(LocalObjects, i)
+						end
+					end
+				end)
+			end
+		end)
+	end
+end
+
+ClientControl.OnClientInvoke = OnClientInvoke
+Tool.Equipped:connect(Equipped)
+Tool.Unequipped:connect(Unequipped)
+end))
+LocalScript71.Name = "MouseIcon"
+LocalScript71.Parent = Tool51
+table.insert(cors,sandbox(LocalScript71,function()
+--Made by Luckymaxer
+
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = script.Parent
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:connect(OnEquipped)
+Tool.Changed:connect(OnChanged)
+end))
+ModuleScript72.Name = "Assets"
+ModuleScript72.Parent = Tool51
+table.insert(cors,sandbox(ModuleScript72,function()
+--Made by Luckymaxer
+
+BaseUrl = "http://www.roblox.com/asset/?id="
+
+local function Create_PrivImpl(objectType)
+	if type(objectType) ~= 'string' then
+		error("Argument of Create must be a string", 2)
+	end
+	--return the proxy function that gives us the nice Create'string'{data} syntax
+	--The first function call is a function call using Lua's single-string-argument syntax
+	--The second function call is using Lua's single-table-argument syntax
+	--Both can be chained together for the nice effect.
+	return function(dat)
+		--default to nothing, to handle the no argument given case
+		dat = dat or {}
+
+		--make the object to mutate
+		local obj = Instance.new(objectType)
+		local parent = nil
+
+		--stored constructor function to be called after other initialization
+		local ctor = nil
+
+		for k, v in pairs(dat) do
+			--add property
+			if type(k) == 'string' then
+				if k == 'Parent' then
+					-- Parent should always be set last, setting the Parent of a new object
+					-- immediately makes performance worse for all subsequent property updates.
+					parent = v
+				else
+					obj[k] = v
+				end
+
+
+			--add child
+			elseif type(k) == 'number' then
+				if type(v) ~= 'userdata' then
+					error("Bad entry in Create body: Numeric keys must be paired with children, got a: "..type(v), 2)
+				end
+				v.Parent = obj
+
+
+			--event connect
+			elseif type(k) == 'table' and k.__eventname then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create.E\'"..k.__eventname.."\']` must have a function value\
+							got: "..tostring(v), 2)
+				end
+				obj[k.__eventname]:connect(v)
+
+
+			--define constructor function
+			elseif k == t.Create then
+				if type(v) ~= 'function' then
+					error("Bad entry in Create body: Key `[Create]` should be paired with a constructor function, \
+							got: "..tostring(v), 2)
+				elseif ctor then
+					--ctor already exists, only one allowed
+					error("Bad entry in Create body: Only one constructor function is allowed", 2)
+				end
+				ctor = v
+
+
+			else
+				error("Bad entry ("..tostring(k).." => "..tostring(v)..") in Create body", 2)
+			end
+		end
+
+		--apply constructor function if it exists
+		if ctor then
+			ctor(obj)
+		end
+
+		if parent then
+			obj.Parent = parent
+		end
+
+		--return the completed object
+		return obj
+	end
+end
+
+--now, create the functor:
+Create = setmetatable({}, {__call = function(tb, ...) return Create_PrivImpl(...) end})
+
+--and create the "Event.E" syntax stub. Really it's just a stub to construct a table which our Create
+--function can recognize as special.
+Create.E = function(eventName)
+	return {__eventname = eventName}
+end
+
+
+BasePart = Create("Part"){
+	Material = Enum.Material.Plastic,
+	Shape = Enum.PartType.Block,
+	TopSurface = Enum.SurfaceType.Smooth,
+	BottomSurface = Enum.SurfaceType.Smooth,
+	FormFactor = Enum.FormFactor.Custom,
+	Size = Vector3.new(0.2, 0.2, 0.2),
+	Anchored = false,
+	CanCollide = true,
+	Locked = true
+}
+
+MeshData = {
+	Meshes = {
+		Body = 206414124,
+		Wheel = 206414152,
+		SideCar = 477750963,
+		SideCarWheel = 477751306,
+	},
+	TextureId = 204410898
+}
+
+function CreateVehicle()
+
+	local ExhaustSmoke = {}
+	local Lights = {}
+	local Sparkles = {}
+
+	local Body = BasePart:Clone()
+	Body.Name = "Body"
+	Body.Size = Vector3.new(1, 3.625, 8)
+	local BodyMesh = Create("SpecialMesh"){
+		Name = "Mesh",
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = MeshData.Meshes.Body,
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(1.25, 1.25, 1.25),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = Body,
+	}
+	
+	local SideCar = Body:Clone()
+	SideCar.Name = "SideCar"
+	SideCar.Size = Vector3.new(3, 2.25, 5.5)
+	SideCar.Mesh.MeshId = MeshData.Meshes.SideCar
+	Create("Weld"){
+		Name = "Weld",
+		Part0 = Body,
+		Part1 = SideCar,
+		C0 = CFrame.new(-2.375, -0.125, 1.225),
+		C1 = CFrame.new(0, 0, 0),
+		Parent = SideCar,
+	}
+	SideCar.Parent = Body
+	
+	local BaseWheel = BasePart:Clone()
+	BaseWheel.Size = Vector3.new(0.5, 1, 1)
+	BaseWheel.CanCollide = false
+	local WheelMesh = Create("SpecialMesh"){
+		Name = "Mesh",
+		MeshType = Enum.MeshType.FileMesh,
+		MeshId = "",
+		TextureId = MeshData.TextureId,
+		Scale = Vector3.new(1.25, 1.25, 1.25),
+		VertexColor = Vector3.new(1, 1, 1),
+		Offset = Vector3.new(0, 0, 0),
+		Parent = BaseWheel,
+	}
+
+	local BaseFrontWheel = BaseWheel:Clone()
+	BaseFrontWheel.Name = "FrontWheel"
+	BaseFrontWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+	
+	local BaseBackWheel = BaseWheel:Clone()
+	BaseBackWheel.Name = "BackWheel"
+	BaseBackWheel.Mesh.MeshId = MeshData.Meshes.Wheel
+	
+	local BaseSideCarWheel = BaseWheel:Clone()
+	BaseSideCarWheel.Name = "Wheel"
+	BaseSideCarWheel.Mesh.MeshId = MeshData.Meshes.SideCarWheel
+
+	local BaseSmokePart = BasePart:Clone()
+	BaseSmokePart.Name = "SmokePart"
+	BaseSmokePart.Transparency = 1
+	local BaseExhaustSmoke = Create("Smoke"){
+		Name = "ExhaustSmoke",
+		Size = 0.1,
+		RiseVelocity = 0.01,
+		Color = Color3.new((127 / 255), (127 / 255), (127 / 255)),
+		Enabled = true,
+		Parent = BaseSmokePart,
+	}
+
+	local BaseLightPart = BasePart:Clone()
+	BaseLightPart.Name = "LightPart"
+	BaseLightPart.Transparency = 1
+	local Light = Create("SpotLight"){
+		Name = "Light",
+		Brightness = 50,
+		Angle = 45,
+		Color = Color3.new((40 / 255), (127 / 255), (71 / 255)),
+		Range = 20,
+		Shadows = false,
+		Enabled = false,
+		Parent = BaseLightPart,
+	}
+			
+	local FrontWheel = BaseFrontWheel:Clone()
+	FrontWheel.Parent = Body
+	
+	local FrontMotor = Create("Motor6D"){
+		Name = "FrontMotor",
+		Part0 = Body,
+		Part1 = FrontWheel,
+		C0 = CFrame.new(0, -0.5, -3.375) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local BackWheel = BaseBackWheel:Clone()
+	BackWheel.Parent = Body
+	
+	local BackMotor = Create("Motor6D"){
+		Name = "BackMotor",
+		Part0 = Body,
+		Part1 = BackWheel,
+		C0 = CFrame.new(0, -0.5, 3.1) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local SideCarWheelLeft = BaseSideCarWheel:Clone()
+	SideCarWheelLeft.Parent = Body
+	
+	local SideCarWheelRight = BaseSideCarWheel:Clone()
+	SideCarWheelRight.Parent = Body
+	
+	local SideCarLeftMotor = Create("Motor6D"){
+		Name = "LeftMotor",
+		Part0 = SideCar,
+		Part1 = SideCarWheelLeft,
+		C0 = CFrame.new(1.35, -0.9, 0.625) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local SideCarRightMotor = Create("Motor6D"){
+		Name = "RightMotor",
+		Part0 = SideCar,
+		Part1 = SideCarWheelRight,
+		C0 = CFrame.new(-1.35, -0.9, 0.625) * CFrame.Angles(0, (math.pi / 2), 0),
+		C1 = CFrame.new() * CFrame.Angles(0, -(math.pi / 2), 0),
+		Parent = Body
+	}
+	
+	local HeadLight = BaseLightPart:Clone()
+	HeadLight.Parent = Body
+	table.insert(Lights, HeadLight.Light)
+	for i, v in pairs(HeadLight:GetChildren()) do
+		if v:IsA("Sparkles") then
+			table.insert(Sparkles, v)
+		end
+	end
+	
+	local LightWeld = Create("Weld"){
+		Part0 = Body,
+		Part1 = HeadLight,
+		C0 = CFrame.new(0, 1.25, -1.9) * CFrame.Angles(0, 0, 0),
+		Parent = HeadLight
+	}
+
+	local Tables = {
+		ExhaustSmoke = ExhaustSmoke,
+		Lights = Lights,
+		Sparkles = Sparkles
+	}
+	
+	Seat = Create("Seat"){
+		Name = "Seat",
+		Transparency = 1,
+		Material = Enum.Material.Plastic,
+		Shape = Enum.PartType.Block,
+		TopSurface = Enum.SurfaceType.Smooth,
+		BottomSurface = Enum.SurfaceType.Smooth,
+		FormFactor = Enum.FormFactor.Custom,
+		Size = Vector3.new(1.5, 2, 1.5),
+		Anchored = false,
+		CanCollide = true,
+		Locked = true,
+		Disabled = false,
+	}
+	Create("Weld"){
+		Name = "Weld",
+		Part0 = SideCar,
+		Part1 = Seat,
+		C0 = CFrame.new(0, 1, 0),
+		C1 = CFrame.new(0, 0, 0),
+		Parent = Seat,
+	}
+	Seat.CFrame = SideCar.CFrame
+	Seat.Parent = Body
+	
+	return {
+		Vehicle = Body,
+		Tables = Tables
+	}
+	
+end
+
+for i, v in pairs(MeshData) do
+	if type(v) == "table" then
+		for ii, vv in pairs(v) do
+			if type(vv) == "string" or type(vv) == "number" then
+				MeshData[i][ii] = (BaseUrl .. tostring(vv))
+			end
+		end
+	elseif type(v) == "string" or type(v) == "number" then
+		MeshData[i] = (BaseUrl .. tostring(v))
+	end
+end
+
+return {
+	BaseUrl = BaseUrl,
+	MeshData = MeshData,
+	CreateVehicle = CreateVehicle
+}
+end))
+Camera73.Name = "ThumbnailCamera"
+Camera73.Parent = Tool51
+Camera73.CFrame = CFrame.new(-7.31865692, 8.76040173, -10.0431194, -0.877065063, 0.234972507, -0.418980658, -0, 0.872201085, 0.489147335, 0.480371624, 0.429014027, -0.764977098)
+Camera73.CoordinateFrame = CFrame.new(-7.31865692, 8.76040173, -10.0431194, -0.877065063, 0.234972507, -0.418980658, -0, 0.872201085, 0.489147335, 0.480371624, 0.429014027, -0.764977098)
+Camera73.FieldOfView = 40
+Camera73.Focus = CFrame.new(-5.30754948, 6.41249418, -6.37122869, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Camera73.focus = CFrame.new(-5.30754948, 6.41249418, -6.37122869, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = script
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
