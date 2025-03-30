@@ -1,0 +1,96 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local ChestTeleportLidToggle = workspace.Tools.Chest_Teleport.LidToggle
+local TeleportEvent = LocalPlayer.Backpack:FindFirstChild("Teleport") and LocalPlayer.Backpack.Teleport:FindFirstChild("TeleportEvent")
+local SpawnLocation = workspace:FindFirstChildWhichIsA("SpawnLocation", true)
+local targetPosition = SpawnLocation.Position + Vector3.new(0, 2, 0) -- Change to your desired position, set to SpawnLocation here
+local debugToggle = false
+
+local function runOnDebug(fn, ...)
+    if not debugToggle then
+        return
+    end
+    return fn(...)
+end
+
+local function getSeats()
+    local seats = {}
+    for i, v in next, workspace:GetDescendants() do
+        if v:IsA("Seat") then
+            v.Disabled = false
+            table.insert(seats, v)
+        end
+    end
+    return seats
+end
+
+local function getWorldPositionForEvent(targetPosition)
+    local localPositionInternal = (
+        LocalPlayer.Character
+        and LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+    ) and LocalPlayer.Character.HumanoidRootPart.Position
+    if not localPositionInternal then
+        return Vector3.new(0, 0, 0)
+    end
+    return targetPosition - localPositionInternal
+end
+
+local function main()
+    if not TeleportEvent then
+        ChestTeleportLidToggle:FireServer()
+        local tool = LocalPlayer.Character:WaitForChild("Teleport", 5)
+        TeleportEvent = tool and tool:FindFirstChild("TeleportEvent")
+        tool.Parent = LocalPlayer.Backpack
+    end
+    local seats = getSeats()
+    local Humanoid = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+    local teleportationCoroutine
+    local function teleportSeats()
+        for i, v in next, seats do
+            if v.Occupant then
+                continue
+            end
+            local connections = {}
+            local timeoutThread
+            runOnDebug(print, "Teleporting seat #" .. i)
+            v:Sit(Humanoid)
+            local c0 = v:GetPropertyChangedSignal("Occupant"):Once(function()
+                runOnDebug(print, "Occupied")
+                if v.Occupant == Humanoid then
+                    runOnDebug(print, "Occupant is self")
+                    task.wait()
+                    local c1 = v:GetPropertyChangedSignal("Position"):Once(function()
+                        task.wait()
+                        runOnDebug(print, "Seat position changed on server-side")
+                        Humanoid:ChangeState("Jumping")
+                        local c2 = v:GetPropertyChangedSignal("Occupant"):Once(function()
+                            task.cancel(timeoutThread)
+                            v.Disabled = true
+                            task.wait(0.2)
+                            coroutine.resume(teleportationCoroutine)
+                        end)
+                        table.insert(connections, c2) 
+                    end)
+                    table.insert(connections, c1)
+                    TeleportEvent:FireServer(
+                        getWorldPositionForEvent(targetPosition)
+                    )
+                end
+            end)
+            table.insert(connections, c0)
+            timeoutThread = task.delay(5, function()
+                runOnDebug(warn, "Timed out, skipping")
+                for i, v in next, connections do
+                    task.spawn(v.Disconnect, v)
+                end
+                coroutine.resume(teleportationCoroutine)
+            end)
+            coroutine.yield()
+        end
+    end
+    teleportationCoroutine = coroutine.create(teleportSeats)
+    coroutine.resume(teleportationCoroutine)
+    return 0
+end
+
+task.spawn(main)
