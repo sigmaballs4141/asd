@@ -1,7 +1,13 @@
--- Gui to Lua
--- Version: 3.2
+--[[
 
--- Instances:
+		Gui2Lua™
+		10zOfficial
+		Version 1.0.0
+
+]]
+
+
+-- Instances
 
 local Executor = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -21,7 +27,7 @@ local Frame = Instance.new("Frame")
 local ImageLabel = Instance.new("ImageLabel")
 local TextLabel_3 = Instance.new("TextLabel")
 
---Properties:
+-- Properties
 
 Executor.Name = "Executor"
 Executor.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -31,57 +37,57 @@ Executor.ResetOnSpawn = false
 Main.Name = "Main"
 Main.Parent = Executor
 Main.AnchorPoint = Vector2.new(1, 0)
-Main.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
-Main.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Main.BackgroundColor3 = Color3.new(0.141176, 0.141176, 0.145098)
+Main.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
 Main.BorderSizePixel = 0
 Main.Position = UDim2.new(0.738755167, 0, 0.297655553, 0)
 Main.Size = UDim2.new(0, 386, 0, 226)
 
 Close.Name = "Close"
 Close.Parent = Main
-Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Close.BackgroundTransparency = 1.000
-Close.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Close.BackgroundColor3 = Color3.new(1, 1, 1)
+Close.BackgroundTransparency = 1
+Close.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 Close.Position = UDim2.new(0.956321836, 0, 0, 0)
 Close.Size = UDim2.new(0, 19, 0, 19)
 Close.Font = Enum.Font.SourceSans
 Close.Text = "X"
-Close.TextColor3 = Color3.fromRGB(255, 0, 0)
-Close.TextSize = 20.000
-Close.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextColor3 = Color3.new(1, 0, 0)
+Close.TextSize = 20
+Close.TextStrokeColor3 = Color3.new(1, 0, 0)
 
 Clear.Name = "Clear"
 Clear.Parent = Main
-Clear.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Clear.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Clear.BackgroundColor3 = Color3.new(0, 0, 0)
+Clear.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
 Clear.BorderSizePixel = 3
 Clear.Position = UDim2.new(0.663088322, 0, 0.882177293, 0)
 Clear.Size = UDim2.new(0, 119, 0, 20)
 Clear.Font = Enum.Font.SourceSans
 Clear.Text = "Clear"
-Clear.TextColor3 = Color3.fromRGB(255, 0, 0)
-Clear.TextSize = 14.000
+Clear.TextColor3 = Color3.new(1, 0, 0)
+Clear.TextSize = 14
 
 UICorner.Parent = Clear
 
 Execute.Name = "Execute"
 Execute.Parent = Main
-Execute.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Execute.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Execute.BackgroundColor3 = Color3.new(0, 0, 0)
+Execute.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
 Execute.BorderSizePixel = 3
 Execute.Position = UDim2.new(0.0317976549, 0, 0.882177293, 0)
 Execute.Size = UDim2.new(0, 119, 0, 20)
 Execute.Font = Enum.Font.SourceSans
 Execute.Text = "Execute"
-Execute.TextColor3 = Color3.fromRGB(255, 0, 0)
-Execute.TextSize = 14.000
+Execute.TextColor3 = Color3.new(1, 0, 0)
+Execute.TextSize = 14
 
 UICorner_2.Parent = Execute
 
 Scroll.Name = "Scroll"
 Scroll.Parent = Main
-Scroll.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Scroll.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Scroll.BackgroundColor3 = Color3.new(0, 0, 0)
+Scroll.BorderColor3 = Color3.new(1, 0, 0)
 Scroll.BorderSizePixel = 3
 Scroll.Position = UDim2.new(0.0321838707, 0, 0.176053211, 0)
 Scroll.Size = UDim2.new(0, 363, 0, 146)
@@ -89,9 +95,9 @@ Scroll.ScrollBarThickness = 7
 
 CodeBox.Name = "CodeBox"
 CodeBox.Parent = Scroll
-CodeBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CodeBox.BackgroundTransparency = 0.999
-CodeBox.BorderColor3 = Color3.fromRGB(27, 42, 53)
+CodeBox.BackgroundColor3 = Color3.new(1, 1, 1)
+CodeBox.BackgroundTransparency = 0.9990000128746033
+CodeBox.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 CodeBox.Position = UDim2.new(0, 0, -3.17065746e-06, 0)
 CodeBox.Size = UDim2.new(1, 0, 100, 0)
 CodeBox.ZIndex = 2
@@ -100,46 +106,46 @@ CodeBox.Font = Enum.Font.SourceSans
 CodeBox.MultiLine = true
 CodeBox.PlaceholderText = "Project LuaCore"
 CodeBox.Text = ""
-CodeBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-CodeBox.TextSize = 18.000
+CodeBox.TextColor3 = Color3.new(1, 1, 1)
+CodeBox.TextSize = 18
 CodeBox.TextXAlignment = Enum.TextXAlignment.Left
 CodeBox.TextYAlignment = Enum.TextYAlignment.Top
 
 HideBox.Name = "HideBox"
 HideBox.Parent = Main
-HideBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-HideBox.BackgroundTransparency = 1.000
-HideBox.BorderColor3 = Color3.fromRGB(27, 42, 53)
+HideBox.BackgroundColor3 = Color3.new(0.176471, 0.176471, 0.176471)
+HideBox.BackgroundTransparency = 1
+HideBox.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
 HideBox.BorderSizePixel = 0
 HideBox.Position = UDim2.new(0.0321838707, 0, 0.17605105, 0)
 HideBox.Size = UDim2.new(0, 363, 0, 146)
 HideBox.Font = Enum.Font.SourceSans
 HideBox.Text = ""
-HideBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-HideBox.TextSize = 14.000
+HideBox.TextColor3 = Color3.new(0, 0, 0)
+HideBox.TextSize = 14
 
 TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderColor3 = Color3.new(0, 0, 0)
 TextLabel.BorderSizePixel = 0
 TextLabel.Size = UDim2.new(0, 92, 0, 31)
 TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = "Project LuaCore"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 14.000
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextSize = 14
 
 TextLabel_2.Parent = Main
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel_2.BackgroundTransparency = 1
+TextLabel_2.BorderColor3 = Color3.new(0, 0, 0)
 TextLabel_2.BorderSizePixel = 0
 TextLabel_2.Position = UDim2.new(0.238341972, 0, 0, 0)
 TextLabel_2.Size = UDim2.new(0, 24, 0, 31)
 TextLabel_2.Font = Enum.Font.SourceSans
 TextLabel_2.Text = "SS"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 0, 4)
-TextLabel_2.TextSize = 30.000
+TextLabel_2.TextColor3 = Color3.new(1, 0, 0.0156863)
+TextLabel_2.TextSize = 30
 
 UICorner_3.Parent = Main
 
@@ -147,47 +153,47 @@ ScreenGui.Parent = Executor
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BackgroundTransparency = 1.000
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame.BackgroundTransparency = 1
+Frame.BorderColor3 = Color3.new(0, 0, 0)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0, 0, 0.752066135, 0)
 Frame.Size = UDim2.new(0, 100, 0, 100)
 
 ImageLabel.Parent = Frame
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.BorderColor3 = Color3.new(0, 0, 0)
 ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(0.0700000003, 0, 0, 0)
 ImageLabel.Size = UDim2.new(0, 100, 0, 100)
 ImageLabel.Image = "http://www.roblox.com/asset/?id=83797870660284"
 
 TextLabel_3.Parent = Frame
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel_3.BorderColor3 = Color3.new(0, 0, 0)
 TextLabel_3.BorderSizePixel = 0
 TextLabel_3.Position = UDim2.new(1.13, 0, 0.100000001, 0)
 TextLabel_3.Size = UDim2.new(0, 200, 0, 80)
 TextLabel_3.Font = Enum.Font.SourceSans
 TextLabel_3.Text = "Project LuaCore Made By 07n7z & ZeroEXE & CodieI2722,Use external program to inject and use internal gui to execute [.gg/5DNQ4KgF3M]                       Status : Injected"
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextColor3 = Color3.new(0, 0, 0)
 TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
+TextLabel_3.TextSize = 14
 TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 
--- Scripts:
+-- Scripts
 
-local function VZBATPI_fake_script() -- Clear.LocalScript 
+local function VQPMJXB_fake_script() -- Clear.LocalScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Scroll.TextBox.Text = ""
 	end)
 end
-coroutine.wrap(VZBATPI_fake_script)()
-local function VAZYVAM_fake_script() -- Execute.LocalScript 
+coroutine.wrap(VQPMJXB_fake_script)()
+local function XMGBVSC_fake_script() -- Execute.LocalScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -196,19 +202,19 @@ local function VAZYVAM_fake_script() -- Execute.LocalScript
 		
 	end)
 end
-coroutine.wrap(VAZYVAM_fake_script)()
-local function EXOYKY_fake_script() -- Main.LocalScript 
+coroutine.wrap(XMGBVSC_fake_script)()
+local function HTTP_fake_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	script.Parent.Selectable = true
 	script.Parent.Active = true
 	script.Parent.Draggable = true
 end
-coroutine.wrap(EXOYKY_fake_script)()
-local function LNSC_fake_script() -- Executor.LocalScript 
+coroutine.wrap(HTTP_fake_script)()
+local function MNYJRO_fake_script() -- Executor.LocalScript 
 	local script = Instance.new('LocalScript', Executor)
 
 	wait(.1)
 	script.Parent.Enabled = true
 end
-coroutine.wrap(LNSC_fake_script)()
+coroutine.wrap(MNYJRO_fake_script)()
