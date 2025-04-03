@@ -1,220 +1,2065 @@
---[[
-
-		Gui2Lua™
-		10zOfficial
-		Version 1.0.0
-
-]]
-
-
--- Instances
-
-local Executor = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local Close = Instance.new("TextButton")
-local Clear = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
-local Execute = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-local Scroll = Instance.new("ScrollingFrame")
-local CodeBox = Instance.new("TextBox")
-local HideBox = Instance.new("TextLabel")
-local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
-local UICorner_3 = Instance.new("UICorner")
 local ScreenGui = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local ImageLabel = Instance.new("ImageLabel")
-local TextLabel_3 = Instance.new("TextLabel")
-
--- Properties
-
-Executor.Name = "Executor"
-Executor.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-Executor.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Executor.ResetOnSpawn = false
-
-Main.Name = "Main"
-Main.Parent = Executor
-Main.AnchorPoint = Vector2.new(1, 0)
-Main.BackgroundColor3 = Color3.new(0.141176, 0.141176, 0.145098)
-Main.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
-Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.738755167, 0, 0.297655553, 0)
-Main.Size = UDim2.new(0, 386, 0, 226)
-
-Close.Name = "Close"
-Close.Parent = Main
-Close.BackgroundColor3 = Color3.new(1, 1, 1)
-Close.BackgroundTransparency = 1
-Close.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-Close.Position = UDim2.new(0.956321836, 0, 0, 0)
-Close.Size = UDim2.new(0, 19, 0, 19)
-Close.Font = Enum.Font.SourceSans
-Close.Text = "X"
-Close.TextColor3 = Color3.new(1, 0, 0)
-Close.TextSize = 20
-Close.TextStrokeColor3 = Color3.new(1, 0, 0)
-
-Clear.Name = "Clear"
-Clear.Parent = Main
-Clear.BackgroundColor3 = Color3.new(0, 0, 0)
-Clear.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
-Clear.BorderSizePixel = 3
-Clear.Position = UDim2.new(0.663088322, 0, 0.882177293, 0)
-Clear.Size = UDim2.new(0, 119, 0, 20)
-Clear.Font = Enum.Font.SourceSans
-Clear.Text = "Clear"
-Clear.TextColor3 = Color3.new(1, 0, 0)
-Clear.TextSize = 14
-
-UICorner.Parent = Clear
-
-Execute.Name = "Execute"
-Execute.Parent = Main
-Execute.BackgroundColor3 = Color3.new(0, 0, 0)
-Execute.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
-Execute.BorderSizePixel = 3
-Execute.Position = UDim2.new(0.0317976549, 0, 0.882177293, 0)
-Execute.Size = UDim2.new(0, 119, 0, 20)
-Execute.Font = Enum.Font.SourceSans
-Execute.Text = "Execute"
-Execute.TextColor3 = Color3.new(1, 0, 0)
-Execute.TextSize = 14
-
-UICorner_2.Parent = Execute
-
-Scroll.Name = "Scroll"
-Scroll.Parent = Main
-Scroll.BackgroundColor3 = Color3.new(0, 0, 0)
-Scroll.BorderColor3 = Color3.new(1, 0, 0)
-Scroll.BorderSizePixel = 3
-Scroll.Position = UDim2.new(0.0321838707, 0, 0.176053211, 0)
-Scroll.Size = UDim2.new(0, 363, 0, 146)
-Scroll.ScrollBarThickness = 7
-
-CodeBox.Name = "CodeBox"
-CodeBox.Parent = Scroll
-CodeBox.BackgroundColor3 = Color3.new(1, 1, 1)
-CodeBox.BackgroundTransparency = 0.9990000128746033
-CodeBox.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-CodeBox.Position = UDim2.new(0, 0, -3.17065746e-06, 0)
-CodeBox.Size = UDim2.new(1, 0, 100, 0)
-CodeBox.ZIndex = 2
-CodeBox.ClearTextOnFocus = false
-CodeBox.Font = Enum.Font.SourceSans
-CodeBox.MultiLine = true
-CodeBox.PlaceholderText = "Project LuaCore"
-CodeBox.Text = ""
-CodeBox.TextColor3 = Color3.new(1, 1, 1)
-CodeBox.TextSize = 18
-CodeBox.TextXAlignment = Enum.TextXAlignment.Left
-CodeBox.TextYAlignment = Enum.TextYAlignment.Top
-
-HideBox.Name = "HideBox"
-HideBox.Parent = Main
-HideBox.BackgroundColor3 = Color3.new(0.176471, 0.176471, 0.176471)
-HideBox.BackgroundTransparency = 1
-HideBox.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-HideBox.BorderSizePixel = 0
-HideBox.Position = UDim2.new(0.0321838707, 0, 0.17605105, 0)
-HideBox.Size = UDim2.new(0, 363, 0, 146)
-HideBox.Font = Enum.Font.SourceSans
-HideBox.Text = ""
-HideBox.TextColor3 = Color3.new(0, 0, 0)
-HideBox.TextSize = 14
-
-TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel.BackgroundTransparency = 1
-TextLabel.BorderColor3 = Color3.new(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Size = UDim2.new(0, 92, 0, 31)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Project LuaCore"
-TextLabel.TextColor3 = Color3.new(1, 1, 1)
-TextLabel.TextSize = 14
-
-TextLabel_2.Parent = Main
-TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel_2.BackgroundTransparency = 1
-TextLabel_2.BorderColor3 = Color3.new(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.238341972, 0, 0, 0)
-TextLabel_2.Size = UDim2.new(0, 24, 0, 31)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "SS"
-TextLabel_2.TextColor3 = Color3.new(1, 0, 0.0156863)
-TextLabel_2.TextSize = 30
-
-UICorner_3.Parent = Main
-
-ScreenGui.Parent = Executor
+ScreenGui.Name = "ScreenGui"
+ScreenGui.ResetOnSpawn = false
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-Frame.Parent = ScreenGui
-Frame.BackgroundColor3 = Color3.new(1, 1, 1)
-Frame.BackgroundTransparency = 1
-Frame.BorderColor3 = Color3.new(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0, 0, 0.752066135, 0)
-Frame.Size = UDim2.new(0, 100, 0, 100)
+local E = Instance.new("Frame")
+E.Name = "E"
+E.Position = UDim2.new(0.11739, 0, 0.18052, 0)
+E.Size = UDim2.new(0, 626, 0, 313)
+E.BackgroundColor3 = Color3.new(0.105882, 0.105882, 0.105882)
+E.BorderSizePixel = 0
+E.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+E.Visible = false
+E.Parent = ScreenGui
 
-ImageLabel.Parent = Frame
+local Select = Instance.new("Frame")
+Select.Name = "Select"
+Select.Position = UDim2.new(0.00700003, 0, 0.148, 0)
+Select.Size = UDim2.new(0, 170, 0, 266)
+Select.BackgroundColor3 = Color3.new(1, 1, 1)
+Select.BackgroundTransparency = 1
+Select.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Select.Transparency = 1
+Select.Parent = E
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Name = "UIListLayout"
+UIListLayout.Padding = UDim.new(0, 5)
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Parent = Select
+
+local Home = Instance.new("TextButton")
+Home.Name = "Home"
+Home.Size = UDim2.new(0, 164, 0, 39)
+Home.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Home.BorderSizePixel = 0
+Home.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Home.Text = "Home"
+Home.TextColor3 = Color3.new(0.792157, 0.792157, 0.792157)
+Home.TextSize = 14
+Home.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Home.Parent = Select
+
+local ImageLabel = Instance.new("ImageLabel")
+ImageLabel.Name = "ImageLabel"
+ImageLabel.Position = UDim2.new(0.128049, 0, 0.165114, 0)
+ImageLabel.Size = UDim2.new(0, 26, 0, 24)
 ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
 ImageLabel.BackgroundTransparency = 1
-ImageLabel.BorderColor3 = Color3.new(0, 0, 0)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(0.0700000003, 0, 0, 0)
-ImageLabel.Size = UDim2.new(0, 100, 0, 100)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=83797870660284"
+ImageLabel.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+ImageLabel.Transparency = 1
+ImageLabel.Image = "http://www.roblox.com/asset/?id=1204390775"
+ImageLabel.ImageColor3 = Color3.new(0.870588, 0.870588, 0.870588)
+ImageLabel.Parent = Home
 
-TextLabel_3.Parent = Frame
-TextLabel_3.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel_3.BorderColor3 = Color3.new(0, 0, 0)
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(1.13, 0, 0.100000001, 0)
-TextLabel_3.Size = UDim2.new(0, 200, 0, 80)
-TextLabel_3.Font = Enum.Font.SourceSans
-TextLabel_3.Text = "Project LuaCore Made By 07n7z & ZeroEXE & CodieI2722,Use external program to inject and use internal gui to execute [.gg/5DNQ4KgF3M]                       Status : Injected"
-TextLabel_3.TextColor3 = Color3.new(0, 0, 0)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14
-TextLabel_3.TextWrapped = true
-TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+local Frame = Instance.new("Frame")
+Frame.Name = "Frame"
+Frame.Size = UDim2.new(0, 2, 0, 39)
+Frame.BackgroundColor3 = Color3.new(0.937255, 0.937255, 0.937255)
+Frame.BorderSizePixel = 0
+Frame.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame.Parent = Home
 
--- Scripts
+local Executor = Instance.new("TextButton")
+Executor.Name = "Executor"
+Executor.Position = UDim2.new(0, 0, 0.165414, 0)
+Executor.Size = UDim2.new(0, 164, 0, 39)
+Executor.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Executor.BorderSizePixel = 0
+Executor.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Executor.Text = "Executor"
+Executor.TextColor3 = Color3.new(0.792157, 0.792157, 0.792157)
+Executor.TextSize = 14
+Executor.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Executor.Parent = Select
 
-local function VQPMJXB_fake_script() -- Clear.LocalScript 
-	local script = Instance.new('LocalScript', Clear)
+local ImageLabel2 = Instance.new("ImageLabel")
+ImageLabel2.Name = "ImageLabel"
+ImageLabel2.Position = UDim2.new(0.0914634, 0, 0, 0)
+ImageLabel2.Size = UDim2.new(0, 37, 0, 39)
+ImageLabel2.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel2.BackgroundTransparency = 1
+ImageLabel2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+ImageLabel2.Transparency = 1
+ImageLabel2.Image = "http://www.roblox.com/asset/?id=5822168115"
+ImageLabel2.ImageColor3 = Color3.new(0.952941, 0.952941, 0.952941)
+ImageLabel2.Parent = Executor
 
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Scroll.TextBox.Text = ""
-	end)
-end
-coroutine.wrap(VQPMJXB_fake_script)()
-local function XMGBVSC_fake_script() -- Execute.LocalScript 
-	local script = Instance.new('LocalScript', Execute)
+local Frame2 = Instance.new("Frame")
+Frame2.Name = "Frame"
+Frame2.Size = UDim2.new(0, 2, 0, 39)
+Frame2.BackgroundColor3 = Color3.new(0.937255, 0.937255, 0.937255)
+Frame2.BorderSizePixel = 0
+Frame2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame2.Visible = false
+Frame2.Parent = Executor
 
-	script.Parent.MouseButton1Click:Connect(function()
-		game.ReplicatedStorage.RemoteEvent:FireServer(script.Parent.Parent.Scroll.CodeBox.Text)
-		
-		
-	end)
-end
-coroutine.wrap(XMGBVSC_fake_script)()
-local function HTTP_fake_script() -- Main.LocalScript 
-	local script = Instance.new('LocalScript', Main)
+local Scripthub = Instance.new("TextButton")
+Scripthub.Name = "Scripthub"
+Scripthub.Position = UDim2.new(0, 0, 0.330827, 0)
+Scripthub.Size = UDim2.new(0, 164, 0, 39)
+Scripthub.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Scripthub.BorderSizePixel = 0
+Scripthub.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Scripthub.Text = "Script hub"
+Scripthub.TextColor3 = Color3.new(0.792157, 0.792157, 0.792157)
+Scripthub.TextSize = 14
+Scripthub.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Scripthub.Parent = Select
 
-	script.Parent.Selectable = true
-	script.Parent.Active = true
-	script.Parent.Draggable = true
-end
-coroutine.wrap(HTTP_fake_script)()
-local function MNYJRO_fake_script() -- Executor.LocalScript 
-	local script = Instance.new('LocalScript', Executor)
+local ImageLabel3 = Instance.new("ImageLabel")
+ImageLabel3.Name = "ImageLabel"
+ImageLabel3.Position = UDim2.new(0.128049, 0, 0.205128, 0)
+ImageLabel3.Size = UDim2.new(0, 24, 0, 21)
+ImageLabel3.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel3.BackgroundTransparency = 1
+ImageLabel3.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+ImageLabel3.Transparency = 1
+ImageLabel3.Image = "http://www.roblox.com/asset/?id=2609397568"
+ImageLabel3.Parent = Scripthub
 
-	wait(.1)
-	script.Parent.Enabled = true
-end
-coroutine.wrap(MNYJRO_fake_script)()
+local Frame3 = Instance.new("Frame")
+Frame3.Name = "Frame"
+Frame3.Size = UDim2.new(0, 2, 0, 39)
+Frame3.BackgroundColor3 = Color3.new(0.937255, 0.937255, 0.937255)
+Frame3.BorderSizePixel = 0
+Frame3.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame3.Visible = false
+Frame3.Parent = Scripthub
+
+local Settings = Instance.new("TextButton")
+Settings.Name = "Settings"
+Settings.Position = UDim2.new(0, 0, 0.496241, 0)
+Settings.Size = UDim2.new(0, 164, 0, 39)
+Settings.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Settings.BorderSizePixel = 0
+Settings.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Settings.Text = "Settings"
+Settings.TextColor3 = Color3.new(0.792157, 0.792157, 0.792157)
+Settings.TextSize = 14
+Settings.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Settings.Parent = Select
+
+local ImageLabel4 = Instance.new("ImageLabel")
+ImageLabel4.Name = "ImageLabel"
+ImageLabel4.Position = UDim2.new(0.121951, 0, 0.153846, 0)
+ImageLabel4.Size = UDim2.new(0, 26, 0, 27)
+ImageLabel4.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel4.BackgroundTransparency = 1
+ImageLabel4.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+ImageLabel4.Transparency = 1
+ImageLabel4.Image = "http://www.roblox.com/asset/?id=311226871"
+ImageLabel4.ImageColor3 = Color3.new(0.933333, 0.933333, 0.933333)
+ImageLabel4.Parent = Settings
+
+local Frame4 = Instance.new("Frame")
+Frame4.Name = "Frame"
+Frame4.Size = UDim2.new(0, 2, 0, 39)
+Frame4.BackgroundColor3 = Color3.new(0.937255, 0.937255, 0.937255)
+Frame4.BorderSizePixel = 0
+Frame4.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame4.Visible = false
+Frame4.Parent = Settings
+
+local UICorner = Instance.new("UICorner")
+UICorner.Name = "UICorner"
+
+UICorner.Parent = Select
+
+local Executor2 = Instance.new("Frame")
+Executor2.Name = "Executor"
+Executor2.Position = UDim2.new(0.300319, 0, 0.148054, 0)
+Executor2.Size = UDim2.new(0, 438, 0, 266)
+Executor2.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Executor2.BackgroundTransparency = 1
+Executor2.BorderSizePixel = 0
+Executor2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Executor2.Visible = false
+Executor2.Transparency = 1
+Executor2.Parent = E
+
+local Execute = Instance.new("TextButton")
+Execute.Name = "Execute"
+Execute.Position = UDim2.new(-0.0365297, 0, 0.838232, 0)
+Execute.Size = UDim2.new(0, 109, 0, 37)
+Execute.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Execute.BorderSizePixel = 0
+Execute.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+Execute.TextSize = 14
+Execute.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Execute.Parent = Executor2
+
+local Execute2 = Instance.new("RemoteEvent")
+Execute2.Name = "Execute"
+
+Execute2.Parent = Execute
+
+local Script = Instance.new("Script")
+Script.Name = "Script"
+
+Script.Parent = Execute
+
+local Loadstring = Instance.new("ModuleScript")
+Loadstring.Name = "Loadstring"
+
+Loadstring.Parent = Script
+
+local LuaZ = Instance.new("ModuleScript")
+LuaZ.Name = "LuaZ"
+
+LuaZ.Parent = Loadstring
+
+local LuaX = Instance.new("ModuleScript")
+LuaX.Name = "LuaX"
+
+LuaX.Parent = Loadstring
+
+local LuaY = Instance.new("ModuleScript")
+LuaY.Name = "LuaY"
+
+LuaY.Parent = Loadstring
+
+local LuaK = Instance.new("ModuleScript")
+LuaK.Name = "LuaK"
+
+LuaK.Parent = Loadstring
+
+local LuaU = Instance.new("ModuleScript")
+LuaU.Name = "LuaU"
+
+LuaU.Parent = Loadstring
+
+local LuaP = Instance.new("ModuleScript")
+LuaP.Name = "LuaP"
+
+LuaP.Parent = Loadstring
+
+local Rerubi = Instance.new("ModuleScript")
+Rerubi.Name = "Rerubi"
+
+Rerubi.Parent = Loadstring
+
+local Credits = Instance.new("Script")
+Credits.Name = "Credits"
+
+Credits.Parent = Loadstring
+
+local Clear = Instance.new("TextButton")
+Clear.Name = "Clear"
+Clear.Position = UDim2.new(0.226027, 0, 0.838232, 0)
+Clear.Size = UDim2.new(0, 110, 0, 37)
+Clear.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Clear.BorderSizePixel = 0
+Clear.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+Clear.TextSize = 14
+Clear.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Clear.Parent = Executor2
+
+local R6 = Instance.new("TextButton")
+R6.Name = "R6"
+R6.Position = UDim2.new(0.872596, 0, 0.838232, 0)
+R6.Size = UDim2.new(0, 48, 0, 37)
+R6.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+R6.BorderSizePixel = 0
+R6.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+R6.Text = "R6"
+R6.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+R6.TextSize = 14
+R6.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+R6.Parent = Executor2
+
+local R62 = Instance.new("ModuleScript")
+R62.Name = "R6"
+
+R62.Parent = R6
+
+local _ = Instance.new("Model")
+_.Name = " "
+
+_.Parent = R62
+
+local Health = Instance.new("Script")
+Health.Name = "Health"
+
+Health.Parent = _
+
+local Sound = Instance.new("Script")
+Sound.Name = "Sound"
+
+Sound.Parent = _
+
+local HumanoidRootPart = Instance.new("Part")
+HumanoidRootPart.Name = "HumanoidRootPart"
+
+HumanoidRootPart.Parent = _
+
+local RootJoint = Instance.new("Motor6D")
+RootJoint.Name = "RootJoint"
+
+RootJoint.Parent = HumanoidRootPart
+
+local RootAttachment = Instance.new("Attachment")
+RootAttachment.Name = "RootAttachment"
+
+RootAttachment.Parent = HumanoidRootPart
+
+local CharacterSoundEvent = Instance.new("RemoteEvent")
+CharacterSoundEvent.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent.Parent = HumanoidRootPart
+
+local Humanoid = Instance.new("Humanoid")
+Humanoid.Name = "Humanoid"
+
+Humanoid.Parent = _
+
+local Respawn = Instance.new("Script")
+Respawn.Name = "Respawn"
+
+Respawn.Parent = Humanoid
+
+local Animator = Instance.new("Animator")
+Animator.Name = "Animator"
+
+Animator.Parent = Humanoid
+
+local Right_Leg = Instance.new("Part")
+Right_Leg.Name = "Right Leg"
+
+Right_Leg.Parent = _
+
+local RightFootAttachment = Instance.new("Attachment")
+RightFootAttachment.Name = "RightFootAttachment"
+
+RightFootAttachment.Parent = Right_Leg
+
+local CharacterSoundEvent2 = Instance.new("RemoteEvent")
+CharacterSoundEvent2.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent2.Parent = Right_Leg
+
+local Left_Leg = Instance.new("Part")
+Left_Leg.Name = "Left Leg"
+
+Left_Leg.Parent = _
+
+local LeftFootAttachment = Instance.new("Attachment")
+LeftFootAttachment.Name = "LeftFootAttachment"
+
+LeftFootAttachment.Parent = Left_Leg
+
+local CharacterSoundEvent3 = Instance.new("RemoteEvent")
+CharacterSoundEvent3.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent3.Parent = Left_Leg
+
+local Right_Arm = Instance.new("Part")
+Right_Arm.Name = "Right Arm"
+
+Right_Arm.Parent = _
+
+local RightGripAttachment = Instance.new("Attachment")
+RightGripAttachment.Name = "RightGripAttachment"
+
+RightGripAttachment.Parent = Right_Arm
+
+local RightShoulderAttachment = Instance.new("Attachment")
+RightShoulderAttachment.Name = "RightShoulderAttachment"
+
+RightShoulderAttachment.Parent = Right_Arm
+
+local CharacterSoundEvent4 = Instance.new("RemoteEvent")
+CharacterSoundEvent4.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent4.Parent = Right_Arm
+
+local Left_Arm = Instance.new("Part")
+Left_Arm.Name = "Left Arm"
+
+Left_Arm.Parent = _
+
+local LeftGripAttachment = Instance.new("Attachment")
+LeftGripAttachment.Name = "LeftGripAttachment"
+
+LeftGripAttachment.Parent = Left_Arm
+
+local LeftShoulderAttachment = Instance.new("Attachment")
+LeftShoulderAttachment.Name = "LeftShoulderAttachment"
+
+LeftShoulderAttachment.Parent = Left_Arm
+
+local CharacterSoundEvent5 = Instance.new("RemoteEvent")
+CharacterSoundEvent5.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent5.Parent = Left_Arm
+
+local Torso = Instance.new("Part")
+Torso.Name = "Torso"
+
+Torso.Parent = _
+
+local Neck = Instance.new("Motor6D")
+Neck.Name = "Neck"
+
+Neck.Parent = Torso
+
+local Left_Hip = Instance.new("Motor6D")
+Left_Hip.Name = "Left Hip"
+
+Left_Hip.Parent = Torso
+
+local Right_Hip = Instance.new("Motor6D")
+Right_Hip.Name = "Right Hip"
+
+Right_Hip.Parent = Torso
+
+local Left_Shoulder = Instance.new("Motor6D")
+Left_Shoulder.Name = "Left Shoulder"
+
+Left_Shoulder.Parent = Torso
+
+local Right_Shoulder = Instance.new("Motor6D")
+Right_Shoulder.Name = "Right Shoulder"
+
+Right_Shoulder.Parent = Torso
+
+local WaistBackAttachment = Instance.new("Attachment")
+WaistBackAttachment.Name = "WaistBackAttachment"
+
+WaistBackAttachment.Parent = Torso
+
+local WaistCenterAttachment = Instance.new("Attachment")
+WaistCenterAttachment.Name = "WaistCenterAttachment"
+
+WaistCenterAttachment.Parent = Torso
+
+local WaistFrontAttachment = Instance.new("Attachment")
+WaistFrontAttachment.Name = "WaistFrontAttachment"
+
+WaistFrontAttachment.Parent = Torso
+
+local RightCollarAttachment = Instance.new("Attachment")
+RightCollarAttachment.Name = "RightCollarAttachment"
+
+RightCollarAttachment.Parent = Torso
+
+local LeftCollarAttachment = Instance.new("Attachment")
+LeftCollarAttachment.Name = "LeftCollarAttachment"
+
+LeftCollarAttachment.Parent = Torso
+
+local BodyBackAttachment = Instance.new("Attachment")
+BodyBackAttachment.Name = "BodyBackAttachment"
+
+BodyBackAttachment.Parent = Torso
+
+local BodyFrontAttachment = Instance.new("Attachment")
+BodyFrontAttachment.Name = "BodyFrontAttachment"
+
+BodyFrontAttachment.Parent = Torso
+
+local NeckAttachment = Instance.new("Attachment")
+NeckAttachment.Name = "NeckAttachment"
+
+NeckAttachment.Parent = Torso
+
+local roblox = Instance.new("Decal")
+roblox.Name = "roblox"
+
+roblox.Parent = Torso
+
+local CharacterSoundEvent6 = Instance.new("RemoteEvent")
+CharacterSoundEvent6.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent6.Parent = Torso
+
+local Head = Instance.new("Part")
+Head.Name = "Head"
+
+Head.Parent = _
+
+local face = Instance.new("Decal")
+face.Name = "face"
+
+face.Parent = Head
+
+local Climbing = Instance.new("Sound")
+Climbing.Name = "Climbing"
+
+Climbing.Parent = Head
+
+local CharacterSoundEvent7 = Instance.new("RemoteEvent")
+CharacterSoundEvent7.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent7.Parent = Climbing
+
+local Swimming = Instance.new("Sound")
+Swimming.Name = "Swimming"
+
+Swimming.Parent = Head
+
+local CharacterSoundEvent8 = Instance.new("RemoteEvent")
+CharacterSoundEvent8.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent8.Parent = Swimming
+
+local Running = Instance.new("Sound")
+Running.Name = "Running"
+
+Running.Parent = Head
+
+local CharacterSoundEvent9 = Instance.new("RemoteEvent")
+CharacterSoundEvent9.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent9.Parent = Running
+
+local Splash = Instance.new("Sound")
+Splash.Name = "Splash"
+
+Splash.Parent = Head
+
+local CharacterSoundEvent10 = Instance.new("RemoteEvent")
+CharacterSoundEvent10.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent10.Parent = Splash
+
+local Landing = Instance.new("Sound")
+Landing.Name = "Landing"
+
+Landing.Parent = Head
+
+local CharacterSoundEvent11 = Instance.new("RemoteEvent")
+CharacterSoundEvent11.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent11.Parent = Landing
+
+local Jumping = Instance.new("Sound")
+Jumping.Name = "Jumping"
+
+Jumping.Parent = Head
+
+local CharacterSoundEvent12 = Instance.new("RemoteEvent")
+CharacterSoundEvent12.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent12.Parent = Jumping
+
+local FreeFalling = Instance.new("Sound")
+FreeFalling.Name = "FreeFalling"
+
+FreeFalling.Parent = Head
+
+local Died = Instance.new("Sound")
+Died.Name = "Died"
+
+Died.Parent = Head
+
+local CharacterSoundEvent13 = Instance.new("RemoteEvent")
+CharacterSoundEvent13.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent13.Parent = Died
+
+local GettingUp = Instance.new("Sound")
+GettingUp.Name = "GettingUp"
+
+GettingUp.Parent = Head
+
+local CharacterSoundEvent14 = Instance.new("RemoteEvent")
+CharacterSoundEvent14.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent14.Parent = GettingUp
+
+local FaceCenterAttachment = Instance.new("Attachment")
+FaceCenterAttachment.Name = "FaceCenterAttachment"
+
+FaceCenterAttachment.Parent = Head
+
+local FaceFrontAttachment = Instance.new("Attachment")
+FaceFrontAttachment.Name = "FaceFrontAttachment"
+
+FaceFrontAttachment.Parent = Head
+
+local HatAttachment = Instance.new("Attachment")
+HatAttachment.Name = "HatAttachment"
+
+HatAttachment.Parent = Head
+
+local HairAttachment = Instance.new("Attachment")
+HairAttachment.Name = "HairAttachment"
+
+HairAttachment.Parent = Head
+
+local Mesh = Instance.new("SpecialMesh")
+Mesh.Name = "Mesh"
+
+Mesh.Parent = Head
+
+local CharacterSoundEvent15 = Instance.new("RemoteEvent")
+CharacterSoundEvent15.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent15.Parent = Head
+
+local GettingUp2 = Instance.new("Sound")
+GettingUp2.Name = "GettingUp"
+
+GettingUp2.Parent = Head
+
+local CharacterSoundEvent16 = Instance.new("RemoteEvent")
+CharacterSoundEvent16.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent16.Parent = GettingUp2
+
+local Died2 = Instance.new("Sound")
+Died2.Name = "Died"
+
+Died2.Parent = Head
+
+local CharacterSoundEvent17 = Instance.new("RemoteEvent")
+CharacterSoundEvent17.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent17.Parent = Died2
+
+local FreeFalling2 = Instance.new("Sound")
+FreeFalling2.Name = "FreeFalling"
+
+FreeFalling2.Parent = Head
+
+local CharacterSoundEvent18 = Instance.new("RemoteEvent")
+CharacterSoundEvent18.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent18.Parent = FreeFalling2
+
+local Jumping2 = Instance.new("Sound")
+Jumping2.Name = "Jumping"
+
+Jumping2.Parent = Head
+
+local CharacterSoundEvent19 = Instance.new("RemoteEvent")
+CharacterSoundEvent19.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent19.Parent = Jumping2
+
+local Landing2 = Instance.new("Sound")
+Landing2.Name = "Landing"
+
+Landing2.Parent = Head
+
+local CharacterSoundEvent20 = Instance.new("RemoteEvent")
+CharacterSoundEvent20.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent20.Parent = Landing2
+
+local Splash2 = Instance.new("Sound")
+Splash2.Name = "Splash"
+
+Splash2.Parent = Head
+
+local CharacterSoundEvent21 = Instance.new("RemoteEvent")
+CharacterSoundEvent21.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent21.Parent = Splash2
+
+local Running2 = Instance.new("Sound")
+Running2.Name = "Running"
+
+Running2.Parent = Head
+
+local CharacterSoundEvent22 = Instance.new("RemoteEvent")
+CharacterSoundEvent22.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent22.Parent = Running2
+
+local Swimming2 = Instance.new("Sound")
+Swimming2.Name = "Swimming"
+
+Swimming2.Parent = Head
+
+local CharacterSoundEvent23 = Instance.new("RemoteEvent")
+CharacterSoundEvent23.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent23.Parent = Swimming2
+
+local Climbing2 = Instance.new("Sound")
+Climbing2.Name = "Climbing"
+
+Climbing2.Parent = Head
+
+local CharacterSoundEvent24 = Instance.new("RemoteEvent")
+CharacterSoundEvent24.Name = "CharacterSoundEvent"
+
+CharacterSoundEvent24.Parent = Climbing2
+
+local Script2 = Instance.new("Script")
+Script2.Name = "Script"
+
+Script2.Parent = R6
+
+local _R6 = Instance.new("RemoteEvent")
+_R6.Name = "_R6"
+
+_R6.Parent = R6
+
+local Respawn2 = Instance.new("TextButton")
+Respawn2.Name = "Respawn"
+Respawn2.Position = UDim2.new(0.748, 0, 0.838, 0)
+Respawn2.Size = UDim2.new(0, 49, 0, 37)
+Respawn2.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Respawn2.BorderSizePixel = 0
+Respawn2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Respawn2.Text = "RE"
+Respawn2.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+Respawn2.TextSize = 14
+Respawn2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Respawn2.Parent = Executor2
+
+local Script3 = Instance.new("Script")
+Script3.Name = "Script"
+
+Script3.Parent = Respawn2
+
+local Respawn3 = Instance.new("RemoteEvent")
+Respawn3.Name = "Respawn"
+
+Respawn3.Parent = Respawn2
+
+local Spawn_NPC = Instance.new("TextButton")
+Spawn_NPC.Name = "Spawn NPC"
+Spawn_NPC.Position = UDim2.new(0.51, 0, 0.838, 0)
+Spawn_NPC.Size = UDim2.new(0, 99, 0, 37)
+Spawn_NPC.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Spawn_NPC.BorderSizePixel = 0
+Spawn_NPC.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Spawn_NPC.Text = "Spawn NPC"
+Spawn_NPC.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+Spawn_NPC.TextSize = 14
+Spawn_NPC.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Spawn_NPC.Parent = Executor2
+
+local Script4 = Instance.new("Script")
+Script4.Name = "Script"
+
+Script4.Parent = Spawn_NPC
+
+local Spawn = Instance.new("RemoteEvent")
+Spawn.Name = "Spawn"
+
+Spawn.Parent = Spawn_NPC
+
+local MainModule = Instance.new("ModuleScript")
+MainModule.Name = "MainModule"
+
+MainModule.Parent = Spawn_NPC
+
+local NPC = Instance.new("Model")
+NPC.Name = "NPC"
+
+NPC.Parent = MainModule
+
+local Head2 = Instance.new("Part")
+Head2.Name = "Head"
+
+Head2.Parent = NPC
+
+local Mesh2 = Instance.new("SpecialMesh")
+Mesh2.Name = "Mesh"
+
+Mesh2.Parent = Head2
+
+local HatAttachment2 = Instance.new("Attachment")
+HatAttachment2.Name = "HatAttachment"
+
+HatAttachment2.Parent = Head2
+
+local HairAttachment2 = Instance.new("Attachment")
+HairAttachment2.Name = "HairAttachment"
+
+HairAttachment2.Parent = Head2
+
+local FaceFrontAttachment2 = Instance.new("Attachment")
+FaceFrontAttachment2.Name = "FaceFrontAttachment"
+
+FaceFrontAttachment2.Parent = Head2
+
+local FaceCenterAttachment2 = Instance.new("Attachment")
+FaceCenterAttachment2.Name = "FaceCenterAttachment"
+
+FaceCenterAttachment2.Parent = Head2
+
+local face2 = Instance.new("Decal")
+face2.Name = "face"
+
+face2.Parent = Head2
+
+local HumanoidRootPart2 = Instance.new("Part")
+HumanoidRootPart2.Name = "HumanoidRootPart"
+
+HumanoidRootPart2.Parent = NPC
+
+local RootJoint2 = Instance.new("Motor6D")
+RootJoint2.Name = "RootJoint"
+
+RootJoint2.Parent = HumanoidRootPart2
+
+local Climbing3 = Instance.new("Sound")
+Climbing3.Name = "Climbing"
+
+Climbing3.Parent = HumanoidRootPart2
+
+local Died3 = Instance.new("Sound")
+Died3.Name = "Died"
+
+Died3.Parent = HumanoidRootPart2
+
+local FreeFalling3 = Instance.new("Sound")
+FreeFalling3.Name = "FreeFalling"
+
+FreeFalling3.Parent = HumanoidRootPart2
+
+local GettingUp3 = Instance.new("Sound")
+GettingUp3.Name = "GettingUp"
+
+GettingUp3.Parent = HumanoidRootPart2
+
+local Jumping3 = Instance.new("Sound")
+Jumping3.Name = "Jumping"
+
+Jumping3.Parent = HumanoidRootPart2
+
+local Landing3 = Instance.new("Sound")
+Landing3.Name = "Landing"
+
+Landing3.Parent = HumanoidRootPart2
+
+local Running3 = Instance.new("Sound")
+Running3.Name = "Running"
+
+Running3.Parent = HumanoidRootPart2
+
+local Splash3 = Instance.new("Sound")
+Splash3.Name = "Splash"
+
+Splash3.Parent = HumanoidRootPart2
+
+local Swimming3 = Instance.new("Sound")
+Swimming3.Name = "Swimming"
+
+Swimming3.Parent = HumanoidRootPart2
+
+local Sound2 = Instance.new("Script")
+Sound2.Name = "Sound"
+
+Sound2.Parent = HumanoidRootPart2
+
+local Left_Arm2 = Instance.new("Part")
+Left_Arm2.Name = "Left Arm"
+
+Left_Arm2.Parent = NPC
+
+local LeftShoulderAttachment2 = Instance.new("Attachment")
+LeftShoulderAttachment2.Name = "LeftShoulderAttachment"
+
+LeftShoulderAttachment2.Parent = Left_Arm2
+
+local Left_Leg2 = Instance.new("Part")
+Left_Leg2.Name = "Left Leg"
+
+Left_Leg2.Parent = NPC
+
+local Right_Arm2 = Instance.new("Part")
+Right_Arm2.Name = "Right Arm"
+
+Right_Arm2.Parent = NPC
+
+local RightShoulderAttachment2 = Instance.new("Attachment")
+RightShoulderAttachment2.Name = "RightShoulderAttachment"
+
+RightShoulderAttachment2.Parent = Right_Arm2
+
+local Right_Leg2 = Instance.new("Part")
+Right_Leg2.Name = "Right Leg"
+
+Right_Leg2.Parent = NPC
+
+local Torso2 = Instance.new("Part")
+Torso2.Name = "Torso"
+
+Torso2.Parent = NPC
+
+local roblox2 = Instance.new("Decal")
+roblox2.Name = "roblox"
+
+roblox2.Parent = Torso2
+
+local Right_Shoulder2 = Instance.new("Motor6D")
+Right_Shoulder2.Name = "Right Shoulder"
+
+Right_Shoulder2.Parent = Torso2
+
+local Right_Hip2 = Instance.new("Motor6D")
+Right_Hip2.Name = "Right Hip"
+
+Right_Hip2.Parent = Torso2
+
+local Neck2 = Instance.new("Motor6D")
+Neck2.Name = "Neck"
+
+Neck2.Parent = Torso2
+
+local Left_Shoulder2 = Instance.new("Motor6D")
+Left_Shoulder2.Name = "Left Shoulder"
+
+Left_Shoulder2.Parent = Torso2
+
+local Left_Hip2 = Instance.new("Motor6D")
+Left_Hip2.Name = "Left Hip"
+
+Left_Hip2.Parent = Torso2
+
+local WaistFrontAttachment2 = Instance.new("Attachment")
+WaistFrontAttachment2.Name = "WaistFrontAttachment"
+
+WaistFrontAttachment2.Parent = Torso2
+
+local WaistCenterAttachment2 = Instance.new("Attachment")
+WaistCenterAttachment2.Name = "WaistCenterAttachment"
+
+WaistCenterAttachment2.Parent = Torso2
+
+local WaistBackAttachment2 = Instance.new("Attachment")
+WaistBackAttachment2.Name = "WaistBackAttachment"
+
+WaistBackAttachment2.Parent = Torso2
+
+local RightCollarAttachment2 = Instance.new("Attachment")
+RightCollarAttachment2.Name = "RightCollarAttachment"
+
+RightCollarAttachment2.Parent = Torso2
+
+local NeckAttachment2 = Instance.new("Attachment")
+NeckAttachment2.Name = "NeckAttachment"
+
+NeckAttachment2.Parent = Torso2
+
+local LeftCollarAttachment2 = Instance.new("Attachment")
+LeftCollarAttachment2.Name = "LeftCollarAttachment"
+
+LeftCollarAttachment2.Parent = Torso2
+
+local BodyFrontAttachment2 = Instance.new("Attachment")
+BodyFrontAttachment2.Name = "BodyFrontAttachment"
+
+BodyFrontAttachment2.Parent = Torso2
+
+local BodyBackAttachment2 = Instance.new("Attachment")
+BodyBackAttachment2.Name = "BodyBackAttachment"
+
+BodyBackAttachment2.Parent = Torso2
+
+local Humanoid2 = Instance.new("Humanoid")
+Humanoid2.Name = "Humanoid"
+
+Humanoid2.Parent = NPC
+
+local Body_Colors = Instance.new("BodyColors")
+Body_Colors.Name = "Body Colors"
+
+Body_Colors.Parent = NPC
+
+local Health2 = Instance.new("Script")
+Health2.Name = "Health"
+
+Health2.Parent = NPC
+
+local Animate = Instance.new("Script")
+Animate.Name = "Animate"
+
+Animate.Parent = NPC
+
+local ScaleDampeningPercent = Instance.new("NumberValue")
+ScaleDampeningPercent.Name = "ScaleDampeningPercent"
+
+ScaleDampeningPercent.Parent = Animate
+
+local climb = Instance.new("StringValue")
+climb.Name = "climb"
+
+climb.Parent = Animate
+
+local ClimbAnim = Instance.new("Animation")
+ClimbAnim.Name = "ClimbAnim"
+
+ClimbAnim.Parent = climb
+
+local fall = Instance.new("StringValue")
+fall.Name = "fall"
+
+fall.Parent = Animate
+
+local FallAnim = Instance.new("Animation")
+FallAnim.Name = "FallAnim"
+
+FallAnim.Parent = fall
+
+local idle = Instance.new("StringValue")
+idle.Name = "idle"
+
+idle.Parent = Animate
+
+local Animation1 = Instance.new("Animation")
+Animation1.Name = "Animation1"
+
+Animation1.Parent = idle
+
+local Weight = Instance.new("NumberValue")
+Weight.Name = "Weight"
+
+Weight.Parent = Animation1
+
+local Animation2 = Instance.new("Animation")
+Animation2.Name = "Animation2"
+
+Animation2.Parent = idle
+
+local Weight2 = Instance.new("NumberValue")
+Weight2.Name = "Weight"
+
+Weight2.Parent = Animation2
+
+local jump = Instance.new("StringValue")
+jump.Name = "jump"
+
+jump.Parent = Animate
+
+local JumpAnim = Instance.new("Animation")
+JumpAnim.Name = "JumpAnim"
+
+JumpAnim.Parent = jump
+
+local run = Instance.new("StringValue")
+run.Name = "run"
+
+run.Parent = Animate
+
+local RunAnim = Instance.new("Animation")
+RunAnim.Name = "RunAnim"
+
+RunAnim.Parent = run
+
+local sit = Instance.new("StringValue")
+sit.Name = "sit"
+
+sit.Parent = Animate
+
+local SitAnim = Instance.new("Animation")
+SitAnim.Name = "SitAnim"
+
+SitAnim.Parent = sit
+
+local toolnone = Instance.new("StringValue")
+toolnone.Name = "toolnone"
+
+toolnone.Parent = Animate
+
+local ToolNoneAnim = Instance.new("Animation")
+ToolNoneAnim.Name = "ToolNoneAnim"
+
+ToolNoneAnim.Parent = toolnone
+
+local walk = Instance.new("StringValue")
+walk.Name = "walk"
+
+walk.Parent = Animate
+
+local WalkAnim = Instance.new("Animation")
+WalkAnim.Name = "WalkAnim"
+
+WalkAnim.Parent = walk
+
+local Settings2 = Instance.new("Configuration")
+Settings2.Name = "Settings"
+
+Settings2.Parent = NPC
+
+local Walk = Instance.new("BoolValue")
+Walk.Name = "Walk"
+
+Walk.Parent = Settings2
+
+local Jump = Instance.new("BoolValue")
+Jump.Name = "Jump"
+
+Jump.Parent = Settings2
+
+local Animations = Instance.new("BoolValue")
+Animations.Name = "Animations"
+
+Animations.Parent = Settings2
+
+local Sound3 = Instance.new("BoolValue")
+Sound3.Name = "Sound"
+
+Sound3.Parent = Settings2
+
+local Walk2 = Instance.new("Script")
+Walk2.Name = "Walk"
+
+Walk2.Parent = NPC
+
+local CodeScroll = Instance.new("ScrollingFrame")
+CodeScroll.Name = "CodeScroll"
+CodeScroll.Position = UDim2.new(-0.0365297, 0, 0, 0)
+CodeScroll.Size = UDim2.new(0, 447, 0, 216)
+CodeScroll.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+CodeScroll.BorderSizePixel = 0
+CodeScroll.BorderColor3 = Color3.new(0.32549, 0.32549, 0.32549)
+CodeScroll.Active = true
+CodeScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+CodeScroll.ScrollBarThickness = 5
+CodeScroll.BottomImage = ""
+CodeScroll.TopImage = ""
+CodeScroll.Parent = Executor2
+
+local Lines = Instance.new("TextLabel")
+Lines.Name = "Lines"
+Lines.Position = UDim2.new(0, 0, 0.0297343, 0)
+Lines.Size = UDim2.new(0, 22, 0, 261)
+Lines.BackgroundColor3 = Color3.new(0.141176, 0.141176, 0.141176)
+Lines.BackgroundTransparency = 1
+Lines.BorderColor3 = Color3.new(0.290196, 0.290196, 0.290196)
+Lines.Transparency = 1
+Lines.Active = true
+Lines.Text = "1"
+Lines.TextColor3 = Color3.new(0.705882, 0.705882, 0.705882)
+Lines.TextSize = 13
+Lines.FontFace = Font.new("rbxasset://fonts/families/ComicNeueAngular.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Lines.TextWrapped = true
+Lines.TextYAlignment = Enum.TextYAlignment.Top
+Lines.Parent = CodeScroll
+
+local Code = Instance.new("TextBox")
+Code.Name = "Code"
+Code.Position = UDim2.new(0, 31, 0, 6)
+Code.Size = UDim2.new(0, 400, 0, 208)
+Code.BackgroundColor3 = Color3.new(0.239216, 0.239216, 0.239216)
+Code.BackgroundTransparency = 1
+Code.BorderSizePixel = 0
+Code.BorderColor3 = Color3.new(0.168627, 0.415686, 0.678431)
+Code.Transparency = 1
+Code.Text = "print("Hello There!")"
+Code.TextColor3 = Color3.new(0.956863, 0.956863, 0.956863)
+Code.TextSize = 13
+Code.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Code.TextXAlignment = Enum.TextXAlignment.Left
+Code.TextYAlignment = Enum.TextYAlignment.Top
+Code.ClearTextOnFocus = false
+Code.MultiLine = true
+Code.Parent = CodeScroll
+
+local Globals = Instance.new("TextLabel")
+Globals.Name = "Globals"
+Globals.Size = UDim2.new(1, 0, 1, 0)
+Globals.BackgroundColor3 = Color3.new(1, 1, 1)
+Globals.BackgroundTransparency = 1
+Globals.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Globals.ZIndex = 2
+Globals.Transparency = 1
+Globals.Text = ""
+Globals.TextColor3 = Color3.new(0.380392, 0.521569, 0.905882)
+Globals.TextSize = 13
+Globals.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Globals.TextXAlignment = Enum.TextXAlignment.Left
+Globals.TextYAlignment = Enum.TextYAlignment.Top
+Globals.Parent = Code
+
+local RemoteHighlight = Instance.new("TextLabel")
+RemoteHighlight.Name = "RemoteHighlight"
+RemoteHighlight.Size = UDim2.new(1, 0, 1, 0)
+RemoteHighlight.BackgroundColor3 = Color3.new(1, 1, 1)
+RemoteHighlight.BackgroundTransparency = 1
+RemoteHighlight.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+RemoteHighlight.ZIndex = 2
+RemoteHighlight.Transparency = 1
+RemoteHighlight.Text = ""
+RemoteHighlight.TextColor3 = Color3.new(1, 0.462745, 0.192157)
+RemoteHighlight.TextSize = 13
+RemoteHighlight.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+RemoteHighlight.TextXAlignment = Enum.TextXAlignment.Left
+RemoteHighlight.TextYAlignment = Enum.TextYAlignment.Top
+RemoteHighlight.Parent = Code
+
+local Numbers = Instance.new("TextLabel")
+Numbers.Name = "Numbers"
+Numbers.Size = UDim2.new(1, 0, 1, 0)
+Numbers.BackgroundColor3 = Color3.new(1, 1, 1)
+Numbers.BackgroundTransparency = 1
+Numbers.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Numbers.ZIndex = 2
+Numbers.Transparency = 1
+Numbers.Text = ""
+Numbers.TextColor3 = Color3.new(1, 0.905882, 0.184314)
+Numbers.TextSize = 13
+Numbers.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Numbers.TextXAlignment = Enum.TextXAlignment.Left
+Numbers.TextYAlignment = Enum.TextYAlignment.Top
+Numbers.Parent = Code
+
+local Keywords = Instance.new("TextLabel")
+Keywords.Name = "Keywords"
+Keywords.Size = UDim2.new(1, 0, 1, 0)
+Keywords.BackgroundColor3 = Color3.new(1, 1, 1)
+Keywords.BackgroundTransparency = 1
+Keywords.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Keywords.ZIndex = 2
+Keywords.Transparency = 1
+Keywords.Text = ""
+Keywords.TextColor3 = Color3.new(0.47451, 0.843137, 1)
+Keywords.TextSize = 13
+Keywords.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Keywords.TextXAlignment = Enum.TextXAlignment.Left
+Keywords.TextYAlignment = Enum.TextYAlignment.Top
+Keywords.Parent = Code
+
+local Comments = Instance.new("TextLabel")
+Comments.Name = "Comments"
+Comments.Size = UDim2.new(1, 0, 1, 0)
+Comments.BackgroundColor3 = Color3.new(1, 1, 1)
+Comments.BackgroundTransparency = 1
+Comments.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Comments.ZIndex = 2
+Comments.Transparency = 1
+Comments.Text = ""
+Comments.TextColor3 = Color3.new(0.168627, 0.784314, 0.54902)
+Comments.TextSize = 13
+Comments.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Comments.TextXAlignment = Enum.TextXAlignment.Left
+Comments.TextYAlignment = Enum.TextYAlignment.Top
+Comments.Parent = Code
+
+local Strings = Instance.new("TextLabel")
+Strings.Name = "Strings"
+Strings.Size = UDim2.new(1, 0, 1, 0)
+Strings.BackgroundColor3 = Color3.new(1, 1, 1)
+Strings.BackgroundTransparency = 1
+Strings.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Strings.ZIndex = 2
+Strings.Transparency = 1
+Strings.Text = ""
+Strings.TextColor3 = Color3.new(0.47451, 0.952941, 0.4)
+Strings.TextSize = 13
+Strings.FontFace = Font.new("rbxasset://fonts/families/Inconsolata.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Strings.TextXAlignment = Enum.TextXAlignment.Left
+Strings.TextYAlignment = Enum.TextYAlignment.Top
+Strings.Parent = Code
+
+local Frame5 = Instance.new("Frame")
+Frame5.Name = "Frame"
+Frame5.Position = UDim2.new(0.0136986, 0, 0, 0)
+Frame5.Size = UDim2.new(0.00261944, 0, 0.00751874, 214)
+Frame5.BackgroundColor3 = Color3.new(0.192157, 0.192157, 0.192157)
+Frame5.BorderSizePixel = 0
+Frame5.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame5.Parent = Executor2
+
+local UICorner2 = Instance.new("UICorner")
+UICorner2.Name = "UICorner"
+
+UICorner2.Parent = Executor2
+
+local Top = Instance.new("Frame")
+Top.Name = "Top"
+Top.Size = UDim2.new(0, 626, 0, 40)
+Top.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Top.BorderSizePixel = 0
+Top.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Top.Parent = E
+
+local UICorner3 = Instance.new("UICorner")
+UICorner3.Name = "UICorner"
+
+UICorner3.Parent = Top
+
+local ScriptHub = Instance.new("Frame")
+ScriptHub.Name = "ScriptHub"
+ScriptHub.Position = UDim2.new(0.300319, 0, 0.148054, 0)
+ScriptHub.Size = UDim2.new(0, 438, 0, 266)
+ScriptHub.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+ScriptHub.BackgroundTransparency = 1
+ScriptHub.BorderSizePixel = 0
+ScriptHub.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+ScriptHub.Visible = false
+ScriptHub.Transparency = 1
+ScriptHub.Parent = E
+
+local TextBox = Instance.new("TextBox")
+TextBox.Name = "TextBox"
+TextBox.Position = UDim2.new(-0.0297255, 0, -0.00310316, 0)
+TextBox.Size = UDim2.new(1.01191, 0, 0.149656, 0)
+TextBox.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+TextBox.BorderSizePixel = 0
+TextBox.BorderColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.new(1, 1, 1)
+TextBox.TextSize = 14
+TextBox.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox.PlaceholderText = "Search for scripts"
+TextBox.PlaceholderColor3 = Color3.new(0.741176, 0.741176, 0.741176)
+TextBox.Parent = ScriptHub
+
+local ScrollingFrame = Instance.new("ScrollingFrame")
+ScrollingFrame.Name = "ScrollingFrame"
+ScrollingFrame.Position = UDim2.new(-0.0319635, 0, 0.16535, 0)
+ScrollingFrame.Size = UDim2.new(0, 444, 0, 215)
+ScrollingFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+ScrollingFrame.BackgroundTransparency = 1
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+ScrollingFrame.Transparency = 1
+ScrollingFrame.Active = true
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 3.4, 0)
+ScrollingFrame.ScrollBarImageColor3 = Color3.new(0.141176, 0.141176, 0.141176)
+ScrollingFrame.Parent = ScriptHub
+
+local AllahuAkbar = Instance.new("TextButton")
+AllahuAkbar.Name = "AllahuAkbar"
+AllahuAkbar.Size = UDim2.new(0, 426, 0, 29)
+AllahuAkbar.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+AllahuAkbar.BorderSizePixel = 0
+AllahuAkbar.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+AllahuAkbar.Text = "Allahu Akbar"
+AllahuAkbar.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+AllahuAkbar.TextSize = 14
+AllahuAkbar.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+AllahuAkbar.Parent = ScrollingFrame
+
+local UIListLayout2 = Instance.new("UIListLayout")
+UIListLayout2.Name = "UIListLayout"
+UIListLayout2.Padding = UDim.new(0, 3)
+UIListLayout2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout2.Parent = ScrollingFrame
+
+local BlindReaper = Instance.new("TextButton")
+BlindReaper.Name = "BlindReaper"
+BlindReaper.Position = UDim2.new(0, 0, 0.15814, 0)
+BlindReaper.Size = UDim2.new(0, 426, 0, 29)
+BlindReaper.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+BlindReaper.BorderSizePixel = 0
+BlindReaper.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+BlindReaper.Text = "Blind Reaper"
+BlindReaper.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+BlindReaper.TextSize = 14
+BlindReaper.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+BlindReaper.Parent = ScrollingFrame
+
+local BowV2 = Instance.new("TextButton")
+BowV2.Name = "BowV2"
+BowV2.Position = UDim2.new(0, 0, 0.15814, 0)
+BowV2.Size = UDim2.new(0, 426, 0, 29)
+BowV2.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+BowV2.BorderSizePixel = 0
+BowV2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+BowV2.Text = "Bow V2"
+BowV2.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+BowV2.TextSize = 14
+BowV2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+BowV2.Parent = ScrollingFrame
+
+local BrokenAngel = Instance.new("TextButton")
+BrokenAngel.Name = "BrokenAngel"
+BrokenAngel.Position = UDim2.new(0, 0, 0.15814, 0)
+BrokenAngel.Size = UDim2.new(0, 426, 0, 29)
+BrokenAngel.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+BrokenAngel.BorderSizePixel = 0
+BrokenAngel.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+BrokenAngel.Text = "Broken Angel"
+BrokenAngel.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+BrokenAngel.TextSize = 14
+BrokenAngel.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+BrokenAngel.Parent = ScrollingFrame
+
+local TrapRiffle = Instance.new("TextButton")
+TrapRiffle.Name = "TrapRiffle"
+TrapRiffle.Position = UDim2.new(0, 0, 0.15814, 0)
+TrapRiffle.Size = UDim2.new(0, 426, 0, 29)
+TrapRiffle.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+TrapRiffle.BorderSizePixel = 0
+TrapRiffle.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+TrapRiffle.Text = "Trap Riffle"
+TrapRiffle.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+TrapRiffle.TextSize = 14
+TrapRiffle.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TrapRiffle.Parent = ScrollingFrame
+
+local CitizenChinaRemake = Instance.new("TextButton")
+CitizenChinaRemake.Name = "CitizenChinaRemake"
+CitizenChinaRemake.Position = UDim2.new(0, 0, 0.15814, 0)
+CitizenChinaRemake.Size = UDim2.new(0, 426, 0, 29)
+CitizenChinaRemake.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+CitizenChinaRemake.BorderSizePixel = 0
+CitizenChinaRemake.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+CitizenChinaRemake.Text = "Citizen China Remake"
+CitizenChinaRemake.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+CitizenChinaRemake.TextSize = 14
+CitizenChinaRemake.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+CitizenChinaRemake.Parent = ScrollingFrame
+
+local DarthVader = Instance.new("TextButton")
+DarthVader.Name = "DarthVader"
+DarthVader.Position = UDim2.new(0, 0, 0.15814, 0)
+DarthVader.Size = UDim2.new(0, 426, 0, 29)
+DarthVader.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+DarthVader.BorderSizePixel = 0
+DarthVader.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+DarthVader.Text = "DarthVader"
+DarthVader.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+DarthVader.TextSize = 14
+DarthVader.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+DarthVader.Parent = ScrollingFrame
+
+local Dex = Instance.new("TextButton")
+Dex.Name = "Dex"
+Dex.Position = UDim2.new(0, 0, 0.15814, 0)
+Dex.Size = UDim2.new(0, 426, 0, 29)
+Dex.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Dex.BorderSizePixel = 0
+Dex.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Dex.Text = "Dex Explorer"
+Dex.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+Dex.TextSize = 14
+Dex.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Dex.Parent = ScrollingFrame
+
+local DubstepGun = Instance.new("TextButton")
+DubstepGun.Name = "DubstepGun"
+DubstepGun.Position = UDim2.new(0, 0, 0.15814, 0)
+DubstepGun.Size = UDim2.new(0, 426, 0, 29)
+DubstepGun.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+DubstepGun.BorderSizePixel = 0
+DubstepGun.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+DubstepGun.Text = "Dubstep Gun"
+DubstepGun.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+DubstepGun.TextSize = 14
+DubstepGun.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+DubstepGun.Parent = ScrollingFrame
+
+local Flamethrower = Instance.new("TextButton")
+Flamethrower.Name = "Flamethrower"
+Flamethrower.Position = UDim2.new(0, 0, 0.15814, 0)
+Flamethrower.Size = UDim2.new(0, 426, 0, 29)
+Flamethrower.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Flamethrower.BorderSizePixel = 0
+Flamethrower.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Flamethrower.Text = "Flamethrower"
+Flamethrower.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+Flamethrower.TextSize = 14
+Flamethrower.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Flamethrower.Parent = ScrollingFrame
+
+local GlitchHub = Instance.new("TextButton")
+GlitchHub.Name = "GlitchHub"
+GlitchHub.Position = UDim2.new(0, 0, 0.15814, 0)
+GlitchHub.Size = UDim2.new(0, 426, 0, 29)
+GlitchHub.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+GlitchHub.BorderSizePixel = 0
+GlitchHub.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+GlitchHub.Text = "Glitch Hub"
+GlitchHub.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+GlitchHub.TextSize = 14
+GlitchHub.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+GlitchHub.Parent = ScrollingFrame
+
+local Goner = Instance.new("TextButton")
+Goner.Name = "Goner"
+Goner.Position = UDim2.new(0, 0, 0.15814, 0)
+Goner.Size = UDim2.new(0, 426, 0, 29)
+Goner.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Goner.BorderSizePixel = 0
+Goner.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Goner.Text = "Goner"
+Goner.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+Goner.TextSize = 14
+Goner.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Goner.Parent = ScrollingFrame
+
+local GrabKnife = Instance.new("TextButton")
+GrabKnife.Name = "GrabKnife"
+GrabKnife.Position = UDim2.new(0, 0, 0.15814, 0)
+GrabKnife.Size = UDim2.new(0, 426, 0, 29)
+GrabKnife.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+GrabKnife.BorderSizePixel = 0
+GrabKnife.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+GrabKnife.Text = "Grab Knife V4"
+GrabKnife.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+GrabKnife.TextSize = 14
+GrabKnife.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+GrabKnife.Parent = ScrollingFrame
+
+local HackerX = Instance.new("TextButton")
+HackerX.Name = "HackerX"
+HackerX.Position = UDim2.new(0, 0, 0.15814, 0)
+HackerX.Size = UDim2.new(0, 426, 0, 29)
+HackerX.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+HackerX.BorderSizePixel = 0
+HackerX.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+HackerX.Text = "Hacker X"
+HackerX.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+HackerX.TextSize = 14
+HackerX.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+HackerX.Parent = ScrollingFrame
+
+local InfiniteYield = Instance.new("TextButton")
+InfiniteYield.Name = "InfiniteYield"
+InfiniteYield.Position = UDim2.new(0, 0, 0.15814, 0)
+InfiniteYield.Size = UDim2.new(0, 426, 0, 29)
+InfiniteYield.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+InfiniteYield.BorderSizePixel = 0
+InfiniteYield.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+InfiniteYield.Text = "Infinite Yield"
+InfiniteYield.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+InfiniteYield.TextSize = 14
+InfiniteYield.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+InfiniteYield.Parent = ScrollingFrame
+
+local InterstekkarGlitcher = Instance.new("TextButton")
+InterstekkarGlitcher.Name = "InterstekkarGlitcher"
+InterstekkarGlitcher.Position = UDim2.new(0, 0, 0.15814, 0)
+InterstekkarGlitcher.Size = UDim2.new(0, 426, 0, 29)
+InterstekkarGlitcher.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+InterstekkarGlitcher.BorderSizePixel = 0
+InterstekkarGlitcher.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+InterstekkarGlitcher.Text = "Interstekkar Glitcher"
+InterstekkarGlitcher.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+InterstekkarGlitcher.TextSize = 14
+InterstekkarGlitcher.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+InterstekkarGlitcher.Parent = ScrollingFrame
+
+local JohnDoe = Instance.new("TextButton")
+JohnDoe.Name = "JohnDoe"
+JohnDoe.Position = UDim2.new(0, 0, 0.15814, 0)
+JohnDoe.Size = UDim2.new(0, 426, 0, 29)
+JohnDoe.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+JohnDoe.BorderSizePixel = 0
+JohnDoe.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+JohnDoe.Text = "John Doe"
+JohnDoe.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+JohnDoe.TextSize = 14
+JohnDoe.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+JohnDoe.Parent = ScrollingFrame
+
+local KitchenGun = Instance.new("TextButton")
+KitchenGun.Name = "KitchenGun"
+KitchenGun.Position = UDim2.new(0, 0, 0.15814, 0)
+KitchenGun.Size = UDim2.new(0, 426, 0, 29)
+KitchenGun.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+KitchenGun.BorderSizePixel = 0
+KitchenGun.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+KitchenGun.Text = "Kitchen Gun"
+KitchenGun.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+KitchenGun.TextSize = 14
+KitchenGun.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+KitchenGun.Parent = ScrollingFrame
+
+local MrBean = Instance.new("TextButton")
+MrBean.Name = "MrBean"
+MrBean.Position = UDim2.new(0, 0, 0.15814, 0)
+MrBean.Size = UDim2.new(0, 426, 0, 29)
+MrBean.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+MrBean.BorderSizePixel = 0
+MrBean.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+MrBean.Text = "Mr Bean"
+MrBean.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+MrBean.TextSize = 14
+MrBean.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+MrBean.Parent = ScrollingFrame
+
+local TOPKEK_5_0 = Instance.new("TextButton")
+TOPKEK_5_0.Name = "TOPKEK 5.0"
+TOPKEK_5_0.Position = UDim2.new(0, 0, 0.15814, 0)
+TOPKEK_5_0.Size = UDim2.new(0, 426, 0, 29)
+TOPKEK_5_0.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+TOPKEK_5_0.BorderSizePixel = 0
+TOPKEK_5_0.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+TOPKEK_5_0.Text = "TOPKEK 5.0"
+TOPKEK_5_0.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+TOPKEK_5_0.TextSize = 14
+TOPKEK_5_0.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TOPKEK_5_0.Parent = ScrollingFrame
+
+local Polaria = Instance.new("TextButton")
+Polaria.Name = "Polaria"
+Polaria.Position = UDim2.new(0, 0, 0.15814, 0)
+Polaria.Size = UDim2.new(0, 426, 0, 29)
+Polaria.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Polaria.BorderSizePixel = 0
+Polaria.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Polaria.Text = "Polaria"
+Polaria.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+Polaria.TextSize = 14
+Polaria.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Polaria.Parent = ScrollingFrame
+
+local Reality_Glitcher = Instance.new("TextButton")
+Reality_Glitcher.Name = "Reality Glitcher"
+Reality_Glitcher.Position = UDim2.new(0, 0, 0.15814, 0)
+Reality_Glitcher.Size = UDim2.new(0, 426, 0, 29)
+Reality_Glitcher.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Reality_Glitcher.BorderSizePixel = 0
+Reality_Glitcher.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Reality_Glitcher.Text = "Reality Glitcher"
+Reality_Glitcher.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+Reality_Glitcher.TextSize = 14
+Reality_Glitcher.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Reality_Glitcher.Parent = ScrollingFrame
+
+local SecretServicePanel = Instance.new("TextButton")
+SecretServicePanel.Name = "SecretServicePanel"
+SecretServicePanel.Position = UDim2.new(0, 0, 0.15814, 0)
+SecretServicePanel.Size = UDim2.new(0, 426, 0, 29)
+SecretServicePanel.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+SecretServicePanel.BorderSizePixel = 0
+SecretServicePanel.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+SecretServicePanel.Text = "Secret Service Panel"
+SecretServicePanel.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+SecretServicePanel.TextSize = 14
+SecretServicePanel.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+SecretServicePanel.Parent = ScrollingFrame
+
+local Server_Admin = Instance.new("TextButton")
+Server_Admin.Name = "Server Admin"
+Server_Admin.Position = UDim2.new(0, 0, 0.15814, 0)
+Server_Admin.Size = UDim2.new(0, 426, 0, 29)
+Server_Admin.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Server_Admin.BorderSizePixel = 0
+Server_Admin.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Server_Admin.Text = "Server Admin"
+Server_Admin.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+Server_Admin.TextSize = 14
+Server_Admin.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Server_Admin.Parent = ScrollingFrame
+
+local Star_Glitcher = Instance.new("TextButton")
+Star_Glitcher.Name = "Star Glitcher"
+Star_Glitcher.Position = UDim2.new(0, 0, 0.15814, 0)
+Star_Glitcher.Size = UDim2.new(0, 426, 0, 29)
+Star_Glitcher.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Star_Glitcher.BorderSizePixel = 0
+Star_Glitcher.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Star_Glitcher.Text = "Star Glitcher"
+Star_Glitcher.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+Star_Glitcher.TextSize = 14
+Star_Glitcher.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Star_Glitcher.Parent = ScrollingFrame
+
+local TOPKEK_4_0 = Instance.new("TextButton")
+TOPKEK_4_0.Name = "TOPKEK 4.0"
+TOPKEK_4_0.Position = UDim2.new(0, 0, 0.15814, 0)
+TOPKEK_4_0.Size = UDim2.new(0, 426, 0, 29)
+TOPKEK_4_0.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+TOPKEK_4_0.BorderSizePixel = 0
+TOPKEK_4_0.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+TOPKEK_4_0.Text = "TOPKEK 4.0"
+TOPKEK_4_0.TextColor3 = Color3.new(0.854902, 0.854902, 0.854902)
+TOPKEK_4_0.TextSize = 14
+TOPKEK_4_0.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TOPKEK_4_0.Parent = ScrollingFrame
+
+local Settings3 = Instance.new("Frame")
+Settings3.Name = "Settings"
+Settings3.Position = UDim2.new(0.300319, 0, 0.148054, 0)
+Settings3.Size = UDim2.new(0, 438, 0, 266)
+Settings3.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Settings3.BackgroundTransparency = 1
+Settings3.BorderSizePixel = 0
+Settings3.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Settings3.Visible = false
+Settings3.Transparency = 1
+Settings3.Parent = E
+
+local Frame6 = Instance.new("Frame")
+Frame6.Name = "Frame"
+Frame6.Position = UDim2.new(-0.0296804, 0, -6.33297e-05, 0)
+Frame6.Size = UDim2.new(0, 443, 0, 259)
+Frame6.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Frame6.BorderSizePixel = 0
+Frame6.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame6.Parent = Settings3
+
+local FixCamera = Instance.new("TextButton")
+FixCamera.Name = "FixCamera"
+FixCamera.Position = UDim2.new(0.0406063, 0, 0.317505, 0)
+FixCamera.Size = UDim2.new(0, 196, 0, 30)
+FixCamera.BackgroundColor3 = Color3.new(0.133333, 0.133333, 0.133333)
+FixCamera.BorderSizePixel = 0
+FixCamera.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+FixCamera.Text = "Fix camera"
+FixCamera.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+FixCamera.TextSize = 18
+FixCamera.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+FixCamera.TextWrapped = true
+FixCamera.Parent = Frame6
+
+local DestroyGUI = Instance.new("TextButton")
+DestroyGUI.Name = "DestroyGUI"
+DestroyGUI.Position = UDim2.new(0.513209, 0, 0.317505, 0)
+DestroyGUI.Size = UDim2.new(0, 203, 0, 30)
+DestroyGUI.BackgroundColor3 = Color3.new(0.133333, 0.133333, 0.133333)
+DestroyGUI.BorderSizePixel = 0
+DestroyGUI.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+DestroyGUI.Text = "Destroy GUI"
+DestroyGUI.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+DestroyGUI.TextSize = 18
+DestroyGUI.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+DestroyGUI.TextWrapped = true
+DestroyGUI.Parent = Frame6
+
+local Antiban = Instance.new("Frame")
+Antiban.Name = "Antiban"
+Antiban.Position = UDim2.new(0.013544, 0, 0.015444, 0)
+Antiban.Size = UDim2.new(0, 431, 0, 60)
+Antiban.BackgroundColor3 = Color3.new(1, 1, 1)
+Antiban.BackgroundTransparency = 1
+Antiban.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Antiban.Transparency = 1
+Antiban.Parent = Frame6
+
+local TextLabel = Instance.new("TextLabel")
+TextLabel.Name = "TextLabel"
+TextLabel.Size = UDim2.new(0, 285, 0, 60)
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+TextLabel.Transparency = 1
+TextLabel.Text = "Anti-Ban"
+TextLabel.TextColor3 = Color3.new(0.819608, 0.819608, 0.819608)
+TextLabel.TextSize = 20
+TextLabel.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextLabel.Parent = Antiban
+
+local Switch = Instance.new("ImageLabel")
+Switch.Name = "Switch"
+Switch.Position = UDim2.new(1.26298, -218, 2.36301, -124)
+Switch.Size = UDim2.new(0, 44, 0, 26)
+Switch.BackgroundColor3 = Color3.new(1, 1, 1)
+Switch.BackgroundTransparency = 1
+Switch.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Switch.Transparency = 1
+Switch.Selectable = true
+Switch.Active = true
+Switch.Image = "rbxassetid://3570695787"
+Switch.ImageColor3 = Color3.new(0.184314, 0.184314, 0.184314)
+Switch.ScaleType = Enum.ScaleType.Slice
+Switch.SliceScale = 0.5
+Switch.Parent = Antiban
+
+local TextButton = Instance.new("TextButton")
+TextButton.Name = "TextButton"
+TextButton.Size = UDim2.new(0, 44, 0, 29)
+TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
+TextButton.BackgroundTransparency = 1
+TextButton.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+TextButton.Transparency = 1
+TextButton.Text = " "
+TextButton.TextColor3 = Color3.new(0, 0, 0)
+TextButton.TextSize = 14
+TextButton.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextButton.Parent = Switch
+
+local Script5 = Instance.new("Script")
+Script5.Name = "Script"
+
+Script5.Parent = TextButton
+
+local MainModule2 = Instance.new("ModuleScript")
+MainModule2.Name = "MainModule"
+
+MainModule2.Parent = Script5
+
+local Switch2 = Instance.new("ImageLabel")
+Switch2.Name = "Switch"
+Switch2.Position = UDim2.new(4.95088, -218, 4.76923, -124)
+Switch2.Size = UDim2.new(0, 24, 0, 26)
+Switch2.BackgroundColor3 = Color3.new(1, 1, 1)
+Switch2.BackgroundTransparency = 1
+Switch2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Switch2.Transparency = 1
+Switch2.Selectable = true
+Switch2.Active = true
+Switch2.Image = "rbxassetid://3570695787"
+Switch2.ImageColor3 = Color3.new(0.937255, 0.937255, 0.937255)
+Switch2.ScaleType = Enum.ScaleType.Slice
+Switch2.SliceScale = 0.5
+Switch2.Parent = Switch
+
+local Themes = Instance.new("Frame")
+Themes.Name = "Themes"
+Themes.Position = UDim2.new(0.013544, 0, 0.490348, 0)
+Themes.Size = UDim2.new(0, 437, 0, 132)
+Themes.BackgroundColor3 = Color3.new(1, 1, 1)
+Themes.BackgroundTransparency = 1
+Themes.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Themes.Transparency = 1
+Themes.Parent = Frame6
+
+local Default = Instance.new("TextButton")
+Default.Name = "Default"
+Default.Position = UDim2.new(-0.0022831, 0, 0.619604, 0)
+Default.Size = UDim2.new(0, 412, 0, 27)
+Default.BackgroundColor3 = Color3.new(0.133333, 0.133333, 0.133333)
+Default.BorderSizePixel = 0
+Default.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Default.Text = "Default"
+Default.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+Default.TextSize = 18
+Default.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Default.TextWrapped = true
+Default.Parent = Themes
+
+local Cyberpunk = Instance.new("TextButton")
+Cyberpunk.Name = "Cyberpunk"
+Cyberpunk.Position = UDim2.new(-0.0022831, 0, 0.747423, 0)
+Cyberpunk.Size = UDim2.new(0, 412, 0, 27)
+Cyberpunk.BackgroundColor3 = Color3.new(0.133333, 0.133333, 0.133333)
+Cyberpunk.BorderSizePixel = 0
+Cyberpunk.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Cyberpunk.Text = "Cyberpunk"
+Cyberpunk.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+Cyberpunk.TextSize = 18
+Cyberpunk.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Cyberpunk.TextWrapped = true
+Cyberpunk.Parent = Themes
+
+local Vaporwave = Instance.new("TextButton")
+Vaporwave.Name = "Vaporwave"
+Vaporwave.Position = UDim2.new(-0.0022831, 0, 0.496127, 0)
+Vaporwave.Size = UDim2.new(0, 412, 0, 27)
+Vaporwave.BackgroundColor3 = Color3.new(0.133333, 0.133333, 0.133333)
+Vaporwave.BorderSizePixel = 0
+Vaporwave.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Vaporwave.Text = "Vaporwave"
+Vaporwave.TextColor3 = Color3.new(0.85098, 0.85098, 0.85098)
+Vaporwave.TextSize = 18
+Vaporwave.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Vaporwave.TextWrapped = true
+Vaporwave.Parent = Themes
+
+local UIListLayout3 = Instance.new("UIListLayout")
+UIListLayout3.Name = "UIListLayout"
+UIListLayout3.Padding = UDim.new(0, 8)
+UIListLayout3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout3.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout3.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout3.Parent = Themes
+
+local Home2 = Instance.new("Frame")
+Home2.Name = "Home"
+Home2.Position = UDim2.new(0.300319, 0, 0.148054, 0)
+Home2.Size = UDim2.new(0, 438, 0, 266)
+Home2.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Home2.BackgroundTransparency = 1
+Home2.BorderSizePixel = 0
+Home2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Home2.Transparency = 1
+Home2.Parent = E
+
+local Frame7 = Instance.new("Frame")
+Frame7.Name = "Frame"
+Frame7.Position = UDim2.new(-0.0296804, 0, -6.33297e-05, 0)
+Frame7.Size = UDim2.new(0, 443, 0, 259)
+Frame7.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+Frame7.BorderSizePixel = 0
+Frame7.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Frame7.Parent = Home2
+
+local Title = Instance.new("TextLabel")
+Title.Name = "Title"
+Title.Position = UDim2.new(0.311512, 0, 0.0623065, 0)
+Title.Size = UDim2.new(0, 130, 0, 35)
+Title.BackgroundColor3 = Color3.new(1, 1, 1)
+Title.BackgroundTransparency = 1
+Title.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Title.ZIndex = 2
+Title.Transparency = 1
+Title.Text = "LuaCore"
+Title.TextColor3 = Color3.new(0.92549, 0.92549, 0.92549)
+Title.TextSize = 30
+Title.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Title.TextWrapped = true
+Title.Parent = Frame7
+
+local Title2 = Instance.new("TextLabel")
+Title2.Name = "Title"
+Title2.Position = UDim2.new(0.58114, 0, 0.0796132, 0)
+Title2.Size = UDim2.new(0, 23, 0, 30)
+Title2.BackgroundColor3 = Color3.new(1, 1, 1)
+Title2.BackgroundTransparency = 1
+Title2.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Title2.ZIndex = 2
+Title2.Transparency = 1
+Title2.Text = "SS"
+Title2.TextColor3 = Color3.new(0.760784, 0.760784, 0.760784)
+Title2.TextSize = 24
+Title2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Title2.TextWrapped = true
+Title2.Parent = Frame7
+
+local Title3 = Instance.new("TextLabel")
+Title3.Name = "Title"
+Title3.Position = UDim2.new(0.23351, 0, 0.75915, 0)
+Title3.Size = UDim2.new(0, 235, 0, 30)
+Title3.BackgroundColor3 = Color3.new(1, 1, 1)
+Title3.BackgroundTransparency = 1
+Title3.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Title3.ZIndex = 2
+Title3.Transparency = 1
+Title3.Text = "• You are whitelisted •"
+Title3.TextColor3 = Color3.new(0.760784, 0.760784, 0.760784)
+Title3.TextSize = 24
+Title3.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Title3.TextWrapped = true
+Title3.Parent = Frame7
+
+local Title4 = Instance.new("TextLabel")
+Title4.Name = "Title"
+Title4.Position = UDim2.new(0.23351, 0, 0.635598, 0)
+Title4.Size = UDim2.new(0, 235, 0, 30)
+Title4.BackgroundColor3 = Color3.new(1, 1, 1)
+Title4.BackgroundTransparency = 1
+Title4.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Title4.ZIndex = 2
+Title4.Transparency = 1
+Title4.Text = "• Welcome username •"
+Title4.TextColor3 = Color3.new(0.760784, 0.760784, 0.760784)
+Title4.TextSize = 24
+Title4.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Title4.TextWrapped = true
+Title4.Parent = Frame7
+
+local Title5 = Instance.new("TextLabel")
+Title5.Name = "Title"
+Title5.Position = UDim2.new(0.152246, 0, 0.0191693, 0)
+Title5.Size = UDim2.new(0, 29, 0, 32)
+Title5.BackgroundColor3 = Color3.new(1, 1, 1)
+Title5.BackgroundTransparency = 1
+Title5.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Title5.ZIndex = 2
+Title5.Transparency = 1
+Title5.Text = "SS"
+Title5.TextColor3 = Color3.new(0.760784, 0.760784, 0.760784)
+Title5.TextSize = 13
+Title5.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Title5.TextWrapped = true
+Title5.Parent = E
+
+local Title6 = Instance.new("TextLabel")
+Title6.Name = "Title"
+Title6.Position = UDim2.new(0, 0, 0.00958467, 0)
+Title6.Size = UDim2.new(0, 130, 0, 35)
+Title6.BackgroundColor3 = Color3.new(1, 1, 1)
+Title6.BackgroundTransparency = 1
+Title6.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Title6.ZIndex = 2
+Title6.Transparency = 1
+Title6.Text = "LuaCore"
+Title6.TextColor3 = Color3.new(0.92549, 0.92549, 0.92549)
+Title6.TextSize = 20
+Title6.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal)
+Title6.TextWrapped = true
+Title6.Parent = E
+
+local Cyber = Instance.new("ImageLabel")
+Cyber.Name = "Cyber"
+Cyber.Size = UDim2.new(0, 626, 0, 313)
+Cyber.BackgroundColor3 = Color3.new(1, 1, 1)
+Cyber.BackgroundTransparency = 1
+Cyber.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+Cyber.Visible = false
+Cyber.ZIndex = 20
+Cyber.Transparency = 1
+Cyber.Image = "http://www.roblox.com/asset/?id=6040799479"
+Cyber.ImageTransparency = 0.8999999761581421
+Cyber.Parent = E
+
+local vaporwave = Instance.new("ImageLabel")
+vaporwave.Name = "vaporwave"
+vaporwave.Size = UDim2.new(0, 626, 0, 313)
+vaporwave.BackgroundColor3 = Color3.new(1, 1, 1)
+vaporwave.BackgroundTransparency = 1
+vaporwave.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+vaporwave.Visible = false
+vaporwave.ZIndex = 20
+vaporwave.Transparency = 1
+vaporwave.Image = "http://www.roblox.com/asset/?id=1284319851"
+vaporwave.ImageTransparency = 0.800000011920929
+vaporwave.Parent = E
+
+local UICorner4 = Instance.new("UICorner")
+UICorner4.Name = "UICorner"
+
+UICorner4.Parent = E
+
+local Open = Instance.new("TextButton")
+Open.Name = "Open"
+Open.Position = UDim2.new(0.835292, 0, 0.841416, 0)
+Open.Size = UDim2.new(0, 107, 0, 35)
+Open.BackgroundColor3 = Color3.new(0.105882, 0.105882, 0.105882)
+Open.BorderSizePixel = 0
+Open.BorderColor3 = Color3.new(0, 0, 0)
+Open.Text = "TOGGLE"
+Open.TextColor3 = Color3.new(1, 1, 1)
+Open.TextSize = 14
+Open.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Open.Parent = ScreenGui
+
+local UICorner5 = Instance.new("UICorner")
+UICorner5.Name = "UICorner"
+UICorner5.CornerRadius = UDim.new(0, 8.6798e+07)
+UICorner5.Parent = Open
+
+local watermark = Instance.new("ScreenGui")
+watermark.Name = "watermark"
+watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+watermark.Parent = ScreenGui
+
+local Frame8 = Instance.new("Frame")
+Frame8.Name = "Frame"
+Frame8.Position = UDim2.new(0, 0, 0.752066, 0)
+Frame8.Size = UDim2.new(0, 100, 0, 100)
+Frame8.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame8.BackgroundTransparency = 1
+Frame8.BorderSizePixel = 0
+Frame8.BorderColor3 = Color3.new(0, 0, 0)
+Frame8.Transparency = 1
+Frame8.Parent = watermark
+
+local ImageLabel5 = Instance.new("ImageLabel")
+ImageLabel5.Name = "ImageLabel"
+ImageLabel5.Position = UDim2.new(0.07, 0, 0, 0)
+ImageLabel5.Size = UDim2.new(0, 100, 0, 100)
+ImageLabel5.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel5.BackgroundTransparency = 1
+ImageLabel5.BorderSizePixel = 0
+ImageLabel5.BorderColor3 = Color3.new(0, 0, 0)
+ImageLabel5.Transparency = 1
+ImageLabel5.Image = "http://www.roblox.com/asset/?id=83797870660284"
+ImageLabel5.Parent = Frame8
+
+local TextLabel2 = Instance.new("TextLabel")
+TextLabel2.Name = "TextLabel"
+TextLabel2.Position = UDim2.new(1.13, 0, 0.1, 0)
+TextLabel2.Size = UDim2.new(0, 200, 0, 80)
+TextLabel2.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel2.BorderSizePixel = 0
+TextLabel2.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel2.Text = "Project LuaCore Made By 07n7z & ZeroEXE & CodieI2722,Use external program to inject and use internal gui to execute [.gg/5DNQ4KgF3M]                       Status : Injected"
+TextLabel2.TextColor3 = Color3.new(0, 0, 0)
+TextLabel2.TextSize = 14
+TextLabel2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextLabel2.TextScaled = true
+TextLabel2.TextWrapped = true
+TextLabel2.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel2.Parent = Frame8
+
