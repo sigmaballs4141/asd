@@ -1,288 +1,214 @@
---[[
+-- Gui to Lua
+-- Version: 3.2
 
-		Gui2Lua™
-		10zOfficial
-		Version 1.0.0
+-- Instances:
 
-]]
-
-
--- Instances
-
-local CodeExecutor = Instance.new("ScreenGui")
-local Frame = Instance.new("ImageLabel")
-local ExcuteFrame = Instance.new("ImageLabel")
-local CodeFrame = Instance.new("ImageLabel")
-local TextBox = Instance.new("TextBox")
-local TextButton = Instance.new("TextButton")
+local Executor = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Close = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Execute = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Scroll = Instance.new("ScrollingFrame")
+local CodeBox = Instance.new("TextBox")
+local HideBox = Instance.new("TextLabel")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
-local OpenClose = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
-local watermark = Instance.new("ScreenGui")
-local Frame_2 = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
 local ImageLabel = Instance.new("ImageLabel")
 local TextLabel_3 = Instance.new("TextLabel")
 
--- Properties
+--Properties:
 
-CodeExecutor.Name = "CodeExecutor"
-CodeExecutor.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Executor.Name = "Executor"
+Executor.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Executor.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Executor.ResetOnSpawn = false
 
-Frame.Name = "Frame"
-Frame.Parent = CodeExecutor
-Frame.BackgroundColor3 = Color3.new(1, 1, 1)
-Frame.BackgroundTransparency = 1
-Frame.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-Frame.Position = UDim2.new(0.196343169, 0, 0.204224944, 0)
-Frame.Size = UDim2.new(0, 405, 0, 268)
-Frame.Image = "rbxassetid://3570695787"
-Frame.ImageColor3 = Color3.new(0, 0, 0)
-Frame.ScaleType = Enum.ScaleType.Slice
-Frame.SliceCenter = Rect.new(100, 100, 100, 100)
+Main.Name = "Main"
+Main.Parent = Executor
+Main.AnchorPoint = Vector2.new(1, 0)
+Main.BackgroundColor3 = Color3.fromRGB(36, 36, 37)
+Main.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.738755167, 0, 0.297655553, 0)
+Main.Size = UDim2.new(0, 386, 0, 226)
 
-ExcuteFrame.Name = "Excute Frame"
-ExcuteFrame.Parent = Frame
-ExcuteFrame.BackgroundColor3 = Color3.new(1, 1, 1)
-ExcuteFrame.BackgroundTransparency = 1
-ExcuteFrame.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-ExcuteFrame.Position = UDim2.new(0.021737935, 0, 0.747810721, 0)
-ExcuteFrame.Size = UDim2.new(0, 385, 0, 61)
-ExcuteFrame.Image = "rbxassetid://3570695787"
-ExcuteFrame.ImageColor3 = Color3.new(0.188235, 0.188235, 0.188235)
-ExcuteFrame.ScaleType = Enum.ScaleType.Slice
-ExcuteFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+Close.Name = "Close"
+Close.Parent = Main
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Close.Position = UDim2.new(0.956321836, 0, 0, 0)
+Close.Size = UDim2.new(0, 19, 0, 19)
+Close.Font = Enum.Font.SourceSans
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+Close.TextSize = 20.000
+Close.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
 
-CodeFrame.Name = "Code Frame"
-CodeFrame.Parent = Frame
-CodeFrame.BackgroundColor3 = Color3.new(1, 1, 1)
-CodeFrame.BackgroundTransparency = 1
-CodeFrame.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-CodeFrame.Position = UDim2.new(0.0234996658, 0, 0.145062581, 0)
-CodeFrame.Size = UDim2.new(0, 386, 0, 156)
-CodeFrame.Image = "rbxassetid://3570695787"
-CodeFrame.ImageColor3 = Color3.new(0.113725, 0.113725, 0.113725)
-CodeFrame.ScaleType = Enum.ScaleType.Slice
-CodeFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+Clear.Name = "Clear"
+Clear.Parent = Main
+Clear.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Clear.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Clear.BorderSizePixel = 3
+Clear.Position = UDim2.new(0.663088322, 0, 0.882177293, 0)
+Clear.Size = UDim2.new(0, 119, 0, 20)
+Clear.Font = Enum.Font.SourceSans
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(255, 0, 0)
+Clear.TextSize = 14.000
 
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.new(1, 1, 1)
-TextBox.BackgroundTransparency = 9
-TextBox.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-TextBox.Position = UDim2.new(0.0234996658, 0, 0.145062581, 0)
-TextBox.Size = UDim2.new(0, 386, 0, 156)
-TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.Unknown
-TextBox.MultiLine = true
-TextBox.PlaceholderColor3 = Color3.new(0.670588, 0.670588, 0.670588)
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.new(1, 1, 1)
-TextBox.TextScaled = true
-TextBox.TextSize = 14
-TextBox.TextWrapped = true
-TextBox.TextXAlignment = Enum.TextXAlignment.Left
-TextBox.TextYAlignment = Enum.TextYAlignment.Top
+UICorner.Parent = Clear
 
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
-TextButton.BackgroundTransparency = 9
-TextButton.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
-TextButton.Position = UDim2.new(0.0217377841, 0, 0.80458343, 0)
-TextButton.Size = UDim2.new(0, 386, 0, 52)
-TextButton.Font = Enum.Font.Unknown
-TextButton.Text = "Execute"
-TextButton.TextColor3 = Color3.new(1, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14
-TextButton.TextWrapped = true
+Execute.Name = "Execute"
+Execute.Parent = Main
+Execute.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Execute.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Execute.BorderSizePixel = 3
+Execute.Position = UDim2.new(0.0317976549, 0, 0.882177293, 0)
+Execute.Size = UDim2.new(0, 119, 0, 20)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 0, 0)
+Execute.TextSize = 14.000
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)
-TextLabel.BackgroundTransparency = 1
-TextLabel.BorderColor3 = Color3.new(0, 0, 0)
+UICorner_2.Parent = Execute
+
+Scroll.Name = "Scroll"
+Scroll.Parent = Main
+Scroll.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Scroll.BorderColor3 = Color3.fromRGB(255, 0, 0)
+Scroll.BorderSizePixel = 3
+Scroll.Position = UDim2.new(0.0321838707, 0, 0.176053211, 0)
+Scroll.Size = UDim2.new(0, 363, 0, 146)
+Scroll.ScrollBarThickness = 7
+
+CodeBox.Name = "CodeBox"
+CodeBox.Parent = Scroll
+CodeBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CodeBox.BackgroundTransparency = 0.999
+CodeBox.BorderColor3 = Color3.fromRGB(27, 42, 53)
+CodeBox.Position = UDim2.new(0, 0, -3.17065746e-06, 0)
+CodeBox.Size = UDim2.new(1, 0, 100, 0)
+CodeBox.ZIndex = 2
+CodeBox.ClearTextOnFocus = false
+CodeBox.Font = Enum.Font.SourceSans
+CodeBox.MultiLine = true
+CodeBox.PlaceholderText = "Project LuaCore"
+CodeBox.Text = ""
+CodeBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+CodeBox.TextSize = 18.000
+CodeBox.TextXAlignment = Enum.TextXAlignment.Left
+CodeBox.TextYAlignment = Enum.TextYAlignment.Top
+
+HideBox.Name = "HideBox"
+HideBox.Parent = Main
+HideBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+HideBox.BackgroundTransparency = 1.000
+HideBox.BorderColor3 = Color3.fromRGB(27, 42, 53)
+HideBox.BorderSizePixel = 0
+HideBox.Position = UDim2.new(0.0321838707, 0, 0.17605105, 0)
+HideBox.Size = UDim2.new(0, 363, 0, 146)
+HideBox.Font = Enum.Font.SourceSans
+HideBox.Text = ""
+HideBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+HideBox.TextSize = 14.000
+
+TextLabel.Parent = Main
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0, 0, -0.000915641198, 0)
-TextLabel.Size = UDim2.new(0, 213, 0, 40)
-TextLabel.Font = Enum.Font.Unknown
+TextLabel.Size = UDim2.new(0, 92, 0, 31)
+TextLabel.Font = Enum.Font.SourceSans
 TextLabel.Text = "Project LuaCore"
-TextLabel.TextColor3 = Color3.new(1, 1, 1)
-TextLabel.TextSize = 24
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 14.000
 
-TextLabel_2.Parent = Frame
-TextLabel_2.BackgroundColor3 = Color3.new(0, 0, 0)
-TextLabel_2.BackgroundTransparency = 1
-TextLabel_2.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.540740788, 0, 0.0214724187, 0)
-TextLabel_2.Size = UDim2.new(0, 36, 0, 34)
-TextLabel_2.Font = Enum.Font.Unknown
+TextLabel_2.Position = UDim2.new(0.238341972, 0, 0, 0)
+TextLabel_2.Size = UDim2.new(0, 24, 0, 31)
+TextLabel_2.Font = Enum.Font.SourceSans
 TextLabel_2.Text = "SS"
-TextLabel_2.TextColor3 = Color3.new(1, 0, 0)
-TextLabel_2.TextSize = 35
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 0, 4)
+TextLabel_2.TextSize = 30.000
 
-OpenClose.Name = "Open/Close"
-OpenClose.Parent = CodeExecutor
-OpenClose.BackgroundColor3 = Color3.new(0.133333, 0.133333, 0.133333)
-OpenClose.BorderColor3 = Color3.new(0, 0, 0)
-OpenClose.BorderSizePixel = 0
-OpenClose.Position = UDim2.new(0.901372552, 0, 0.814531744, 0)
-OpenClose.Size = UDim2.new(0, 135, 0, 50)
-OpenClose.Font = Enum.Font.LuckiestGuy
-OpenClose.Text = "Open/Close"
-OpenClose.TextColor3 = Color3.new(1, 1, 1)
-OpenClose.TextSize = 14
+UICorner_3.Parent = Main
 
-UICorner.Parent = OpenClose
+ScreenGui.Parent = Executor
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-watermark.Name = "watermark"
-watermark.Parent = CodeExecutor
-watermark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundTransparency = 1.000
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, 0.752066135, 0)
+Frame.Size = UDim2.new(0, 100, 0, 100)
 
-Frame_2.Parent = watermark
-Frame_2.BackgroundColor3 = Color3.new(1, 1, 1)
-Frame_2.BackgroundTransparency = 1
-Frame_2.BorderColor3 = Color3.new(0, 0, 0)
-Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(0, 0, 0.752066135, 0)
-Frame_2.Size = UDim2.new(0, 100, 0, 100)
-
-ImageLabel.Parent = Frame_2
-ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
-ImageLabel.BackgroundTransparency = 1
-ImageLabel.BorderColor3 = Color3.new(0, 0, 0)
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(0.0700000003, 0, 0, 0)
 ImageLabel.Size = UDim2.new(0, 100, 0, 100)
 ImageLabel.Image = "http://www.roblox.com/asset/?id=83797870660284"
 
-TextLabel_3.Parent = Frame_2
-TextLabel_3.BackgroundColor3 = Color3.new(1, 1, 1)
-TextLabel_3.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_3.BorderSizePixel = 0
 TextLabel_3.Position = UDim2.new(1.13, 0, 0.100000001, 0)
 TextLabel_3.Size = UDim2.new(0, 200, 0, 80)
 TextLabel_3.Font = Enum.Font.SourceSans
 TextLabel_3.Text = "Project LuaCore Made By 07n7z & ZeroEXE & CodieI2722,Use external program to inject and use internal gui to execute [.gg/5DNQ4KgF3M]                       Status : Injected"
-TextLabel_3.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14
+TextLabel_3.TextSize = 14.000
 TextLabel_3.TextWrapped = true
 TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 
--- Scripts
+-- Scripts:
 
-local function BPKPB_fake_script() -- TextBox.Script 
-	local script = Instance.new('Script', TextBox)
-
-	-- Get the TextBox object
-	local textBox = script.Parent:WaitForChild("TextBox")
-	
-	-- Load the player data from PlayerData (this can be a simple example with a DataStore or a local save)
-	local player = game.Players.LocalPlayer
-	
-	-- When the player joins, load the saved text (you could use DataStore for persistence across sessions)
-	textBox.Text = player:WaitForChild("PlayerData"):FindFirstChild("SavedText") and player.PlayerData.SavedText.Value or ""
-	
-	-- When the user finishes typing and clicks out, save the text (this can be done in multiple ways)
-	textBox.FocusLost:Connect(function(enterPressed)
-		-- Save the text (in this case, we're saving it to the PlayerData for this player)
-		if player:FindFirstChild("PlayerData") then
-			if not player.PlayerData:FindFirstChild("SavedText") then
-				local savedText = Instance.new("StringValue")
-				savedText.Name = "SavedText"
-				savedText.Parent = player.PlayerData
-			end
-			player.PlayerData.SavedText.Value = textBox.Text
-		end
-	end)
-	
-end
-coroutine.wrap(BPKPB_fake_script)()
-local function HIBGU_fake_script() -- TextButton.LocalScript 
-	local script = Instance.new('LocalScript', TextButton)
+local function VZBATPI_fake_script() -- Clear.LocalScript 
+	local script = Instance.new('LocalScript', Clear)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.ExecuteEvent:FireServer(script.Parent.Parent.TextBox.Text)
-		end)
-end
-coroutine.wrap(HIBGU_fake_script)()
-local function LMGK_fake_script() -- Frame.Smooth GUI Dragging 
-	local script = Instance.new('LocalScript', Frame)
-
-	local UserInputService = game:GetService("UserInputService")
-	local runService = (game:GetService("RunService"));
-	
-	local gui = script.Parent
-	
-	local dragging
-	local dragInput
-	local dragStart
-	local startPos
-	
-	function Lerp(a, b, m)
-		return a + (b - a) * m
-	end;
-	
-	local lastMousePos
-	local lastGoalPos
-	local DRAG_SPEED = (8); -- // The speed of the UI darg.
-	function Update(dt)
-		if not (startPos) then return end;
-		if not (dragging) and (lastGoalPos) then
-			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
-			return 
-		end;
-	
-		local delta = (lastMousePos - UserInputService:GetMouseLocation())
-		local xGoal = (startPos.X.Offset - delta.X);
-		local yGoal = (startPos.Y.Offset - delta.Y);
-		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
-		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
-	end;
-	
-	gui.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-			dragging = true
-			dragStart = input.Position
-			startPos = gui.Position
-			lastMousePos = UserInputService:GetMouseLocation()
-	
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
-				end
-			end)
-		end
+		script.Parent.Parent.Scroll.TextBox.Text = ""
 	end)
-	
-	gui.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			dragInput = input
-		end
-	end)
-	
-	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(LMGK_fake_script)()
-local function IJSHAZ_fake_script() -- Frame.LocalScript 
-	local script = Instance.new('LocalScript', Frame)
+coroutine.wrap(VZBATPI_fake_script)()
+local function VAZYVAM_fake_script() -- Execute.LocalScript 
+	local script = Instance.new('LocalScript', Execute)
 
-	
-	local Frame = script.Parent.Parent
-	
 	script.Parent.MouseButton1Click:Connect(function()
-		Frame.Visible = true
-	end)
-end
-coroutine.wrap(IJSHAZ_fake_script)()
-local function ALFCU_fake_script() -- OpenClose.LocalScript 
-	local script = Instance.new('LocalScript', OpenClose)
+		game.ReplicatedStorage.RemoteEvent:FireServer(script.Parent.Parent.Scroll.CodeBox.Text)
 
-	--You dont need to delete this text.
-	--PUT INSIDE a BUTTON in StarterGui
-	--Make sure to make a frame for the menu to pop up then go to properties > Visible [Off]
-	script.Parent.MouseButton1Click:Connect (function()
-		script.Parent.Parent.Frame.Visible = not script.Parent.Parent.Frame.Visible
+
 	end)
 end
-coroutine.wrap(ALFCU_fake_script)()
+coroutine.wrap(VAZYVAM_fake_script)()
+local function EXOYKY_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Selectable = true
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(EXOYKY_fake_script)()
+local function LNSC_fake_script() -- Executor.LocalScript 
+	local script = Instance.new('LocalScript', Executor)
+
+	wait(.1)
+	script.Parent.Enabled = true
+end
+coroutine.wrap(LNSC_fake_script)()
