@@ -1,0 +1,1888 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 101 | Scripts: 24 | Modules: 13 | Tags: 0
+local G2L = {};
+
+-- StarterGui.ProjectReptileV3
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[ProjectReptileV3]];
+G2L["1"]["ResetOnSpawn"] = false;
+
+
+-- StarterGui.ProjectReptileV3.Open
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["Visible"] = false;
+G2L["2"]["Active"] = true;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(28, 28, 28);
+G2L["2"]["Size"] = UDim2.new(0, 58, 0, 35);
+G2L["2"]["Position"] = UDim2.new(0.96448, 0, 0.33415, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(86, 255, 255);
+G2L["2"]["Name"] = [[Open]];
+
+
+-- StarterGui.ProjectReptileV3.Open.TextButton
+G2L["3"] = Instance.new("TextButton", G2L["2"]);
+G2L["3"]["TextColor3"] = Color3.fromRGB(0, 255, 255);
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["3"]["Size"] = UDim2.new(0, 58, 0, 35);
+G2L["3"]["BackgroundTransparency"] = 10;
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 128);
+G2L["3"]["Text"] = [[OPEN]];
+
+
+-- StarterGui.ProjectReptileV3.Open.TextButton.LocalScript
+G2L["4"] = Instance.new("LocalScript", G2L["3"]);
+
+
+
+-- StarterGui.ProjectReptileV3.AA
+G2L["5"] = Instance.new("Script", G2L["1"]);
+G2L["5"]["Name"] = [[AA]];
+
+
+-- StarterGui.ProjectReptileV3.AA.Respawn
+G2L["6"] = Instance.new("RemoteEvent", G2L["5"]);
+G2L["6"]["Name"] = [[Respawn]];
+
+
+-- StarterGui.ProjectReptileV3.Holder
+G2L["7"] = Instance.new("Frame", G2L["1"]);
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(0, 21, 63);
+G2L["7"]["Selectable"] = true;
+G2L["7"]["ClipsDescendants"] = true;
+G2L["7"]["Size"] = UDim2.new(0, 432, 0, 236);
+G2L["7"]["Position"] = UDim2.new(0.34247, 0, 0.29776, 0);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(86, 255, 255);
+G2L["7"]["Name"] = [[Holder]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.d=drag
+G2L["8"] = Instance.new("LocalScript", G2L["7"]);
+G2L["8"]["Name"] = [[d=drag]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.Project
+G2L["9"] = Instance.new("TextLabel", G2L["7"]);
+G2L["9"]["TextSize"] = 18;
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["BackgroundTransparency"] = 1;
+G2L["9"]["Size"] = UDim2.new(0, 78, 0, 25);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["9"]["Text"] = [[PROJECT]];
+G2L["9"]["Name"] = [[Project]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.Reptile
+G2L["a"] = Instance.new("TextLabel", G2L["7"]);
+G2L["a"]["TextSize"] = 18;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["TextColor3"] = Color3.fromRGB(0, 255, 255);
+G2L["a"]["BackgroundTransparency"] = 1;
+G2L["a"]["Size"] = UDim2.new(0, 39, 0, 25);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["a"]["Text"] = [[                                      SONICELIJAHMANIA BETA]];
+G2L["a"]["Name"] = [[Reptile]];
+G2L["a"]["Position"] = UDim2.new(0.17966, 0, 0, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.Close
+G2L["b"] = Instance.new("TextButton", G2L["7"]);
+G2L["b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["TextSize"] = 20;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b"]["Size"] = UDim2.new(0, 26, 0, 26);
+G2L["b"]["BackgroundTransparency"] = 1;
+G2L["b"]["Name"] = [[Close]];
+G2L["b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["b"]["Text"] = [[-]];
+G2L["b"]["Position"] = UDim2.new(0.93826, 0, 0, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.Close.LocalScript
+G2L["c"] = Instance.new("LocalScript", G2L["b"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu
+G2L["d"] = Instance.new("Frame", G2L["7"]);
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["ClipsDescendants"] = true;
+G2L["d"]["Size"] = UDim2.new(0, 431, 0, 236);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["d"]["Name"] = [[mainmenu]];
+G2L["d"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Credit
+G2L["e"] = Instance.new("TextLabel", G2L["d"]);
+G2L["e"]["TextWrapped"] = true;
+G2L["e"]["LineHeight"] = 1.142;
+G2L["e"]["TextSize"] = 9;
+G2L["e"]["TextScaled"] = true;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["BackgroundTransparency"] = 10;
+G2L["e"]["Size"] = UDim2.new(0, 299, 0, 30);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["e"]["Text"] = [[Made by HacksProfound#4864, UI made by Enable#6969 Custom Front From By SonicElijahMania]];
+G2L["e"]["Name"] = [[Credit]];
+G2L["e"]["Position"] = UDim2.new(0.1535, 0, 0.88642, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Scripts
+G2L["f"] = Instance.new("TextButton", G2L["d"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["TextSize"] = 21;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(0, 171, 255);
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["f"]["Size"] = UDim2.new(0, 414, 0, 27);
+G2L["f"]["Name"] = [[Scripts]];
+G2L["f"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["f"]["Text"] = [[SCRIPTS]];
+G2L["f"]["Position"] = UDim2.new(0.01852, 0, 0.21889, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Scripts.effectR
+G2L["10"] = Instance.new("ModuleScript", G2L["f"]);
+G2L["10"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Scripts.effectR.Circle
+G2L["11"] = Instance.new("ImageLabel", G2L["10"]);
+G2L["11"]["ZIndex"] = 10;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["ImageTransparency"] = 0.5;
+G2L["11"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Image"] = [[rbxassetid://266543268]];
+G2L["11"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["11"]["BackgroundTransparency"] = 1;
+G2L["11"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Scripts.effectR.click
+G2L["12"] = Instance.new("LocalScript", G2L["10"]);
+G2L["12"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Scripts.LocalScript
+G2L["13"] = Instance.new("LocalScript", G2L["f"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.d
+G2L["14"] = Instance.new("TextButton", G2L["d"]);
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["TextSize"] = 21;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(0, 171, 255);
+G2L["14"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["14"]["Size"] = UDim2.new(0, 414, 0, 27);
+G2L["14"]["Name"] = [[d]];
+G2L["14"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["14"]["Text"] = [[HUBS]];
+G2L["14"]["Position"] = UDim2.new(0.02083, 0, 0.36719, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.d.effectR
+G2L["15"] = Instance.new("ModuleScript", G2L["14"]);
+G2L["15"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.d.effectR.Circle
+G2L["16"] = Instance.new("ImageLabel", G2L["15"]);
+G2L["16"]["ZIndex"] = 10;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["ImageTransparency"] = 0.5;
+G2L["16"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Image"] = [[rbxassetid://266543268]];
+G2L["16"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["16"]["BackgroundTransparency"] = 1;
+G2L["16"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.d.effectR.click
+G2L["17"] = Instance.new("LocalScript", G2L["15"]);
+G2L["17"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.d.LocalScript
+G2L["18"] = Instance.new("LocalScript", G2L["14"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Credits
+G2L["19"] = Instance.new("TextButton", G2L["d"]);
+G2L["19"]["BorderSizePixel"] = 0;
+G2L["19"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["19"]["TextSize"] = 21;
+G2L["19"]["BackgroundColor3"] = Color3.fromRGB(86, 171, 255);
+G2L["19"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["19"]["Size"] = UDim2.new(0, 414, 0, 27);
+G2L["19"]["Name"] = [[Credits]];
+G2L["19"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["19"]["Text"] = [[CREDITS]];
+G2L["19"]["Position"] = UDim2.new(0.021, 0, 0.663, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Credits.effectR
+G2L["1a"] = Instance.new("ModuleScript", G2L["19"]);
+G2L["1a"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Credits.effectR.Circle
+G2L["1b"] = Instance.new("ImageLabel", G2L["1a"]);
+G2L["1b"]["ZIndex"] = 10;
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1b"]["ImageTransparency"] = 0.5;
+G2L["1b"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["Image"] = [[rbxassetid://266543268]];
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1b"]["BackgroundTransparency"] = 1;
+G2L["1b"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Credits.effectR.click
+G2L["1c"] = Instance.new("LocalScript", G2L["1a"]);
+G2L["1c"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Credits.LocalScript
+G2L["1d"] = Instance.new("LocalScript", G2L["19"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Changelog
+G2L["1e"] = Instance.new("TextButton", G2L["d"]);
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["TextSize"] = 21;
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(0, 171, 255);
+G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1e"]["Size"] = UDim2.new(0, 414, 0, 27);
+G2L["1e"]["Name"] = [[Changelog]];
+G2L["1e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["1e"]["Text"] = [[CHANGELOG]];
+G2L["1e"]["Position"] = UDim2.new(0.021, 0, 0.515, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Changelog.effectR
+G2L["1f"] = Instance.new("ModuleScript", G2L["1e"]);
+G2L["1f"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Changelog.effectR.Circle
+G2L["20"] = Instance.new("ImageLabel", G2L["1f"]);
+G2L["20"]["ZIndex"] = 10;
+G2L["20"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["20"]["ImageTransparency"] = 0.5;
+G2L["20"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["20"]["Image"] = [[rbxassetid://266543268]];
+G2L["20"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["20"]["BackgroundTransparency"] = 1;
+G2L["20"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Changelog.effectR.click
+G2L["21"] = Instance.new("LocalScript", G2L["1f"]);
+G2L["21"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts
+G2L["22"] = Instance.new("Frame", G2L["7"]);
+G2L["22"]["Visible"] = false;
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["ClipsDescendants"] = true;
+G2L["22"]["Size"] = UDim2.new(0, 431, 0, 236);
+G2L["22"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["22"]["Name"] = [[scripts]];
+G2L["22"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.Credit
+G2L["23"] = Instance.new("TextLabel", G2L["22"]);
+G2L["23"]["TextWrapped"] = true;
+G2L["23"]["TextSize"] = 14;
+G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["23"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["23"]["BackgroundTransparency"] = 10;
+G2L["23"]["Size"] = UDim2.new(0, 299, 0, 18);
+G2L["23"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["23"]["Text"] = [[Made by HacksProfound#4864, UI made by Enable#6969]];
+G2L["23"]["Name"] = [[Credit]];
+G2L["23"]["Position"] = UDim2.new(0.1535, 0, 0.92032, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder
+G2L["24"] = Instance.new("ScrollingFrame", G2L["22"]);
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["CanvasSize"] = UDim2.new(0, 0, 25, 0);
+G2L["24"]["TopImage"] = [[]];
+G2L["24"]["MidImage"] = [[]];
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["Name"] = [[ScriptHolder]];
+G2L["24"]["BottomImage"] = [[]];
+G2L["24"]["Size"] = UDim2.new(0, 432, 0, 175);
+G2L["24"]["Position"] = UDim2.new(0, 0, 0.17797, 0);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["24"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.LocalScript
+G2L["25"] = Instance.new("LocalScript", G2L["24"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.LocalScript.SmoothScroll
+G2L["26"] = Instance.new("ModuleScript", G2L["25"]);
+G2L["26"]["Name"] = [[SmoothScroll]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.TextLabel
+G2L["27"] = Instance.new("TextLabel", G2L["24"]);
+G2L["27"]["TextWrapped"] = true;
+G2L["27"]["TextSize"] = 14;
+G2L["27"]["TextScaled"] = true;
+G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["27"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["27"]["TextColor3"] = Color3.fromRGB(0, 255, 255);
+G2L["27"]["BackgroundTransparency"] = 10;
+G2L["27"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["27"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["27"]["Text"] = [[More Scripts soon!]];
+G2L["27"]["Position"] = UDim2.new(0.27778, 0, 0.30814, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.ULTIMATE
+G2L["28"] = Instance.new("TextButton", G2L["24"]);
+G2L["28"]["TextColor3"] = Color3.fromRGB(255, 255, 0);
+G2L["28"]["TextSize"] = 20;
+G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["28"]["Size"] = UDim2.new(0, 431, 0, 31);
+G2L["28"]["BackgroundTransparency"] = 1;
+G2L["28"]["Name"] = [[ULTIMATE]];
+G2L["28"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["28"]["Text"] = [[ULTIMATE]];
+G2L["28"]["Position"] = UDim2.new(0.01157, 0, 0.01636, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.ULTIMATE.effectR
+G2L["29"] = Instance.new("ModuleScript", G2L["28"]);
+G2L["29"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.ULTIMATE.effectR.click
+G2L["2a"] = Instance.new("LocalScript", G2L["29"]);
+G2L["2a"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.ULTIMATE.effectR.Circle
+G2L["2b"] = Instance.new("ImageLabel", G2L["29"]);
+G2L["2b"]["ZIndex"] = 10;
+G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2b"]["ImageTransparency"] = 0.5;
+G2L["2b"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2b"]["Image"] = [[rbxassetid://266543268]];
+G2L["2b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["2b"]["BackgroundTransparency"] = 1;
+G2L["2b"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.TOPKEK
+G2L["2c"] = Instance.new("TextButton", G2L["24"]);
+G2L["2c"]["TextColor3"] = Color3.fromRGB(255, 255, 0);
+G2L["2c"]["TextSize"] = 20;
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2c"]["Size"] = UDim2.new(0, 431, 0, 31);
+G2L["2c"]["BackgroundTransparency"] = 1;
+G2L["2c"]["Name"] = [[TOPKEK]];
+G2L["2c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["2c"]["Text"] = [[TOPKEK 4.0]];
+G2L["2c"]["Position"] = UDim2.new(-0, 0, 0.00636, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.TOPKEK.effectR
+G2L["2d"] = Instance.new("ModuleScript", G2L["2c"]);
+G2L["2d"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.TOPKEK.effectR.click
+G2L["2e"] = Instance.new("LocalScript", G2L["2d"]);
+G2L["2e"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.TOPKEK.effectR.Circle
+G2L["2f"] = Instance.new("ImageLabel", G2L["2d"]);
+G2L["2f"]["ZIndex"] = 10;
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["ImageTransparency"] = 0.5;
+G2L["2f"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Image"] = [[rbxassetid://266543268]];
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["2f"]["BackgroundTransparency"] = 1;
+G2L["2f"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.SERVER ADMIN
+G2L["30"] = Instance.new("TextButton", G2L["24"]);
+G2L["30"]["TextColor3"] = Color3.fromRGB(255, 255, 0);
+G2L["30"]["TextSize"] = 20;
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["30"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["30"]["Size"] = UDim2.new(0, 431, 0, 31);
+G2L["30"]["BackgroundTransparency"] = 1;
+G2L["30"]["Name"] = [[SERVER ADMIN]];
+G2L["30"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["30"]["Text"] = [[SERVER ADMIN]];
+G2L["30"]["Position"] = UDim2.new(0, 0, 0.00119, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.SERVER ADMIN.effectR
+G2L["31"] = Instance.new("ModuleScript", G2L["30"]);
+G2L["31"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.SERVER ADMIN.effectR.click
+G2L["32"] = Instance.new("LocalScript", G2L["31"]);
+G2L["32"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.SERVER ADMIN.effectR.Circle
+G2L["33"] = Instance.new("ImageLabel", G2L["31"]);
+G2L["33"]["ZIndex"] = 10;
+G2L["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["33"]["ImageTransparency"] = 0.5;
+G2L["33"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["33"]["Image"] = [[rbxassetid://266543268]];
+G2L["33"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["33"]["BackgroundTransparency"] = 1;
+G2L["33"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.IY/Infinite Yield
+G2L["34"] = Instance.new("TextButton", G2L["24"]);
+G2L["34"]["TextColor3"] = Color3.fromRGB(255, 255, 0);
+G2L["34"]["TextSize"] = 20;
+G2L["34"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["34"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["34"]["Size"] = UDim2.new(0, 431, 0, 31);
+G2L["34"]["BackgroundTransparency"] = 1;
+G2L["34"]["Name"] = [[IY/Infinite Yield]];
+G2L["34"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["34"]["Text"] = [[INFINITE YIELD]];
+G2L["34"]["Position"] = UDim2.new(0, 0, 0.02153, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.IY/Infinite Yield.effectR
+G2L["35"] = Instance.new("ModuleScript", G2L["34"]);
+G2L["35"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.IY/Infinite Yield.effectR.click
+G2L["36"] = Instance.new("LocalScript", G2L["35"]);
+G2L["36"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.IY/Infinite Yield.effectR.Circle
+G2L["37"] = Instance.new("ImageLabel", G2L["35"]);
+G2L["37"]["ZIndex"] = 10;
+G2L["37"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["37"]["ImageTransparency"] = 0.5;
+G2L["37"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["37"]["Image"] = [[rbxassetid://266543268]];
+G2L["37"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["37"]["BackgroundTransparency"] = 1;
+G2L["37"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CROSSMOD
+G2L["38"] = Instance.new("TextButton", G2L["24"]);
+G2L["38"]["TextColor3"] = Color3.fromRGB(255, 255, 0);
+G2L["38"]["TextSize"] = 20;
+G2L["38"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["38"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["38"]["Size"] = UDim2.new(0, 431, 0, 31);
+G2L["38"]["BackgroundTransparency"] = 1;
+G2L["38"]["Name"] = [[CROSSMOD]];
+G2L["38"]["ClipsDescendants"] = true;
+G2L["38"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["38"]["Text"] = [[CROSSMOD]];
+G2L["38"]["Position"] = UDim2.new(0, 0, 0.02653, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CROSSMOD.effectR
+G2L["39"] = Instance.new("ModuleScript", G2L["38"]);
+G2L["39"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CROSSMOD.effectR.click
+G2L["3a"] = Instance.new("LocalScript", G2L["39"]);
+G2L["3a"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CROSSMOD.effectR.Circle
+G2L["3b"] = Instance.new("ImageLabel", G2L["39"]);
+G2L["3b"]["ZIndex"] = 10;
+G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3b"]["ImageTransparency"] = 0.5;
+G2L["3b"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3b"]["Image"] = [[rbxassetid://266543268]];
+G2L["3b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3b"]["BackgroundTransparency"] = 1;
+G2L["3b"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CLAWS
+G2L["3c"] = Instance.new("TextButton", G2L["24"]);
+G2L["3c"]["TextColor3"] = Color3.fromRGB(255, 255, 0);
+G2L["3c"]["TextSize"] = 20;
+G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3c"]["Size"] = UDim2.new(0, 431, 0, 31);
+G2L["3c"]["BackgroundTransparency"] = 1;
+G2L["3c"]["Name"] = [[CLAWS]];
+G2L["3c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3c"]["Text"] = [[CLAWS]];
+G2L["3c"]["Position"] = UDim2.new(0.00231, 0, 0.01119, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CLAWS.effectR
+G2L["3d"] = Instance.new("ModuleScript", G2L["3c"]);
+G2L["3d"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CLAWS.effectR.click
+G2L["3e"] = Instance.new("LocalScript", G2L["3d"]);
+G2L["3e"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CLAWS.effectR.Circle
+G2L["3f"] = Instance.new("ImageLabel", G2L["3d"]);
+G2L["3f"]["ZIndex"] = 10;
+G2L["3f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3f"]["ImageTransparency"] = 0.5;
+G2L["3f"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3f"]["Image"] = [[rbxassetid://266543268]];
+G2L["3f"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["3f"]["BackgroundTransparency"] = 1;
+G2L["3f"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.Back
+G2L["40"] = Instance.new("TextButton", G2L["22"]);
+G2L["40"]["TextColor3"] = Color3.fromRGB(86, 255, 255);
+G2L["40"]["TextSize"] = 14;
+G2L["40"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["40"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["40"]["Size"] = UDim2.new(0, 30, 0, 26);
+G2L["40"]["BackgroundTransparency"] = 10;
+G2L["40"]["Name"] = [[Back]];
+G2L["40"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["40"]["Text"] = [[<]];
+G2L["40"]["Position"] = UDim2.new(0, 0, 0.88642, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.Back.LocalScript
+G2L["41"] = Instance.new("LocalScript", G2L["40"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.TextLabel
+G2L["42"] = Instance.new("TextLabel", G2L["22"]);
+G2L["42"]["BorderSizePixel"] = 0;
+G2L["42"]["TextSize"] = 14;
+G2L["42"]["BackgroundColor3"] = Color3.fromRGB(86, 255, 128);
+G2L["42"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["42"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["42"]["Size"] = UDim2.new(0, 416, 0, 1);
+G2L["42"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["42"]["Text"] = [[]];
+G2L["42"]["Position"] = UDim2.new(0.01856, 0, 0.17373, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.SCRIPT HUB
+G2L["43"] = Instance.new("Frame", G2L["22"]);
+G2L["43"]["ZIndex"] = 8;
+G2L["43"]["BorderSizePixel"] = 0;
+G2L["43"]["BackgroundColor3"] = Color3.fromRGB(43, 43, 43);
+G2L["43"]["Size"] = UDim2.new(0, 171, 0, 25);
+G2L["43"]["Position"] = UDim2.new(0.35641, 0, 0.06742, 0);
+G2L["43"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["43"]["Name"] = [[SCRIPT HUB]];
+G2L["43"]["BackgroundTransparency"] = 10;
+
+
+-- StarterGui.ProjectReptileV3.Holder.scripts.TextLabel
+G2L["44"] = Instance.new("TextLabel", G2L["22"]);
+G2L["44"]["BorderSizePixel"] = 0;
+G2L["44"]["TextSize"] = 14;
+G2L["44"]["BackgroundColor3"] = Color3.fromRGB(86, 255, 128);
+G2L["44"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["44"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["44"]["Size"] = UDim2.new(0, 416, 0, 1);
+G2L["44"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["44"]["Text"] = [[]];
+G2L["44"]["Position"] = UDim2.new(0.01856, 0, 0.17373, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits
+G2L["45"] = Instance.new("Frame", G2L["7"]);
+G2L["45"]["Visible"] = false;
+G2L["45"]["BorderSizePixel"] = 0;
+G2L["45"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["45"]["ClipsDescendants"] = true;
+G2L["45"]["Size"] = UDim2.new(0, 431, 0, 236);
+G2L["45"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["45"]["Name"] = [[credits]];
+G2L["45"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits.Credit
+G2L["46"] = Instance.new("TextLabel", G2L["45"]);
+G2L["46"]["TextWrapped"] = true;
+G2L["46"]["TextSize"] = 14;
+G2L["46"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["46"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["46"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["46"]["BackgroundTransparency"] = 10;
+G2L["46"]["Size"] = UDim2.new(0, 299, 0, 30);
+G2L["46"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["46"]["Text"] = [[Made by HacksProfound#4864, UI made by Enable#6969 Modded By SonicElijahMania]];
+G2L["46"]["Name"] = [[Credit]];
+G2L["46"]["Position"] = UDim2.new(0.1535, 0, 0.88642, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits.TextLabel
+G2L["47"] = Instance.new("TextLabel", G2L["45"]);
+G2L["47"]["TextWrapped"] = true;
+G2L["47"]["TextSize"] = 25;
+G2L["47"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["47"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["47"]["TextColor3"] = Color3.fromRGB(0, 255, 255);
+G2L["47"]["BackgroundTransparency"] = 1;
+G2L["47"]["Size"] = UDim2.new(0, 431, 0, 39);
+G2L["47"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["47"]["Text"] = [[CREDITS]];
+G2L["47"]["Position"] = UDim2.new(0.00232, 0, 0.10593, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits.TextLabel
+G2L["48"] = Instance.new("TextLabel", G2L["45"]);
+G2L["48"]["TextSize"] = 22;
+G2L["48"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["48"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["48"]["TextColor3"] = Color3.fromRGB(0, 255, 255);
+G2L["48"]["BackgroundTransparency"] = 1;
+G2L["48"]["Size"] = UDim2.new(0, 138, 0, 30);
+G2L["48"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["48"]["Text"] = [[MADE THE PROJECT]];
+G2L["48"]["Position"] = UDim2.new(0.38426, 0, 0.27542, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits.TextLabel
+G2L["49"] = Instance.new("TextLabel", G2L["45"]);
+G2L["49"]["TextSize"] = 22;
+G2L["49"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["49"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["49"]["TextColor3"] = Color3.fromRGB(0, 255, 255);
+G2L["49"]["BackgroundTransparency"] = 1;
+G2L["49"]["Size"] = UDim2.new(0, 88, 0, 30);
+G2L["49"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["49"]["Text"] = [[UI MAKER]];
+G2L["49"]["Position"] = UDim2.new(0.18056, 0, 0.40254, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits.TextLabel
+G2L["4a"] = Instance.new("TextLabel", G2L["45"]);
+G2L["4a"]["TextSize"] = 22;
+G2L["4a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["4a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4a"]["BackgroundTransparency"] = 1;
+G2L["4a"]["Size"] = UDim2.new(0, 154, 0, 30);
+G2L["4a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["4a"]["Text"] = [[ENABLE:]];
+G2L["4a"]["Position"] = UDim2.new(0.02778, 0, 0.40254, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits.TextLabel
+G2L["4b"] = Instance.new("TextLabel", G2L["45"]);
+G2L["4b"]["TextSize"] = 22;
+G2L["4b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["4b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4b"]["BackgroundTransparency"] = 1;
+G2L["4b"]["Size"] = UDim2.new(0, 154, 0, 30);
+G2L["4b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["4b"]["Text"] = [[HACKSPROFOUND: ]];
+G2L["4b"]["Position"] = UDim2.new(0.02778, 0, 0.27542, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits.TextButton
+G2L["4c"] = Instance.new("TextButton", G2L["45"]);
+G2L["4c"]["TextColor3"] = Color3.fromRGB(0, 255, 255);
+G2L["4c"]["TextSize"] = 14;
+G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4c"]["Size"] = UDim2.new(0, 30, 0, 26);
+G2L["4c"]["BackgroundTransparency"] = 10;
+G2L["4c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["4c"]["Text"] = [[<]];
+G2L["4c"]["Position"] = UDim2.new(0, 0, 0.88642, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.credits.TextButton.LocalScript
+G2L["4d"] = Instance.new("LocalScript", G2L["4c"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.discord
+G2L["4e"] = Instance.new("Frame", G2L["7"]);
+G2L["4e"]["Visible"] = false;
+G2L["4e"]["BorderSizePixel"] = 0;
+G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4e"]["Selectable"] = true;
+G2L["4e"]["ClipsDescendants"] = true;
+G2L["4e"]["Size"] = UDim2.new(0, 431, 0, 235);
+G2L["4e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["4e"]["Name"] = [[discord]];
+G2L["4e"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ProjectReptileV3.Holder.discord.Credit
+G2L["4f"] = Instance.new("TextLabel", G2L["4e"]);
+G2L["4f"]["TextWrapped"] = true;
+G2L["4f"]["TextSize"] = 14;
+G2L["4f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4f"]["BackgroundTransparency"] = 10;
+G2L["4f"]["Size"] = UDim2.new(0, 299, 0, 30);
+G2L["4f"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["4f"]["Text"] = [[Made by HacksProfound#4864, UI made by Enable#6969 Modded By SonicElijahMania]];
+G2L["4f"]["Name"] = [[Credit]];
+G2L["4f"]["Position"] = UDim2.new(0.1535, 0, 0.88642, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.discord.TextLabel
+G2L["50"] = Instance.new("TextLabel", G2L["4e"]);
+G2L["50"]["TextWrapped"] = true;
+G2L["50"]["TextSize"] = 25;
+G2L["50"]["TextScaled"] = true;
+G2L["50"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["50"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["50"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["50"]["BackgroundTransparency"] = 1;
+G2L["50"]["Size"] = UDim2.new(0, 431, 0, 35);
+G2L["50"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["50"]["Text"] = [[COMING SOON!]];
+G2L["50"]["Position"] = UDim2.new(0, 0, 0.33051, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.discord.TextLabel
+G2L["51"] = Instance.new("TextLabel", G2L["4e"]);
+G2L["51"]["TextWrapped"] = true;
+G2L["51"]["TextSize"] = 25;
+G2L["51"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["51"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["51"]["TextColor3"] = Color3.fromRGB(255, 255, 0);
+G2L["51"]["BackgroundTransparency"] = 1;
+G2L["51"]["Size"] = UDim2.new(0, 431, 0, 36);
+G2L["51"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["51"]["Text"] = [[COMING SOON]];
+G2L["51"]["Position"] = UDim2.new(0, 0, 0.47881, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.discord.TextButton
+G2L["52"] = Instance.new("TextButton", G2L["4e"]);
+G2L["52"]["TextColor3"] = Color3.fromRGB(86, 255, 128);
+G2L["52"]["TextSize"] = 14;
+G2L["52"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["52"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["52"]["Size"] = UDim2.new(0, 30, 0, 26);
+G2L["52"]["BackgroundTransparency"] = 10;
+G2L["52"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["52"]["Text"] = [[<]];
+G2L["52"]["Position"] = UDim2.new(0, 0, 0.88642, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.discord.TextButton.LocalScript
+G2L["53"] = Instance.new("LocalScript", G2L["52"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.login
+G2L["54"] = Instance.new("Frame", G2L["7"]);
+G2L["54"]["Visible"] = false;
+G2L["54"]["BorderSizePixel"] = 0;
+G2L["54"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["54"]["ClipsDescendants"] = true;
+G2L["54"]["Size"] = UDim2.new(0, 431, 0, 236);
+G2L["54"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["54"]["Name"] = [[login]];
+G2L["54"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.Credit
+G2L["55"] = Instance.new("TextLabel", G2L["54"]);
+G2L["55"]["TextWrapped"] = true;
+G2L["55"]["TextSize"] = 14;
+G2L["55"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["55"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["55"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["55"]["BackgroundTransparency"] = 10;
+G2L["55"]["Size"] = UDim2.new(0, 299, 0, 30);
+G2L["55"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["55"]["Text"] = [[Made by HacksProfound#4864, UI made by Enable#6969]];
+G2L["55"]["Name"] = [[Credit]];
+G2L["55"]["Position"] = UDim2.new(0.1535, 0, 0.88642, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextBox
+G2L["56"] = Instance.new("TextBox", G2L["54"]);
+G2L["56"]["PlaceholderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["56"]["TextWrapped"] = true;
+G2L["56"]["TextSize"] = 14;
+G2L["56"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["56"]["TextScaled"] = true;
+G2L["56"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["56"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic);
+G2L["56"]["Size"] = UDim2.new(0, 280, 0, 53);
+G2L["56"]["Position"] = UDim2.new(0.17633, 0, 0.24153, 0);
+G2L["56"]["Text"] = [[]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextBox.effectR
+G2L["57"] = Instance.new("ModuleScript", G2L["56"]);
+G2L["57"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextBox.effectR.Circle
+G2L["58"] = Instance.new("ImageLabel", G2L["57"]);
+G2L["58"]["ZIndex"] = 10;
+G2L["58"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["58"]["ImageTransparency"] = 0.5;
+G2L["58"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["58"]["Image"] = [[rbxassetid://266543268]];
+G2L["58"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["58"]["BackgroundTransparency"] = 1;
+G2L["58"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextBox.effectR.click
+G2L["59"] = Instance.new("LocalScript", G2L["57"]);
+G2L["59"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextButton
+G2L["5a"] = Instance.new("TextButton", G2L["54"]);
+G2L["5a"]["TextWrapped"] = true;
+G2L["5a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5a"]["TextSize"] = 14;
+G2L["5a"]["TextScaled"] = true;
+G2L["5a"]["BackgroundColor3"] = Color3.fromRGB(86, 255, 128);
+G2L["5a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic);
+G2L["5a"]["Size"] = UDim2.new(0, 200, 0, 50);
+G2L["5a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["5a"]["Text"] = [[Submit]];
+G2L["5a"]["Position"] = UDim2.new(0.26682, 0, 0.50847, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextButton.LocalScript
+G2L["5b"] = Instance.new("LocalScript", G2L["5a"]);
+
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextButton.effectR
+G2L["5c"] = Instance.new("ModuleScript", G2L["5a"]);
+G2L["5c"]["Name"] = [[effectR]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextButton.effectR.Circle
+G2L["5d"] = Instance.new("ImageLabel", G2L["5c"]);
+G2L["5d"]["ZIndex"] = 10;
+G2L["5d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5d"]["ImageTransparency"] = 0.5;
+G2L["5d"]["ImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5d"]["Image"] = [[rbxassetid://266543268]];
+G2L["5d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["5d"]["BackgroundTransparency"] = 1;
+G2L["5d"]["Name"] = [[Circle]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.TextButton.effectR.click
+G2L["5e"] = Instance.new("LocalScript", G2L["5c"]);
+G2L["5e"]["Name"] = [[click]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.Code
+G2L["5f"] = Instance.new("StringValue", G2L["54"]);
+G2L["5f"]["Name"] = [[Code]];
+G2L["5f"]["Value"] = [[31232132323234ChangedBySkyFall]];
+
+
+-- StarterGui.ProjectReptileV3.Holder.login.Codey
+G2L["60"] = Instance.new("TextLabel", G2L["54"]);
+G2L["60"]["TextWrapped"] = true;
+G2L["60"]["TextSize"] = 20;
+G2L["60"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["60"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["60"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["60"]["BackgroundTransparency"] = 10;
+G2L["60"]["Size"] = UDim2.new(0, 429, 0, 30);
+G2L["60"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["60"]["Text"] = [[Code: 31232132323234ChangedBySkyFall]];
+G2L["60"]["Name"] = [[Codey]];
+G2L["60"]["Position"] = UDim2.new(-0.00195, 0, 0.10252, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.Respawn/RE
+G2L["61"] = Instance.new("TextButton", G2L["7"]);
+G2L["61"]["TextWrapped"] = true;
+G2L["61"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["61"]["TextSize"] = 14;
+G2L["61"]["TextScaled"] = true;
+G2L["61"]["BackgroundColor3"] = Color3.fromRGB(50, 154, 74);
+G2L["61"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic);
+G2L["61"]["Size"] = UDim2.new(0, 32, 0, 19);
+G2L["61"]["BackgroundTransparency"] = 10;
+G2L["61"]["Name"] = [[Respawn/RE]];
+G2L["61"]["ClipsDescendants"] = true;
+G2L["61"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["61"]["Text"] = [[RE]];
+G2L["61"]["Position"] = UDim2.new(0.93609, 0, 0.91656, 0);
+
+
+-- StarterGui.ProjectReptileV3.Holder.R6
+G2L["62"] = Instance.new("TextButton", G2L["7"]);
+G2L["62"]["TextWrapped"] = true;
+G2L["62"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["62"]["TextSize"] = 14;
+G2L["62"]["TextScaled"] = true;
+G2L["62"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["62"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Italic);
+G2L["62"]["Size"] = UDim2.new(0, 31, 0, 19);
+G2L["62"]["BackgroundTransparency"] = 10;
+G2L["62"]["Name"] = [[R6]];
+G2L["62"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["62"]["Text"] = [[R6]];
+G2L["62"]["Position"] = UDim2.new(0.86511, 0, 0.91797, 0);
+
+
+-- StarterGui.ProjectReptileV3.Handler
+G2L["63"] = Instance.new("LocalScript", G2L["1"]);
+G2L["63"]["Name"] = [[Handler]];
+
+
+-- StarterGui.ProjectReptileV3.ScreenGui
+G2L["64"] = Instance.new("ScreenGui", G2L["1"]);
+G2L["64"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.ProjectReptileV3.ScreenGui.TextButton
+G2L["65"] = Instance.new("TextButton", G2L["64"]);
+G2L["65"]["TextWrapped"] = true;
+G2L["65"]["BorderSizePixel"] = 6;
+G2L["65"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["65"]["TextSize"] = 19;
+G2L["65"]["TextScaled"] = true;
+G2L["65"]["BackgroundColor3"] = Color3.fromRGB(230, 230, 230);
+G2L["65"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["65"]["Size"] = UDim2.new(0, 293, 0, 80);
+G2L["65"]["BorderColor3"] = Color3.fromRGB(171, 255, 255);
+G2L["65"]["Text"] = [["Welcome To Project Sonic"  Orginally made by Enable & HacksProFound Edited By SonicElijahMania Use the Program to execute scripts Status Enabled!.";]];
+G2L["65"]["Position"] = UDim2.new(-0.00062, 0, 0.87934, 0);
+
+
+-- Require G2L wrapper
+local G2L_REQUIRE = require;
+local G2L_MODULES = {};
+local function require(Module:ModuleScript)
+    local ModuleState = G2L_MODULES[Module];
+    if ModuleState then
+        if not ModuleState.Required then
+            ModuleState.Required = true;
+            ModuleState.Value = ModuleState.Closure();
+        end
+        return ModuleState.Value;
+    end;
+    return G2L_REQUIRE(Module);
+end
+
+G2L_MODULES[G2L["10"]] = {
+Closure = function()
+    local script = G2L["10"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["15"]] = {
+Closure = function()
+    local script = G2L["15"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["1a"]] = {
+Closure = function()
+    local script = G2L["1a"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["1f"]] = {
+Closure = function()
+    local script = G2L["1f"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["26"]] = {
+Closure = function()
+    local script = G2L["26"];-- SmoothScroll module
+-- By boatbomber (2019)
+
+local RS, UIS, CAS = game:GetService("RunService"), game:GetService("UserInputService"), game:GetService("ContextActionService")
+
+if not RS:IsClient() then
+	error("SmoothScroll can only be used on the client")
+end
+
+local PlayerGui	= game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local Mouse		= game.Players.LocalPlayer:GetMouse()
+local ipairs,pairs	= ipairs,pairs
+
+
+wait() --Because we're about to call Mouse.ViewSizeY, we wait() to ensure the property has actually updated
+
+local DEFAULT_SENS,DEFAULT_FRICT = Mouse.ViewSizeY/27, 0.78
+
+
+local Objects = {}
+local ScrollBarHolder
+local DraggingBar = false
+
+--PC only
+if not UIS.TouchEnabled then
+	
+	ScrollBarHolder = Instance.new("ScreenGui")
+		ScrollBarHolder.Name = "SmoothScroll"
+		ScrollBarHolder.Parent = PlayerGui
+	
+	RS.Heartbeat:Connect(function()
+		for Frame, Info in pairs(Objects) do
+			if Info.Velocity > 0.05 or Info.Velocity < -0.05 then
+				Info.Velocity = Info.Velocity*Info.Frict				
+				if Info.Axis == "X" then
+					Frame.CanvasPosition = Vector2.new(Frame.CanvasPosition.X+Info.Velocity,Frame.CanvasPosition.Y)
+					
+					if math.abs(Info.LastPos-Frame.CanvasPosition.X) == 0 then
+						--Hit end, remove velocity so scrolling back responds instantly
+						Info.Velocity = 0
+					end
+					Info.LastPos = Frame.CanvasPosition.X
+				else
+					Frame.CanvasPosition = Vector2.new(Frame.CanvasPosition.X,Frame.CanvasPosition.Y+Info.Velocity)
+
+					if math.abs(Info.LastPos-Frame.CanvasPosition.Y) == 0 then
+						--Hit end, remove velocity so scrolling back responds instantly
+						Info.Velocity = 0
+					end
+					Info.LastPos = Frame.CanvasPosition.Y
+				end
+			end
+		end
+	end)
+	
+	--Trackpad support
+	UIS.PointerAction:Connect(function(Wheel,Pan,Pinch,GP)
+		if not DraggingBar then
+			local HoveredObjects = PlayerGui:GetGuiObjectsAtPosition(Mouse.X, Mouse.Y)	
+			for i, Frame in ipairs(HoveredObjects) do
+				local Info = Objects[Frame]
+				
+				if Info and Info.Visibility.Visible == true then
+					Info.Velocity = Info.Velocity - (Info.Sens * Pan.Y * (Info.Inverted and -1 or 1))
+					break
+				end
+			end
+		end
+	end)
+	
+	--Mouse wheel support
+	CAS:BindActionAtPriority("SmoothScroll", function(Name,State,Input)
+		
+		if DraggingBar then return Enum.ContextActionResult.Pass end
+		
+		local Processed = false
+		
+		local HoveredObjects = PlayerGui:GetGuiObjectsAtPosition(Mouse.X, Mouse.Y)	
+		for i, Frame in ipairs(HoveredObjects) do
+			local Info = Objects[Frame]
+			
+			if Info and Info.Visibility.Visible == true then
+				Info.Velocity = Info.Velocity - (Info.Sens * Input.Position.Z * (Info.Inverted and -1 or 1))
+				Processed = true
+				break
+			end
+		end
+		
+		return Processed and Enum.ContextActionResult.Sink or Enum.ContextActionResult.Pass
+		
+	end, false, 8000, Enum.UserInputType.MouseWheel)
+
+end
+
+-- This visibility tracker is taken from Crazyman32's MouseOver module (August 18, 2018)
+
+local OnScreenTracker = {}
+OnScreenTracker.__index = OnScreenTracker
+
+function OnScreenTracker.new(obj)
+	
+	assert(typeof(obj) == "Instance" and obj:IsA("GuiObject"), "Argument #1 expected GuiObject")
+	local visibleChanged = Instance.new("BindableEvent")
+	
+	local self = setmetatable({
+		GuiObject = obj;
+		Visible = nil;
+		Changed = visibleChanged.Event;
+		_path = {};
+		_conn = {};
+		_root = nil;
+		_visibleChanged = visibleChanged;
+	}, OnScreenTracker)
+	
+	local function CheckVisible()
+		local vis = (self._root and self._root.Enabled or false)
+		if (vis) then
+			local path = self._path
+			for i, p in ipairs(path) do
+				if (not p.Visible) then
+					vis = false
+					break
+				end
+			end
+		end
+		if (vis ~= self.Visible) then
+			self.Visible = vis
+			visibleChanged:Fire(vis)
+		end
+	end
+	
+	local function BuildAncestryPath()
+		for _,c in ipairs(self._conn) do c:Disconnect() end
+		local path = {}
+		local conn = {}
+		local root = nil
+		local parent = obj
+		while (parent and (parent:IsA("GuiObject") or parent:IsA("Folder"))) do
+			if parent:IsA("GuiObject") then
+				conn[#conn + 1] = parent:GetPropertyChangedSignal("Visible"):Connect(CheckVisible)
+				path[#path + 1] = parent
+			end
+			parent = parent.Parent
+		end
+		if (parent and parent:IsA("LayerCollector")) then
+			conn[#conn + 1] = parent:GetPropertyChangedSignal("Enabled"):Connect(CheckVisible)
+			root = parent
+		end
+		self._path = path
+		self._conn = conn
+		self._root = root
+		CheckVisible()
+	end
+	
+	self._ancestry = obj.AncestryChanged:Connect(function(child, parent)
+		BuildAncestryPath()
+	end)
+	BuildAncestryPath()
+	
+	return self
+	
+end
+
+function OnScreenTracker:Destroy()
+	self._visibleChanged:Fire(false)
+	self._visibleChanged:Destroy()
+	self._ancestry:Disconnect()
+	for _,c in ipairs(self._conn) do c:Disconnect() end
+end
+
+
+local function CreateBar(Frame,Axis)
+	
+	--Safety checks
+	
+	Axis = Axis or "Y"
+	if not (Frame and typeof(Frame) == "Instance" and Frame.ClassName == "ScrollingFrame") then
+		warn("Invalid frame to create custom bar")
+		return
+	end
+	
+	local Bar = Instance.new("TextButton")
+		Bar.Name = Frame.Name.."_Scroller_"..Axis
+		Bar.Text = ""
+		Bar.BackgroundTransparency = 1
+		Bar.Visible = Objects[Frame].Visibility.Visible
+		
+	--Localize frame stuff
+	local absSize,absPos,scrollThick = Frame.AbsoluteSize,Frame.AbsolutePosition,Frame.ScrollBarThickness
+	
+	local BarDrag
+	Bar.MouseButton1Down:Connect(function()
+		if not DraggingBar and not BarDrag then
+			DraggingBar = true
+			
+			local LastPos = Vector2.new(Mouse.X,Mouse.Y)
+			BarDrag = UIS.InputChanged:Connect(function(Input)
+				if Input.UserInputType == Enum.UserInputType.MouseMovement then
+					
+					local Pos = Vector2.new(Input.Position.X,Input.Position.Y)
+					local Delta = Pos-LastPos
+					local DeltaPercent = (Axis == "Y" and Delta.Y or Delta.X)/(Axis == "Y" and Frame.AbsoluteWindowSize.Y or Frame.AbsoluteWindowSize.X)
+					
+					local Parent = Frame:FindFirstAncestorWhichIsA("GuiBase2d")
+					
+					local CanvasSize = Vector2.new(
+						(Frame.CanvasSize.X.Scale*Parent.AbsoluteSize.X)+Frame.CanvasSize.X.Offset,
+						(Frame.CanvasSize.Y.Scale*Parent.AbsoluteSize.Y)+Frame.CanvasSize.Y.Offset
+					)
+
+					Frame.CanvasPosition = Vector2.new(Frame.CanvasPosition.X+(Axis == "X" and CanvasSize.X*DeltaPercent or 0),Frame.CanvasPosition.Y+(Axis == "Y" and CanvasSize.Y*DeltaPercent or 0))
+					
+					LastPos = Pos
+				end
+			end)
+		end
+	end)
+	local DragEnded = UIS.InputEnded:Connect(function(Input)
+		if Input.UserInputType == Enum.UserInputType.MouseButton1 and BarDrag then
+			DraggingBar = false
+			BarDrag:Disconnect()
+			BarDrag = nil
+		end
+	end)
+	
+	Objects[Frame].Visibility.Changed:Connect(function(Visible)
+		Bar.Visible = Visible
+		
+		if not Visible and BarDrag then
+			DraggingBar = false
+			BarDrag:Disconnect()
+			BarDrag = nil
+		end
+	end)
+		
+	if Axis == "X" then
+		--Initial bar
+		Bar.Size = UDim2.new(0,absSize.X,0,scrollThick)
+		Bar.Position = UDim2.new(
+			0,absPos.X,
+			0,absPos.Y+absSize.Y-scrollThick
+		)
+	else
+		--Initial bar
+		Bar.Size = UDim2.new(0,scrollThick,0,absSize.Y)
+		Bar.Position = UDim2.new(
+			0,Frame.VerticalScrollBarPosition == Enum.VerticalScrollBarPosition.Right and absPos.X+absSize.X-scrollThick or absPos.X,
+			0,absPos.Y
+		)
+	end
+	
+	local Updater
+	Updater = Frame.Changed:Connect(function(Prop)
+		if Objects[Frame] then
+			if Frame:FindFirstAncestorWhichIsA("GuiBase2d") then
+				--Ensure bar stays updated
+				
+				if Prop == "AbsoluteSize" or Prop == "AbsolutePosition" or Prop == "AbsolutePosition" or Prop == "CanvasSize" or Prop == "ScrollBarThickness" then
+					--Update frame stuff
+					absSize,absPos,scrollThick = Frame.AbsoluteSize,Frame.AbsolutePosition,Frame.ScrollBarThickness
+					
+					if Axis == "X" then
+						--Update bar
+						Bar.Size = UDim2.new(0,absSize.X,0,scrollThick)
+						Bar.Position = UDim2.new(
+							0,absPos.X,
+							0,absPos.Y+absSize.Y-scrollThick
+						)
+					else
+						--Update bar
+						Bar.Size = UDim2.new(0,scrollThick,0,absSize.Y)
+						Bar.Position = UDim2.new(
+							0,Frame.VerticalScrollBarPosition == Enum.VerticalScrollBarPosition.Right and absPos.X+absSize.X-scrollThick or absPos.X,
+							0,absPos.Y
+						)
+					end
+				end
+				
+			end
+		else
+			Bar:Destroy()
+			Updater:Disconnect()
+			DragEnded:Disconnect()
+			if BarDrag then
+				BarDrag:Disconnect()
+				BarDrag = nil
+			end
+		end
+	end)
+	
+	Bar.Parent = ScrollBarHolder
+end
+
+local SmoothScroll = {}
+
+--[[**
+    Sets a ScrollingFrame to scroll smoothly
+			
+    @param Frame [ScrollingFrame] The ScrollingFrame object to apply smoothing to
+	@param Sensitivity [Optional Number] How many pixels it scrolls per wheel turn
+	@param Friction [Optional Number] What the velocity is multiplied by each frame
+	@param Inverted [Optional Bool] Inverts the scrolling direction
+	@param Axis [Optional String] "X" or "Y". If left out, will default to whichever Axis is scrollable or "Y" if both are valid
+			
+    @returns nil		
+**--]]
+function SmoothScroll.Enable(Frame, Sensitivity, Friction, Inverted, Axis)
+	if not UIS.TouchEnabled then
+		
+		--Safety check
+		if not (Frame and typeof(Frame) == "Instance" and Frame.ClassName == "ScrollingFrame") then
+			warn("Invalid frame to smooth")
+			return
+		end
+		
+		if not Objects[Frame] then
+			Frame.ScrollingEnabled = false
+			
+			local Actives,Connections = {},{}
+			
+			for _,desc in ipairs(Frame:GetDescendants()) do
+				if desc:IsA("GuiObject") then
+					Actives[desc] = desc.Active
+					desc.Active = false
+					Connections[#Connections+1] = desc:GetPropertyChangedSignal("Active"):Connect(function()
+						desc.Active = false
+					end)
+				end
+			end
+			
+			local parent = Frame
+			while (parent and (parent:IsA("GuiObject") or parent:IsA("Folder"))) do
+				if parent:IsA("GuiObject") then
+					Actives[parent] = parent.Active
+					parent.Active = false
+					Connections[#Connections+1] = parent:GetPropertyChangedSignal("Active"):Connect(function()
+						parent.Active = false
+					end)
+				end
+				parent = parent.Parent
+			end
+			
+			Connections[#Connections+1] = Frame.DescendantAdded:Connect(function(desc)
+				if desc:IsA("GuiObject") then
+					Objects[Frame].Actives[desc] = desc.Active
+					desc.Active = false
+					Objects[Frame].Connections[#Objects[Frame].Connections+1] = desc:GetPropertyChangedSignal("Active"):Connect(function()
+						desc.Active = false
+					end)
+				end
+			end)
+			
+			
+			if Axis and (Axis == "X" or Axis == "Y") then
+				--Leave Axis as defined by param
+			else
+				Axis = "Y" --Default to Y
+				if (Frame.CanvasSize.Y.Offset>0 or Frame.CanvasSize.Y.Scale>0) then
+					Axis = "Y"
+				elseif (Frame.CanvasSize.X.Offset>0 or Frame.CanvasSize.X.Scale>0) then
+					Axis = "X"
+				end
+			end
+			
+			Objects[Frame] = {
+				Connections	= Connections;
+				Actives		= Actives;
+				
+				Velocity	= 0;
+				LastPos		= 0;
+				Visibility	= OnScreenTracker.new(Frame);
+				
+				Inverted	= Inverted;
+				Axis		= Axis;
+				Frict		= math.clamp(type(Friction)=="number" and Friction or DEFAULT_FRICT,0.2,0.99);
+				Sens		= math.clamp(type(Sensitivity)=="number" and Sensitivity or DEFAULT_SENS,0.01,99999999999999999);
+			}
+			
+			CreateBar(Frame, "X")
+			CreateBar(Frame, "Y")
+		else
+			--Already enabled, so just update the new settings passed
+			Objects[Frame].Sens		= math.clamp(type(Sensitivity)=="number" and Sensitivity or DEFAULT_SENS,0.01,99999999999999999);
+			Objects[Frame].Frict	= math.clamp(type(Friction)=="number" and Friction or DEFAULT_FRICT,0.2,0.99);
+			Objects[Frame].Inverted	= Inverted
+		end
+		
+	else
+		warn("SmoothScroll only works for PC")
+	end
+end
+
+--[[**
+    Sets a ScrollingFrame to scroll normally
+			
+    @param Frame [ScrollingFrame] The ScrollingFrame object to remove smoothing from
+			
+    @returns nil		
+**--]]
+function SmoothScroll.Disable(Frame)
+
+	if Objects[Frame] then
+		-- Return default behavior
+		Frame.ScrollingEnabled = true
+		-- Disconnect mouse events and desc events
+		for i,c in ipairs(Objects[Frame].Connections) do
+			c:Disconnect()
+		end
+		-- Destroy tracker
+		Objects[Frame].Visibility:Destroy()
+		-- Return prior Active properties
+		for desc,a in pairs(Objects[Frame].Actives) do
+			desc.Active = a
+		end
+		
+		-- Remove from update queue
+		Objects[Frame] = nil
+	end
+	
+end
+
+return SmoothScroll
+end;
+};
+G2L_MODULES[G2L["29"]] = {
+Closure = function()
+    local script = G2L["29"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["2d"]] = {
+Closure = function()
+    local script = G2L["2d"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["31"]] = {
+Closure = function()
+    local script = G2L["31"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["35"]] = {
+Closure = function()
+    local script = G2L["35"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["39"]] = {
+Closure = function()
+    local script = G2L["39"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["3d"]] = {
+Closure = function()
+    local script = G2L["3d"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["57"]] = {
+Closure = function()
+    local script = G2L["57"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+G2L_MODULES[G2L["5c"]] = {
+Closure = function()
+    local script = G2L["5c"];function CircleClick(d,b,a)coroutine.resume(coroutine.create(function()d.ClipsDescendants=true local c=script:WaitForChild("Circle"):Clone()c.Parent=d local b=b-c.AbsolutePosition.X local a=a-c.AbsolutePosition.Y c.Position=UDim2.new(0,b,0,a)local a=0 if d.AbsoluteSize.X>d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 elseif d.AbsoluteSize.X<d.AbsoluteSize.Y then a=d.AbsoluteSize.Y*1.5 elseif d.AbsoluteSize.X==d.AbsoluteSize.Y then a=d.AbsoluteSize.X*1.5 end local b=0.5 c:TweenSizeAndPosition(UDim2.new(0,a,0,a),UDim2.new(0.5,-a/2,0.5,-a/2),"Out","Quad",b,false,nil)for a=1,10 do c.ImageTransparency=c.ImageTransparency+0.01 wait(b/10)end c:Destroy()end))end return CircleClick
+end;
+};
+-- StarterGui.ProjectReptileV3.Open.TextButton.LocalScript
+local function C_4()
+local script = G2L["4"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Open.Visible = false
+		script.Parent.Parent.Parent.Holder.Visible = true
+	end)
+end;
+task.spawn(C_4);
+-- StarterGui.ProjectReptileV3.Holder.d=drag
+local function C_8()
+local script = G2L["8"];
+	local a=game:GetService("UserInputService")function drag(b)dragToggle=nil dragSpeed=0.23 dragInput=nil dragStart=nil dragPos=nil function updateInput(a)Delta=a.Position-dragStart Position=UDim2.new(startPos.X.Scale,startPos.X.Offset+Delta.X,startPos.Y.Scale,startPos.Y.Offset+Delta.Y)game:GetService("TweenService"):Create(b,TweenInfo.new(0.25),{Position=Position}):Play()end b.InputBegan:Connect(function(c)if(c.UserInputType==Enum.UserInputType.MouseButton1 or c.UserInputType==Enum.UserInputType.Touch)and a:GetFocusedTextBox()==nil then dragToggle=true dragStart=c.Position startPos=b.Position c.Changed:Connect(function()if c.UserInputState==Enum.UserInputState.End then dragToggle=false end end)end end)b.InputChanged:Connect(function(a)if a.UserInputType==Enum.UserInputType.MouseMovement or a.UserInputType==Enum.UserInputType.Touch then dragInput=a end end)game:GetService("UserInputService").InputChanged:Connect(function(a)if a==dragInput and dragToggle then updateInput(a)end end)end drag(script.Parent)
+	
+	
+	
+end;
+task.spawn(C_8);
+-- StarterGui.ProjectReptileV3.Holder.Close.LocalScript
+local function C_c()
+local script = G2L["c"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Open.Visible = true
+		script.Parent.Parent.Parent.Holder.Visible = false
+	end)
+end;
+task.spawn(C_c);
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Scripts.effectR.click
+local function C_12()
+local script = G2L["12"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_12);
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Scripts.LocalScript
+local function C_13()
+local script = G2L["13"];
+	local function findPlayer(name)
+		name = name:lower()
+		if name == 'me' then
+			return game:GetService'Players'.LocalPlayer
+		end
+		for i,v in pairs(game:GetService'Players':GetPlayers()) do
+			if v.Name:lower():find(name) == 1 then
+				return v
+			end
+		end
+	end
+	
+	if(_G.TweenDB==nil)then
+		_G.TweenDB=false
+	end
+	
+	local currpage = script.Parent.Parent
+	local nextpage = script.Parent.Parent.Parent:WaitForChild"scripts"
+	script.Parent.MouseButton1Click:connect(function()
+		if(_G.TweenDB)then return end
+		_G.TweenDB=true
+		nextpage.Visible=true
+		currpage.Visible=true
+		nextpage.Position = UDim2.new(1, 0,-0.001, 0)
+		currpage:TweenPosition(UDim2.new(-1, 0,0,0),Enum.EasingDirection.In,Enum.EasingStyle.Back,.6,true)
+		wait(.4)
+		nextpage:TweenPosition(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Back,.5,true)
+		wait(.5)
+		_G.TweenDB=false
+	end)
+end;
+task.spawn(C_13);
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.d.effectR.click
+local function C_17()
+local script = G2L["17"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_17);
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.d.LocalScript
+local function C_18()
+local script = G2L["18"];
+	local function findPlayer(name)
+		name = name:lower()
+		if name == 'me' then
+			return game:GetService'Players'.LocalPlayer
+		end
+		for i,v in pairs(game:GetService'Players':GetPlayers()) do
+			if v.Name:lower():find(name) == 1 then
+				return v
+			end
+		end
+	end
+	
+	if(_G.TweenDB==nil)then
+		_G.TweenDB=false
+	end
+	
+	local currpage = script.Parent.Parent
+	local nextpage = script.Parent.Parent.Parent:WaitForChild"discord"
+	script.Parent.MouseButton1Click:connect(function()
+		if(_G.TweenDB)then return end
+		_G.TweenDB=true
+		nextpage.Visible=true
+		currpage.Visible=true
+		nextpage.Position = UDim2.new(1,0,0,0)
+		currpage:TweenPosition(UDim2.new(-1, 0,0, 0),Enum.EasingDirection.In,Enum.EasingStyle.Back,.6,true)
+		wait(.4)
+		nextpage:TweenPosition(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Back,.5,true)
+		wait(.5)
+		_G.TweenDB=false
+	end)
+end;
+task.spawn(C_18);
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Credits.effectR.click
+local function C_1c()
+local script = G2L["1c"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_1c);
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Credits.LocalScript
+local function C_1d()
+local script = G2L["1d"];
+	local function findPlayer(name)
+		name = name:lower()
+		if name == 'me' then
+			return game:GetService'Players'.LocalPlayer
+		end
+		for i,v in pairs(game:GetService'Players':GetPlayers()) do
+			if v.Name:lower():find(name) == 1 then
+				return v
+			end
+		end
+	end
+	
+	if(_G.TweenDB==nil)then
+		_G.TweenDB=false
+	end
+	
+	local currpage = script.Parent.Parent
+	local nextpage = script.Parent.Parent.Parent:WaitForChild"credits"
+	script.Parent.MouseButton1Click:connect(function()
+		if(_G.TweenDB)then return end
+		_G.TweenDB=true
+		nextpage.Visible=true
+		currpage.Visible=true
+		nextpage.Position = UDim2.new(1, 0,-0.001, 0)
+		currpage:TweenPosition(UDim2.new(-1, 0,0,0),Enum.EasingDirection.In,Enum.EasingStyle.Back,.6,true)
+		wait(.4)
+		nextpage:TweenPosition(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Back,.5,true)
+		wait(.5)
+		_G.TweenDB=false
+	end)
+end;
+task.spawn(C_1d);
+-- StarterGui.ProjectReptileV3.Holder.mainmenu.Changelog.effectR.click
+local function C_21()
+local script = G2L["21"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_21);
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.LocalScript
+local function C_25()
+local script = G2L["25"];
+	local SmoothScroll	= require(script.SmoothScroll)
+	
+	local scrol		= script.Parent
+	
+	SmoothScroll.Enable(scrol)
+	
+	local prevMin = 0.5
+	local prevMax = 400
+	
+	local Player = game.Players.LocalPlayer
+	Cam = workspace.CurrentCamera
+	Head = Player.Character.Head
+	script.Parent.MouseEnter:connect(function()
+	    local camDist = (Cam.CoordinateFrame.p - Head.Position).magnitude
+	    prevMin = Player.CameraMinZoomDistance
+	    prevMax = Player.CameraMaxZoomDistance
+	    Player.CameraMinZoomDistance = camDist --Lock the zoom to whatever distance the camera is from the head
+	    Player.CameraMaxZoomDistance = camDist
+	end)
+	
+	script.Parent.MouseLeave:connect(function()
+	    Player.CameraMinZoomDistance = prevMin --revert the zoom back to what it was before
+	    Player.CameraMaxZoomDistance = prevMax
+	end)
+end;
+task.spawn(C_25);
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.ULTIMATE.effectR.click
+local function C_2a()
+local script = G2L["2a"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_2a);
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.TOPKEK.effectR.click
+local function C_2e()
+local script = G2L["2e"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_2e);
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.SERVER ADMIN.effectR.click
+local function C_32()
+local script = G2L["32"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_32);
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.IY/Infinite Yield.effectR.click
+local function C_36()
+local script = G2L["36"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_36);
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CROSSMOD.effectR.click
+local function C_3a()
+local script = G2L["3a"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_3a);
+-- StarterGui.ProjectReptileV3.Holder.scripts.ScriptHolder.CLAWS.effectR.click
+local function C_3e()
+local script = G2L["3e"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_3e);
+-- StarterGui.ProjectReptileV3.Holder.scripts.Back.LocalScript
+local function C_41()
+local script = G2L["41"];
+	local function findPlayer(name)
+		name = name:lower()
+		if name == 'me' then
+			return game:GetService'Players'.LocalPlayer
+		end
+		for i,v in pairs(game:GetService'Players':GetPlayers()) do
+			if v.Name:lower():find(name) == 1 then
+				return v
+			end
+		end
+	end
+	
+	if(_G.TweenDB==nil)then
+		_G.TweenDB=false
+	end
+	
+	local currpage = script.Parent.Parent
+	local nextpage = script.Parent.Parent.Parent:WaitForChild"mainmenu"
+	script.Parent.MouseButton1Click:connect(function()
+		if(_G.TweenDB)then return end
+		_G.TweenDB=true
+		nextpage.Visible=true
+		currpage.Visible=true
+		nextpage.Position = UDim2.new(-1, 0,-0.001, 0)
+		currpage:TweenPosition(UDim2.new(1, 0,0,0),Enum.EasingDirection.In,Enum.EasingStyle.Back,.6,true)
+		wait(.4)
+		nextpage:TweenPosition(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Back,.5,true)
+		wait(.5)
+		_G.TweenDB=false
+	end)
+end;
+task.spawn(C_41);
+-- StarterGui.ProjectReptileV3.Holder.credits.TextButton.LocalScript
+local function C_4d()
+local script = G2L["4d"];
+	local function findPlayer(name)
+		name = name:lower()
+		if name == 'me' then
+			return game:GetService'Players'.LocalPlayer
+		end
+		for i,v in pairs(game:GetService'Players':GetPlayers()) do
+			if v.Name:lower():find(name) == 1 then
+				return v
+			end
+		end
+	end
+	
+	if(_G.TweenDB==nil)then
+		_G.TweenDB=false
+	end
+	
+	local currpage = script.Parent.Parent
+	local nextpage = script.Parent.Parent.Parent:WaitForChild"mainmenu"
+	script.Parent.MouseButton1Click:connect(function()
+		if(_G.TweenDB)then return end
+		_G.TweenDB=true
+		nextpage.Visible=true
+		currpage.Visible=true
+		nextpage.Position = UDim2.new(-1, 0,-0.001, 0)
+		currpage:TweenPosition(UDim2.new(1, 0,0,0),Enum.EasingDirection.In,Enum.EasingStyle.Back,.6,true)
+		wait(.4)
+		nextpage:TweenPosition(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Back,.5,true)
+		wait(.5)
+		_G.TweenDB=false
+	end)
+end;
+task.spawn(C_4d);
+-- StarterGui.ProjectReptileV3.Holder.discord.TextButton.LocalScript
+local function C_53()
+local script = G2L["53"];
+	local function findPlayer(name)
+		name = name:lower()
+		if name == 'me' then
+			return game:GetService'Players'.LocalPlayer
+		end
+		for i,v in pairs(game:GetService'Players':GetPlayers()) do
+			if v.Name:lower():find(name) == 1 then
+				return v
+			end
+		end
+	end
+	
+	if(_G.TweenDB==nil)then
+		_G.TweenDB=false
+	end
+	
+	local currpage = script.Parent.Parent
+	local nextpage = script.Parent.Parent.Parent:WaitForChild"mainmenu"
+	script.Parent.MouseButton1Click:connect(function()
+		if(_G.TweenDB)then return end
+		_G.TweenDB=true
+		nextpage.Visible=true
+		currpage.Visible=true
+		nextpage.Position = UDim2.new(-1, 0,-0.001, 0)
+		currpage:TweenPosition(UDim2.new(1, 0,0,0),Enum.EasingDirection.In,Enum.EasingStyle.Back,.6,true)
+		wait(.4)
+		nextpage:TweenPosition(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Back,.5,true)
+		wait(.5)
+		_G.TweenDB=false
+	end)
+end;
+task.spawn(C_53);
+-- StarterGui.ProjectReptileV3.Holder.login.TextBox.effectR.click
+local function C_59()
+local script = G2L["59"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_59);
+-- StarterGui.ProjectReptileV3.Holder.login.TextButton.LocalScript
+local function C_5b()
+local script = G2L["5b"];
+	local code = script.Parent.Parent.Code
+	local textbox = script.Parent.Parent.TextBox
+	
+	
+	script.Parent.MouseButton1Click:connect(function()
+		if textbox.Text == code.Value then
+			script.Parent.Text = 'Welcome!'
+			wait(1)
+			script.Parent.Parent.Visible = false
+			script.Parent.Parent.mainmenu.Visible = true
+	else
+			game:GetService('Players').LocalPlayer:Kick('Bye, skid kid!')
+		end
+	end)
+end;
+task.spawn(C_5b);
+-- StarterGui.ProjectReptileV3.Holder.login.TextButton.effectR.click
+local function C_5e()
+local script = G2L["5e"];
+	moduleLocation=script.Parent guiObject=script.Parent.Parent m=game.Players.LocalPlayer:GetMouse()RippleEffect=require(moduleLocation)guiObject.MouseButton1Down:connect(function()RippleEffect(guiObject,m.X,m.Y)end)
+end;
+task.spawn(C_5e);
+-- StarterGui.ProjectReptileV3.Handler
+local function C_63()
+local script = G2L["63"];
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Welcome To Project Sonic";
+	Text = "Orginally made by Enable & HacksProFound Edited By SonicElijahMania Use the Program to execute scripts Status Enabled!.";
+	Duration = 100;
+	})
+end;
+task.spawn(C_63);
+
+return G2L["1"], require;
